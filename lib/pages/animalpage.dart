@@ -2,7 +2,7 @@ import 'package:cmzoofv2/animaldata/amphibian.dart';
 import 'package:cmzoofv2/animaldata/mammals.dart';
 import 'package:cmzoofv2/animaldata/poultry.dart';
 import 'package:cmzoofv2/animaldata/reptiles.dart';
-import 'package:cmzoofv2/ar/ar_core.dart';
+//import 'package:cmzoofv2/ar/ar_core.dart';
 import 'package:cmzoofv2/animaldata/animaldata.dart';
 import 'package:flutter/material.dart';
 
@@ -152,7 +152,7 @@ class _AnimalPageState extends State<AnimalPage> {
           ),
         ),
         actions: [
-          IconButton(
+          /*IconButton(
             icon: Icon(Icons.camera),
             onPressed: () {
               //Navigator.of(context).pop();
@@ -160,7 +160,7 @@ class _AnimalPageState extends State<AnimalPage> {
                   builder: (BuildContext context) => ARcore());
               Navigator.push(context, route);
             },
-          ),
+          ),*/
         ],
       ),
       body: Padding(

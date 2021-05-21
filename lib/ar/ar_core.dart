@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+/*import 'package:flutter/material.dart';
 // ignore: import_of_legacy_library_into_null_safe
 import 'package:arcore_flutter_plugin/arcore_flutter_plugin.dart';
 import 'package:vector_math/vector_math_64.dart' as vector;
@@ -38,4 +38,4 @@ class _ARcoreState extends State<ARcore> {
       body: ArCoreView(onArCoreViewCreated: _onArCoreViewCreated),
     );
   }
-}
+}*/

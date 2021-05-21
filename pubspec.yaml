@@ -26,7 +26,7 @@ dependencies:
   image: ^3.0.2
   convex_bottom_bar: ^3.0.0-nullsafety.0
   convex_bottom_navigation: ^1.1.1
-  arcore_flutter_plugin: ^0.0.10
+  #arcore_flutter_plugin: ^0.0.10
   google_maps_flutter: ^2.0.0-nullsafety
   carousel_slider: ^4.0.0-nullsafety.0
   url_launcher: ^6.0.0-nullsafety.7

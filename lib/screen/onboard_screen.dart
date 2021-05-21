@@ -16,7 +16,7 @@ class _OnBoardScreenState extends State<OnBoardScreen> {
     PageModel(
       iconImagePath: 'icons/lion.png',
       heroImagePath: 'icons/lion.png',
-      color: Colors.lightGreen,
+      color: Colors.lightGreen.shade200,
       title: Text(
         'สวนสัตว์เชียงใหม่',
         style: TextStyle(
@@ -39,7 +39,7 @@ class _OnBoardScreenState extends State<OnBoardScreen> {
     PageModel(
       iconImagePath: 'icons/shark.png',
       heroImagePath: 'icons/shark.png',
-      color: Colors.lightBlue,
+      color: Colors.lightBlue.shade200,
       title: Text(
         'อควาเรียม',
         style: TextStyle(
@@ -62,7 +62,7 @@ class _OnBoardScreenState extends State<OnBoardScreen> {
     PageModel(
       iconImagePath: 'icons/tiger.png',
       heroImagePath: 'icons/tiger.png',
-      color: Colors.orangeAccent,
+      color: Colors.orangeAccent.shade100,
       title: Text(
         'แนะนำการใช้งาน',
         style: TextStyle(
