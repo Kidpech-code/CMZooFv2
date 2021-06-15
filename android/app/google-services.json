@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "583654626246",
+    "project_id": "cmzoo-4206f",
+    "storage_bucket": "cmzoo-4206f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:583654626246:android:922cb5b357c1e173a9d8c7",
+        "android_client_info": {
+          "package_name": "com.google.cmzoofv2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "583654626246-qlmoqtsnu26t6nnqpb24sgvhrlg1l42u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDnQxP_dzHZbzteAUGVzcCwWJ2hwtX8N2I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "583654626246-qlmoqtsnu26t6nnqpb24sgvhrlg1l42u.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
