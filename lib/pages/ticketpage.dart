@@ -76,7 +76,7 @@ class _TicketPageState extends State<TicketPage> {
                     ),
                   ),
                   SizedBox(
-                    width: 145.0,
+                    width: 135.0,
                   ),
                   // ignore: deprecated_member_use
                   RaisedButton.icon(

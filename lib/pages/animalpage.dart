@@ -1,5 +1,6 @@
 import 'package:cmzoofv2/animaldata/amphibian.dart';
 import 'package:cmzoofv2/animaldata/mammals.dart';
+import 'package:cmzoofv2/animaldata/mammals_firebase.dart';
 import 'package:cmzoofv2/animaldata/poultry.dart';
 import 'package:cmzoofv2/animaldata/reptiles.dart';
 //import 'package:cmzoofv2/ar/ar_core.dart';
@@ -16,7 +17,7 @@ class _AnimalPageState extends State<AnimalPage> {
 
   void mammalsPage() {
     Navigator.of(context)
-        .push(MaterialPageRoute(builder: (context) => MammalsPage()));
+        .push(MaterialPageRoute(builder: (context) => ShowmammalsList()));
   }
 
   void amphibianPage() {
@@ -183,7 +184,7 @@ class _AnimalPageState extends State<AnimalPage> {
               ),
             ),
             SizedBox(
-              height: 8.0,
+              height: 6.0,
             ),
             Text(
               "ประเภทของสัตว์",
@@ -208,7 +209,7 @@ class _AnimalPageState extends State<AnimalPage> {
               ),
             ),
             SizedBox(
-              height: 1.0,
+              height: 3.0,
             ),
             Text(
               "สัตว์หายาก",
@@ -220,11 +221,11 @@ class _AnimalPageState extends State<AnimalPage> {
               ),
             ),
             SizedBox(
-              height: 10.0,
+              height: 9.0,
             ),
             Container(
               width: double.infinity,
-              height: 536,
+              height: 539,
               child: ListView(
                 physics: BouncingScrollPhysics(),
                 scrollDirection: Axis.horizontal,

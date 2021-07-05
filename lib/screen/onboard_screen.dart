@@ -98,7 +98,7 @@ class _OnBoardScreenState extends State<OnBoardScreen> {
         },
         skipButtonText: 'ข้าม',
         showSkipButton: true,
-        skipButtonColor: Colors.transparent,
+        //skipButtonColor: Colors.transparent,
         onSkipButtonPressed: () {
           Navigator.push(
             context,
