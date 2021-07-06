@@ -57,24 +57,15 @@ class _ShowmammalsListState extends State<ShowmammalsList> {
                 ),
               ));
         },
-        child: Card(
-          elevation: 4.0,
-          color: Colors.green[800],
-          clipBehavior: Clip.antiAlias,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.all(
-              Radius.circular(15),
-            ),
-          ),
           child: Center(
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
                 Container(
-                  width: 80,
-                  height: 80,
+                  width: 95,
+                  height: 95,
                   decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
+                      borderRadius: BorderRadius.circular(20),
                       image: DecorationImage(
                         image: NetworkImage(model.cover),
                         fit: BoxFit.cover,
@@ -84,19 +75,22 @@ class _ShowmammalsListState extends State<ShowmammalsList> {
                 Text(
                   model.nameth,
                   style: TextStyle(
-                    color: Colors.grey[200],
+                    color: Colors.lightGreen[900],
+                    fontWeight: FontWeight.bold,
+                    fontFamily: 'mitr'
                   ),
                 ),
                 Text(
                   model.nameeng,
                   style: TextStyle(
-                    color: Colors.grey[200],
+                    color: Colors.lightGreen[900],
+                    fontWeight: FontWeight.bold,
+                    fontFamily: 'mitr'
                   ),
                 ),
               ],
             ),
           ),
-        ),
       );
 
   @override
