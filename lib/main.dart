@@ -1,5 +1,5 @@
 import 'package:cmzoofv2/screen/home.dart';
-//import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 
@@ -14,7 +14,7 @@ Future<void> main() async {
       InitializationSettings(android: initializationSettingsandroid);
 
   await flutterLocalNotificationsPlugin.initialize(initializationSettings);
-  //await Firebase.initializeApp();
+  await Firebase.initializeApp();
   runApp(MyApp());
 }
 

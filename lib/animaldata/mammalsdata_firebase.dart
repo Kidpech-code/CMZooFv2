@@ -58,3 +58,4 @@ class MammalFirebase {
   @override
   int get hashCode => cover.hashCode ^ nameeng.hashCode ^ nameth.hashCode;
 }
+

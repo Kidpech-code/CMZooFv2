@@ -1,4 +1,5 @@
 import 'package:cmzoofv2/animaldata/amphibian.dart';
+import 'package:cmzoofv2/animaldata/listmammal_fb.dart';
 import 'package:cmzoofv2/animaldata/mammals.dart';
 import 'package:cmzoofv2/animaldata/mammals_firebase.dart';
 import 'package:cmzoofv2/animaldata/poultry.dart';
@@ -17,7 +18,7 @@ class _AnimalPageState extends State<AnimalPage> {
 
   void mammalsPage() {
     Navigator.of(context)
-        .push(MaterialPageRoute(builder: (context) => ShowmammalsList()));
+        .push(MaterialPageRoute(builder: (context) => ListmammalFB()));
   }
 
   void amphibianPage() {
