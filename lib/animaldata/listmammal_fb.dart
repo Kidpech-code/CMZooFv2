@@ -1,9 +1,9 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:cmzoofv2/animaldata/mammalspage.dart';
 import 'package:cmzoofv2/constants.dart';
 import 'package:flutter/material.dart';
 
 class ListmammalFB extends StatelessWidget {
-  ListmammalFB({Key? key}) : super(key: key);
 
   final CollectionReference _mammalsRef =
       FirebaseFirestore.instance.collection("listmammals");
@@ -45,53 +45,64 @@ class ListmammalFB extends StatelessWidget {
                   //Display the data inside a list view
                   return ListView(
                     children: snapshot.data!.docs.map((document) {
-                      return Container(
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(12.0),
-                        ),
-                        height: 350.0,
-                        margin: EdgeInsets.symmetric(
-                          vertical: 12.0,
-                          horizontal: 24.0,
-                        ),
-                        child: Stack(
-                          children: [
-                            Container(
-                              height: 300,
-                              child: ClipRRect(
-                                borderRadius: BorderRadius.circular(12.0),
-                                child: Image.network(
-                                  "${document['cover']}",
-                                  fit: BoxFit.cover,
+                      return GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => MammalPage(mammalsId: document.id),
+                              ));
+                        },
+                        child: Container(
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(12.0),
+                          ),
+                          height: 350.0,
+                          margin: EdgeInsets.symmetric(
+                            vertical: 12.0,
+                            horizontal: 24.0,
+                          ),
+                          child: Stack(
+                            children: [
+                              Container(
+                                height: 300,
+                                child: ClipRRect(
+                                  borderRadius: BorderRadius.circular(12.0),
+                                  child: Image.network(
+                                    "${document['cover']}",
+                                    fit: BoxFit.cover,
+                                  ),
                                 ),
                               ),
-                            ),
-                            Positioned(
-                              bottom: 0,
-                              left: 0,
-                              right: 0,
-                              child: Padding(
-                                padding: const EdgeInsets.all(24.0),
-                                child: Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Text(
-                                      document['nameth'] ?? "Mammals NameTh",
-                                      style: Constants.regularHeading,
-                                    ),
-                                    Text(
-                                      document['nameeng'] ?? "Mammals NameEng",
-                                      style: TextStyle(
-                                          fontSize: 18.0,
-                                          color: Theme.of(context).accentColor,
-                                          fontWeight: FontWeight.w600),
-                                    ),
-                                  ],
+                              Positioned(
+                                bottom: 0,
+                                left: 0,
+                                right: 0,
+                                child: Padding(
+                                  padding: const EdgeInsets.all(24.0),
+                                  child: Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Text(
+                                        document['nameth'] ?? "Mammals NameTh",
+                                        style: Constants.regularHeading,
+                                      ),
+                                      Text(
+                                        document['nameeng'] ??
+                                            "Mammals NameEng",
+                                        style: TextStyle(
+                                            fontSize: 18.0,
+                                            color:
+                                                Theme.of(context).accentColor,
+                                            fontWeight: FontWeight.w600),
+                                      ),
+                                    ],
+                                  ),
                                 ),
-                              ),
-                            )
-                          ],
+                              )
+                            ],
+                          ),
                         ),
                       );
                     }).toList(),

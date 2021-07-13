@@ -15,6 +15,7 @@ class TypeMammal extends StatelessWidget {
       //backgroundColor: Colors.lightGreen[100],
       body: Stack(
         children: [
+          //รูปด้านหลัง
           Container(
             child: Hero(
               tag: mammals.mammalsImg,
@@ -24,6 +25,7 @@ class TypeMammal extends StatelessWidget {
               ),
             ),
           ),
+          //ลูกศรย้อนกลับ
           Padding(
             padding: EdgeInsets.only(
               top: 40,
@@ -406,6 +408,7 @@ class TypeMammal extends StatelessWidget {
               ),
             ),
           ),
+          //รูปสัตว์อันเล็ก
           Align(
             alignment: Alignment.bottomLeft,
             child: Padding(
