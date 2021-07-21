@@ -16,66 +16,68 @@ class _MammalPageState extends State<MammalPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Stack(
-      children: [
-        FutureBuilder(
-          future: _mammalsRef.doc(widget.mammalsId).get(),
-          builder: (context, snapshot) {
-            if (snapshot.hasError) {
-              return Scaffold(
-                body: Center(
-                  child: Text("Error: ${snapshot.error}"),
-                ),
-              );
-            }
+      body: Container(
+        child: Stack(
+          children: [
+            FutureBuilder(
+              future: _mammalsRef.doc(widget.mammalsId).get(),
+              builder: (context, snapshot) {
+                if (snapshot.hasError) {
+                  return Scaffold(
+                    body: Center(
+                      child: Text("Error: ${snapshot.error}"),
+                    ),
+                  );
+                }
 
-            if (snapshot.connectionState == ConnectionState.done) {
-              // Firebase Document Data Map
-              Map<String, dynamic> data = snapshot.data!.data();
-              return ListView(
-                children: [
-                  Image.network("${data['image'][0]}"),
-                ],
-              );
-            }
+                // if (snapshot.connectionState == ConnectionState.done) {
+                //   final Map<String, dynamic> documentData = snapshot.data!.data();
+                //   return ListView(
+                //     children: [
+                //       Image.network("${documentData['image'][0]}"),
+                //     ],
+                //   );
+                // }
 
-            // Loading State
-            return Scaffold(
-              body: Center(
-                child: CircularProgressIndicator(),
+                // Loading State
+                return Scaffold(
+                  body: Center(
+                    child: CircularProgressIndicator(),
+                  ),
+                );
+              },
+            ),
+            Padding(
+              padding: EdgeInsets.only(
+                top: 40,
+                left: 20,
               ),
-            );
-          },
-        ),
-        Padding(
-          padding: EdgeInsets.only(
-            top: 40,
-            left: 20,
-          ),
-          child: GestureDetector(
-            onTap: () {
-              Navigator.pop(context);
-            },
-            child: Align(
-              alignment: Alignment.topLeft,
-              child: Container(
-                height: 40.0,
-                width: 40.0,
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  shape: BoxShape.circle,
-                ),
-                child: Center(
-                  child: Icon(
-                    Icons.arrow_back,
-                    color: Colors.green[900],
+              child: GestureDetector(
+                onTap: () {
+                  Navigator.pop(context);
+                },
+                child: Align(
+                  alignment: Alignment.topLeft,
+                  child: Container(
+                    height: 40.0,
+                    width: 40.0,
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      shape: BoxShape.circle,
+                    ),
+                    child: Center(
+                      child: Icon(
+                        Icons.arrow_back,
+                        color: Colors.green[900],
+                      ),
+                    ),
                   ),
                 ),
               ),
             ),
-          ),
+          ],
         ),
-      ],
-    ));
+      ),
+    );
   }
 }
