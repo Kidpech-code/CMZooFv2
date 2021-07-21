@@ -6,6 +6,7 @@ import 'package:cmzoofv2/animaldata/poultry.dart';
 import 'package:cmzoofv2/animaldata/reptiles.dart';
 //import 'package:cmzoofv2/ar/ar_core.dart';
 import 'package:cmzoofv2/animaldata/animaldata.dart';
+import 'package:cmzoofv2/service/testgetdata.dart';
 import 'package:flutter/material.dart';
 
 class AnimalPage extends StatefulWidget {
@@ -18,7 +19,7 @@ class _AnimalPageState extends State<AnimalPage> {
 
   void mammalsPage() {
     Navigator.of(context)
-        .push(MaterialPageRoute(builder: (context) => ListmammalFB()));
+        .push(MaterialPageRoute(builder: (context) => TestgetData()));
   }
 
   void amphibianPage() {

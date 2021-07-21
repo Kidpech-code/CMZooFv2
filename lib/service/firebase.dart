@@ -1,19 +1,27 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 
-class Firebase {
-  Future<String?> getData({
-    required String path,
-  }) async {
-    final reference = FirebaseFirestore.instance.doc(path);
-    try {
-    final docSnapshot = await reference.get();
-    if (docSnapshot.exists){
-      return docSnapshot.data().toString();
-    }
-    return null;
-  } catch (e) {
-    rethrow;
+class FireBase {
+  void getQuery({required String path}) {
+    final reference = FirebaseFirestore.instance.collection(path);
+    final query = reference
+        .where(
+          'nameth',
+        )
+        .where('nameeng');
+    query.get().then(
+      (querySnapshot) {
+        querySnapshot.docs.forEach(
+          (doc) {
+            if (doc.exists) {
+              print(doc.data());
+            }
+          },
+        );
+      },
+    ).catchError(
+      (err) {
+        print(err);
+      },
+    );
   }
-  }
-  
 }
