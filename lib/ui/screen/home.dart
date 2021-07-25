@@ -2,7 +2,7 @@
 //import 'package:path_provider/path_provider.dart';
 //import 'package:audioplayers/audioplayers.dart';
 //import 'package:flutter/services.dart';
-import 'package:cmzoofv2/screen/onboard_screen.dart';
+import 'package:cmzoofv2/ui/screen/onboard_screen.dart';
 import 'package:flutter/material.dart';
 
 class IndexHome extends StatefulWidget {

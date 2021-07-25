@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:cmzoofv2/animaldata/mammalspage.dart';
 import 'package:cmzoofv2/constants.dart';
+import 'package:cmzoofv2/ui/animaldata/mammalspage.dart';
 import 'package:flutter/material.dart';
 
 class ListmammalFB extends StatelessWidget {

@@ -1,7 +1,7 @@
 import 'package:cmzoofv2/main.dart';
-import 'package:cmzoofv2/screen/list_item.dart';
-import 'package:cmzoofv2/screen/slider_item.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:cmzoofv2/ui/screen/list_item.dart';
+import 'package:cmzoofv2/ui/screen/slider_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 

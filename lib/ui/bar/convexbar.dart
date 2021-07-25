@@ -1,9 +1,7 @@
-import 'package:cmzoofv2/pages/animalpage.dart';
-//import 'package:cmzoofv2/pages/aquarium.dart';
-//import 'package:cmzoofv2/pages/carpage.dart';
-import 'package:cmzoofv2/pages/mappage.dart';
-import 'package:cmzoofv2/pages/ticketpage.dart';
-import 'package:cmzoofv2/pages/dashborad.dart';
+import 'package:cmzoofv2/ui/pages/animalpage.dart';
+import 'package:cmzoofv2/ui/pages/dashborad.dart';
+import 'package:cmzoofv2/ui/pages/mappage.dart';
+import 'package:cmzoofv2/ui/pages/ticketpage.dart';
 import 'package:flutter/material.dart';
 import 'package:convex_bottom_bar/convex_bottom_bar.dart';
 

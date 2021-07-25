@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:cmzoofv2/animaldata/mammalsdata_firebase.dart';
-import 'package:cmzoofv2/animaldata/typemammal_firebase.dart';
+import 'package:cmzoofv2/ui/animaldata/mammalsdata_firebase.dart';
+import 'package:cmzoofv2/ui/animaldata/typemammal_firebase.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 

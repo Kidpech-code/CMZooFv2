@@ -1,5 +1,5 @@
-import 'package:cmzoofv2/animaldata/typemammal.dart';
-import 'package:cmzoofv2/animaldata/animaldata.dart';
+import 'package:cmzoofv2/ui/animaldata/animaldata.dart';
+import 'package:cmzoofv2/ui/animaldata/typemammal.dart';
 import 'package:flutter/material.dart';
 
 class AmphibianPage extends StatefulWidget {

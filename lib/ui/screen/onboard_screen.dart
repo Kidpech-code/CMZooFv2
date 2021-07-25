@@ -1,4 +1,4 @@
-import 'package:cmzoofv2/bar/convexbar.dart';
+import 'package:cmzoofv2/ui/bar/convexbar.dart';
 import 'package:flutter/material.dart';
 // ignore: import_of_legacy_library_into_null_safe
 import 'package:fancy_on_boarding/fancy_on_boarding.dart';

@@ -1,5 +1,5 @@
-import 'package:cmzoofv2/data/cardata.dart';
-import 'package:cmzoofv2/detail/detailcar.dart';
+import 'package:cmzoofv2/ui/data/cardata.dart';
+import 'package:cmzoofv2/ui/detail/detailcar.dart';
 import 'package:flutter/material.dart';
 
 class CarPage extends StatefulWidget {

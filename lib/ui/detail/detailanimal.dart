@@ -1,4 +1,4 @@
-import 'package:cmzoofv2/animaldata/animaldata.dart';
+import 'package:cmzoofv2/ui/animaldata/animaldata.dart';
 import 'package:flutter/material.dart';
 
 Widget detailAnimal(AnimalData animal) {

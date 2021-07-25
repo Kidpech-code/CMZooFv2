@@ -1,12 +1,9 @@
-import 'package:cmzoofv2/animaldata/amphibian.dart';
-import 'package:cmzoofv2/animaldata/listmammal_fb.dart';
-import 'package:cmzoofv2/animaldata/mammals.dart';
-import 'package:cmzoofv2/animaldata/mammals_firebase.dart';
-import 'package:cmzoofv2/animaldata/poultry.dart';
-import 'package:cmzoofv2/animaldata/reptiles.dart';
 //import 'package:cmzoofv2/ar/ar_core.dart';
-import 'package:cmzoofv2/animaldata/animaldata.dart';
 import 'package:cmzoofv2/service/testgetdata.dart';
+import 'package:cmzoofv2/ui/animaldata/amphibian.dart';
+import 'package:cmzoofv2/ui/animaldata/animaldata.dart';
+import 'package:cmzoofv2/ui/animaldata/poultry.dart';
+import 'package:cmzoofv2/ui/animaldata/reptiles.dart';
 import 'package:flutter/material.dart';
 
 class AnimalPage extends StatefulWidget {

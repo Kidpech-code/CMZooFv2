@@ -1,5 +1,5 @@
-import 'package:cmzoofv2/data/ticketdata.dart';
-import 'package:cmzoofv2/detail/detailticket.dart';
+import 'package:cmzoofv2/ui/data/ticketdata.dart';
+import 'package:cmzoofv2/ui/detail/detailticket.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 

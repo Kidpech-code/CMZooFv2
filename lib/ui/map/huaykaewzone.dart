@@ -1,4 +1,4 @@
-import 'package:cmzoofv2/map/mapdata.dart';
+import 'package:cmzoofv2/ui/map/mapdata.dart';
 import 'package:flutter/material.dart';
 
 class HuaykaewZone extends StatelessWidget {
