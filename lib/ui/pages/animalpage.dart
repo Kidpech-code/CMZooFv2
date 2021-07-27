@@ -1,7 +1,7 @@
 //import 'package:cmzoofv2/ar/ar_core.dart';
-import 'package:cmzoofv2/service/testgetdata.dart';
 import 'package:cmzoofv2/ui/animaldata/amphibian.dart';
 import 'package:cmzoofv2/service/data/animaldata.dart';
+import 'package:cmzoofv2/ui/animaldata/mammals_page.dart';
 import 'package:cmzoofv2/ui/animaldata/poultry.dart';
 import 'package:cmzoofv2/ui/animaldata/reptiles.dart';
 import 'package:flutter/material.dart';
@@ -16,7 +16,7 @@ class _AnimalPageState extends State<AnimalPage> {
 
   void mammalsPage() {
     Navigator.of(context)
-        .push(MaterialPageRoute(builder: (context) => TestgetData()));
+        .push(MaterialPageRoute(builder: (context) => ListMammals()));
   }
 
   void amphibianPage() {
