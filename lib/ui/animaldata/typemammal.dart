@@ -1,4 +1,4 @@
-import 'package:cmzoofv2/ui/animaldata/animaldata.dart';
+import 'package:cmzoofv2/service/data/animaldata.dart';
 import 'package:flutter/material.dart';
 
 class TypeMammal extends StatelessWidget {

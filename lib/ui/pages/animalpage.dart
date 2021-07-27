@@ -1,7 +1,7 @@
 //import 'package:cmzoofv2/ar/ar_core.dart';
 import 'package:cmzoofv2/service/testgetdata.dart';
 import 'package:cmzoofv2/ui/animaldata/amphibian.dart';
-import 'package:cmzoofv2/ui/animaldata/animaldata.dart';
+import 'package:cmzoofv2/service/data/animaldata.dart';
 import 'package:cmzoofv2/ui/animaldata/poultry.dart';
 import 'package:cmzoofv2/ui/animaldata/reptiles.dart';
 import 'package:flutter/material.dart';
