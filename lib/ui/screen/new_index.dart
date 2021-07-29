@@ -1,14 +1,14 @@
 import 'package:cmzoofv2/ui/screen/onboard_screen.dart';
 import 'package:flutter/material.dart';
 
-class NewHome extends StatefulWidget {
-  const NewHome({Key? key}) : super(key: key);
+class NewIndex extends StatefulWidget {
+  const NewIndex({Key? key}) : super(key: key);
 
   @override
-  _NewHomeState createState() => _NewHomeState();
+  _NewIndexState createState() => _NewIndexState();
 }
 
-class _NewHomeState extends State<NewHome> {
+class _NewIndexState extends State<NewIndex> {
   Widget showLogo() {
     return Container(
       child: Image.asset(

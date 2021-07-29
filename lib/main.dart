@@ -1,5 +1,5 @@
 import 'package:animated_splash_screen/animated_splash_screen.dart';
-import 'package:cmzoofv2/ui/screen/new_home.dart';
+import 'package:cmzoofv2/ui/screen/new_index.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'CM Zoo',
-      home: NewHome(),
+      home: NewIndex(),
     );
   }
 }
