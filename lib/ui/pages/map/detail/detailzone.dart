@@ -1,4 +1,4 @@
-import 'package:cmzoofv2/ui/map/mapdata.dart';
+import 'package:cmzoofv2/Model/map_model.dart';
 import 'package:flutter/material.dart';
 
 Widget detailzone(MapData zone) {

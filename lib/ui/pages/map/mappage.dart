@@ -1,6 +1,7 @@
-import 'package:cmzoofv2/ui/map/huaykaewzone.dart';
-import 'package:cmzoofv2/ui/map/mapdata.dart';
-import 'package:cmzoofv2/ui/map/zoomap.dart';
+import 'package:cmzoofv2/Model/map_model.dart';
+import 'package:cmzoofv2/ui/pages/map/show_zone/huaykaewzone.dart';
+import 'package:cmzoofv2/service/data/map_data/mapdata.dart';
+import 'package:cmzoofv2/service/map/zoomap.dart';
 import 'package:flutter/material.dart';
 
 class MapPage extends StatefulWidget {

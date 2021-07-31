@@ -1,15 +1,14 @@
 import 'package:cmzoofv2/Model/animal_model.dart';
 import 'package:cmzoofv2/service/data/animal_data/mammals_data.dart';
-import 'package:cmzoofv2/service/data/animaldata.dart';
-import 'package:cmzoofv2/ui/animaldata/typemammal.dart';
+import 'package:cmzoofv2/ui/pages/animal/show/Show_mammals/typemammal.dart';
 import 'package:flutter/material.dart';
 
-class ReptilesPage extends StatefulWidget {
+class PoultryPage extends StatefulWidget {
   @override
-  _ReptilesPageState createState() => _ReptilesPageState();
+  _PoultryPageState createState() => _PoultryPageState();
 }
 
-class _ReptilesPageState extends State<ReptilesPage> {
+class _PoultryPageState extends State<PoultryPage> {
   List<Mammals> mammalanimal = mammal();
   @override
   Widget build(BuildContext context) {

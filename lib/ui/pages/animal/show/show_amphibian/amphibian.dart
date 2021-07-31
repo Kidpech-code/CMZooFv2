@@ -1,14 +1,14 @@
 import 'package:cmzoofv2/Model/animal_model.dart';
 import 'package:cmzoofv2/service/data/animal_data/mammals_data.dart';
-import 'package:cmzoofv2/ui/animaldata/typemammal.dart';
+import 'package:cmzoofv2/ui/pages/animal/show/Show_mammals/typemammal.dart';
 import 'package:flutter/material.dart';
 
-class MammalsPage extends StatefulWidget {
+class AmphibianPage extends StatefulWidget {
   @override
-  _MammalsPageState createState() => _MammalsPageState();
+  _AmphibianPageState createState() => _AmphibianPageState();
 }
 
-class _MammalsPageState extends State<MammalsPage> {
+class _AmphibianPageState extends State<AmphibianPage> {
   List<Mammals> mammalanimal = mammal();
   @override
   Widget build(BuildContext context) {
@@ -50,7 +50,6 @@ class _MammalsPageState extends State<MammalsPage> {
       ),
     );
   }
-
   List<Widget> typemammal() {
     List<Widget> list = [];
     for (var i = 0; i < mammalanimal.length; i++) {

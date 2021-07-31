@@ -1,4 +1,4 @@
-import 'package:cmzoofv2/ui/map/zoomap.dart';
+import 'package:cmzoofv2/service/map/zoomap.dart';
 import 'package:flutter/material.dart';
 
 class MapPage extends StatefulWidget {
