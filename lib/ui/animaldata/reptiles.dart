@@ -1,3 +1,5 @@
+import 'package:cmzoofv2/Model/animal_model.dart';
+import 'package:cmzoofv2/service/data/animal_data/mammals_data.dart';
 import 'package:cmzoofv2/service/data/animaldata.dart';
 import 'package:cmzoofv2/ui/animaldata/typemammal.dart';
 import 'package:flutter/material.dart';

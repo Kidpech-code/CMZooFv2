@@ -1,4 +1,4 @@
-import 'package:cmzoofv2/service/firebase.dart';
+import 'package:cmzoofv2/service/fire_base/firebase.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 

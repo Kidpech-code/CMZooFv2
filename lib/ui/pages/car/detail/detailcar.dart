@@ -1,4 +1,4 @@
-import 'package:cmzoofv2/service/data/cardata.dart';
+import 'package:cmzoofv2/Model/cardata.dart';
 import 'package:flutter/material.dart';
 
 Widget detailCar(CarData carout) {

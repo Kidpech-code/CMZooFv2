@@ -1,6 +1,7 @@
 //import 'package:cmzoofv2/ar/ar_core.dart';
+import 'package:cmzoofv2/Model/animal_model.dart';
+import 'package:cmzoofv2/service/data/animal_data/rareanimal_data.dart';
 import 'package:cmzoofv2/ui/animaldata/amphibian.dart';
-import 'package:cmzoofv2/service/data/animaldata.dart';
 import 'package:cmzoofv2/ui/animaldata/mammals_page.dart';
 import 'package:cmzoofv2/ui/animaldata/poultry.dart';
 import 'package:cmzoofv2/ui/animaldata/reptiles.dart';
@@ -12,7 +13,7 @@ class AnimalPage extends StatefulWidget {
 }
 
 class _AnimalPageState extends State<AnimalPage> {
-  List<AnimalData> ranimal = rareanimal();
+  List<Rareanimal> ranimal = rareanimal();
 
   void mammalsPage() {
     Navigator.of(context)
@@ -245,7 +246,7 @@ class _AnimalPageState extends State<AnimalPage> {
     return list;
   }
 
-  Widget listAnimal(AnimalData ranimal) {
+  Widget listAnimal(Rareanimal ranimal) {
     return GestureDetector(
       child: Container(
         width: 300.0,
@@ -255,7 +256,7 @@ class _AnimalPageState extends State<AnimalPage> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              ranimal.animalName,
+              ranimal.rareanimalName,
               style: TextStyle(
                 fontSize: 16.5,
                 fontWeight: FontWeight.bold,
@@ -269,7 +270,7 @@ class _AnimalPageState extends State<AnimalPage> {
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10.0),
                 image: DecorationImage(
-                  image: AssetImage(ranimal.animalImg),
+                  image: AssetImage(ranimal.rareanimalImg),
                   fit: BoxFit.cover,
                 ),
               ),

@@ -1,5 +1,5 @@
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:cmzoofv2/Model/travel.dart';
+import 'package:cmzoofv2/service/data/travel_banner/banner_data.dart';
 import 'package:flutter/material.dart';
 
 class BannerPlaces extends StatefulWidget {
