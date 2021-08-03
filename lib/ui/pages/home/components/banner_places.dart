@@ -1,4 +1,5 @@
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:cmzoofv2/responsive.dart';
 import 'package:cmzoofv2/service/data/travel_banner/banner_data.dart';
 import 'package:flutter/material.dart';
 
@@ -17,7 +18,7 @@ class _BannerPlacesState extends State<BannerPlaces> {
   Widget build(BuildContext context) {
     return SizedBox(
       width: double.infinity,
-      height: 200,
+      height: isTab(context) ? 450 : 200,
       child: Column(
         children: [
           CarouselSlider(
@@ -51,7 +52,7 @@ class _BannerPlacesState extends State<BannerPlaces> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
-            height: 172.0,
+            height: isTab(context) ? 250 : 172,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10.0),
               image: DecorationImage(

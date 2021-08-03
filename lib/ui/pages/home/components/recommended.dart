@@ -1,4 +1,5 @@
 import 'package:cmzoofv2/components/constants.dart';
+import 'package:cmzoofv2/responsive.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -12,14 +13,16 @@ class Recommended extends StatelessWidget {
     return SafeArea(
       bottom: false,
       child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 20),
+        padding: isLandscape(context)
+            ? EdgeInsets.symmetric(horizontal: 50)
+            : EdgeInsets.symmetric(horizontal: 20),
         child: Row(
           children: [
             Text(
               'Recommemded',
               style: GoogleFonts.merriweather(
                 fontWeight: FontWeight.w700,
-                fontSize: 20,
+                fontSize: isTab(context) ? 24 : 20,
               ),
             ),
             Spacer(),
@@ -28,7 +31,9 @@ class Recommended extends StatelessWidget {
               child: Text(
                 'View All',
                 style: GoogleFonts.merriweather(
-                    fontSize: 14, color: kPrimaryColor),
+                  fontSize: isTab(context) ? 20 : 14,
+                  color: kPrimaryColor,
+                ),
               ),
             ),
           ],

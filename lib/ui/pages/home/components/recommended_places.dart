@@ -1,5 +1,6 @@
 import 'package:cmzoofv2/responsive.dart';
 import 'package:cmzoofv2/service/data/travel_banner/travel_data.dart';
+import 'package:cmzoofv2/ui/pages/details/details.dart';
 import 'package:cmzoofv2/ui/pages/home/components/grid_place_card.dart';
 import 'package:flutter/material.dart';
 
@@ -15,7 +16,9 @@ class RecommendedPlaces extends StatelessWidget {
         crossAxisCount: isLandscape(context) ? 3 : 2,
         shrinkWrap: true,
         physics: NeverScrollableScrollPhysics(),
-        padding: EdgeInsets.all(20),
+        padding: isLandscape(context)
+            ? EdgeInsets.symmetric(vertical: 20, horizontal: 50)
+            : EdgeInsets.all(20),
         mainAxisSpacing: 20,
         crossAxisSpacing: 20,
         childAspectRatio: 1.2,
@@ -23,8 +26,18 @@ class RecommendedPlaces extends StatelessWidget {
           travelPlaces.length,
           (index) {
             return GridPlaceCard(
-              place: travelPlaces[index],
-              tapEvent: () {},
+              travel: travelPlaces[index],
+              //กดที่รูป
+              tapEvent: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => DetailsScreen(
+                      travel: travelPlaces[index],
+                    ),
+                  ),
+                );
+              },
             );
           },
         ),

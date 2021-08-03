@@ -1,4 +1,5 @@
 import 'package:cmzoofv2/components/constants.dart';
+import 'package:cmzoofv2/responsive.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -26,7 +27,7 @@ class _PlacesCategoriesState extends State<PlacesCategories> {
     return Padding(
       padding: EdgeInsets.all(30),
       child: SizedBox(
-        height: 25,
+        height: isTab(context) ? 35 : 25,
         child: ListView.builder(
           scrollDirection: Axis.horizontal,
           itemCount: placesCategoris.length,
@@ -42,7 +43,7 @@ class _PlacesCategoriesState extends State<PlacesCategories> {
                 child: Text(
                   placesCategoris[index],
                   style: GoogleFonts.merriweather(
-                      fontSize: 16,
+                      fontSize: isTab(context) ? 24 : 16,
                       color:
                           selectedIndex == index ? kPrimaryColor : kTextColor,
                       fontWeight: selectedIndex == index

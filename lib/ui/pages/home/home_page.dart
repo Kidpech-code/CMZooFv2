@@ -18,6 +18,7 @@ class HomePage extends StatelessWidget {
         actions: [
           Notifi(),
         ],
+        leading: ReordeMenu(),
       ),
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
