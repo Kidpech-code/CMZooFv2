@@ -3,7 +3,7 @@ import 'package:cmzoofv2/Model/animal_model.dart';
 import 'package:cmzoofv2/service/data/animal_data/rareanimal_data.dart';
 import 'package:cmzoofv2/ui/pages/animal/show/show_amphibian/amphibian.dart';
 import 'package:cmzoofv2/ui/animaldata/mammals_page.dart';
-import 'package:cmzoofv2/ui/pages/animal/show/Show_mammals/show_poultry/poultry.dart';
+import 'package:cmzoofv2/ui/pages/animal/show/show_poultry/poultry.dart';
 import 'package:cmzoofv2/ui/pages/animal/show/show_reptiles/reptiles.dart';
 import 'package:flutter/material.dart';
 
