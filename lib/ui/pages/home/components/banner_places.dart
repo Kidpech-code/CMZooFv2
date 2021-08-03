@@ -23,7 +23,7 @@ class _BannerPlacesState extends State<BannerPlaces> {
         children: [
           CarouselSlider(
             options: CarouselOptions(
-              height: 200.0,
+              height: isTab(context) ? 450 : 200,
               enlargeCenterPage: true,
               autoPlay: true,
               aspectRatio: 16 / 9,
@@ -52,7 +52,7 @@ class _BannerPlacesState extends State<BannerPlaces> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
-            height: isTab(context) ? 250 : 172,
+            height: isTab(context) ? 250 : 150,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10.0),
               image: DecorationImage(
