@@ -45,8 +45,36 @@ class RareInformation extends StatelessWidget {
                   ),
                 ),
                 SizedBox(height: 5),
+                Text(
+                  rare.rareanimalEngname,
+                  style: TextStyle(
+                    fontSize: isTab(context) ? 32 : 24,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                SizedBox(height: 5),
                 RareLocation(rare: rare),
                 SizedBox(height: 10),
+                Row(
+                  children: [
+                    Text(
+                      'ประเภท: ',
+                      style: TextStyle(
+                        fontSize: isTab(context) ? 28 : 15,
+                        fontWeight: FontWeight.w700,
+                      ),
+                    ),
+                    SizedBox(width: 2),
+                    Text(
+                      rare.rareanimalType,
+                      style: TextStyle(
+                        fontSize: isTab(context) ? 28 : 15,
+                        fontWeight: FontWeight.w600,
+                        color: Colors.green[900],
+                      ),
+                    ),
+                  ],
+                ),
                 Text(
                   'Description',
                   style: TextStyle(

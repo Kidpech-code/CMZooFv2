@@ -17,9 +17,9 @@ class TypeRemonmended extends StatelessWidget {
         child: Row(
           children: [
             Text(
-              'ประเภทของสัตว์',
-              style: GoogleFonts.mitr(
-                fontWeight: FontWeight.w500,
+              'TypeAnimal',
+              style: GoogleFonts.merriweather(
+                fontWeight: FontWeight.w700,
                 fontSize: isTab(context) ? 26 : 22,
                 color: Colors.green[900],
               ),

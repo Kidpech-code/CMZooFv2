@@ -50,7 +50,7 @@ class GridRareCard extends StatelessWidget {
                       Row(
                         children: [
                           Text(
-                            rare.rareanimalName,
+                            rare.rareanimalEngname,
                             style: TextStyle(
                                 color: Colors.white,
                                 fontSize: isTab(context) ? 24 : 15,

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class RareRemonmended extends StatelessWidget {
-  const RareRemonmended({ Key? key }) : super(key: key);
+  const RareRemonmended({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -17,9 +17,9 @@ class RareRemonmended extends StatelessWidget {
         child: Row(
           children: [
             Text(
-              'สัตว์หายาก',
-              style: GoogleFonts.mitr(
-                fontWeight: FontWeight.w500,
+              'RareAnimal',
+              style: GoogleFonts.merriweather(
+                fontWeight: FontWeight.w700,
                 fontSize: isTab(context) ? 26 : 22,
                 color: Colors.green[900],
               ),

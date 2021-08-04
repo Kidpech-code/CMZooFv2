@@ -1,6 +1,5 @@
 import 'package:cmzoofv2/responsive.dart';
 import 'package:cmzoofv2/service/data/animal_data/rareanimal_data.dart';
-import 'package:cmzoofv2/service/data/travel_banner/travel_data.dart';
 import 'package:cmzoofv2/ui/pages/animal/components/grid_rare_card.dart';
 import 'package:cmzoofv2/ui/pages/animal/detail/components/rare_detail.dart';
 import 'package:flutter/material.dart';
@@ -24,7 +23,7 @@ class RareAnimalRecommended extends StatelessWidget {
         crossAxisSpacing: 20,
         childAspectRatio: 1.2,
         children: List.generate(
-          travelPlaces.length,
+          rareAnimal.length,
           (index) {
             return GridRareCard(
               rare: rareAnimal[index],

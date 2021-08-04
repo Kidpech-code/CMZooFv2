@@ -14,7 +14,7 @@ class AnimalsPage extends StatelessWidget {
       extendBody: true,
       appBar: buildAppBar(
         context,
-        title: 'TypeAnimal',
+        title: 'Animal',
         actions: [],
         leading: EmptyMenu(),
       ),
@@ -26,7 +26,7 @@ class AnimalsPage extends StatelessWidget {
             TypeRemonmended(),
             TypeCategories(),
             RareRemonmended(),
-            //RareAnimalRecommended(),
+            RareAnimalRecommended(),
           ],
         ),
       ),
