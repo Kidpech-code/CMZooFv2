@@ -13,7 +13,7 @@ class AnimalPage extends StatefulWidget {
 }
 
 class _AnimalPageState extends State<AnimalPage> {
-  List<Rareanimal> ranimal = rareanimal();
+  // List<Rareanimal> ranimal = rareanimal();
 
   void mammalsPage() {
     Navigator.of(context)
@@ -229,7 +229,7 @@ class _AnimalPageState extends State<AnimalPage> {
               child: ListView(
                 physics: BouncingScrollPhysics(),
                 scrollDirection: Axis.horizontal,
-                children: rareanimals(),
+                // children: rareanimals(),
               ),
             ),
           ],
@@ -238,46 +238,46 @@ class _AnimalPageState extends State<AnimalPage> {
     );
   }
 
-  List<Widget> rareanimals() {
-    List<Widget> list = [];
-    for (var i = 0; i < ranimal.length; i++) {
-      list.add(listAnimal(ranimal[i]));
-    }
-    return list;
-  }
+  // List<Widget> rareanimals() {
+  //   List<Widget> list = [];
+  //   for (var i = 0; i < ranimal.length; i++) {
+  //     list.add(listAnimal(ranimal[i]));
+  //   }
+  //   return list;
+  // }
 
-  Widget listAnimal(Rareanimal ranimal) {
-    return GestureDetector(
-      child: Container(
-        width: 300.0,
-        margin: EdgeInsets.only(right: 12.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              ranimal.rareanimalName,
-              style: TextStyle(
-                fontSize: 16.5,
-                fontWeight: FontWeight.bold,
-                fontFamily: 'mitr',
-              ),
-            ),
-            SizedBox(height: 5.0),
-            Container(
-              height: 508.0,
-              width: 300.0,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10.0),
-                image: DecorationImage(
-                  image: AssetImage(ranimal.rareanimalImg),
-                  fit: BoxFit.cover,
-                ),
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
+  // Widget listAnimal(Rareanimal ranimal) {
+  //   return GestureDetector(
+  //     child: Container(
+  //       width: 300.0,
+  //       margin: EdgeInsets.only(right: 12.0),
+  //       child: Column(
+  //         mainAxisAlignment: MainAxisAlignment.start,
+  //         crossAxisAlignment: CrossAxisAlignment.start,
+  //         children: [
+  //           Text(
+  //             ranimal.rareanimalName,
+  //             style: TextStyle(
+  //               fontSize: 16.5,
+  //               fontWeight: FontWeight.bold,
+  //               fontFamily: 'mitr',
+  //             ),
+  //           ),
+  //           SizedBox(height: 5.0),
+  //           Container(
+  //             height: 508.0,
+  //             width: 300.0,
+  //             decoration: BoxDecoration(
+  //               borderRadius: BorderRadius.circular(10.0),
+  //               image: DecorationImage(
+  //                 image: AssetImage(ranimal.rareanimalImg),
+  //                 fit: BoxFit.cover,
+  //               ),
+  //             ),
+  //           ),
+  //         ],
+  //       ),
+  //     ),
+  //   );
+  // }
 }

@@ -3,26 +3,24 @@ import 'package:cmzoofv2/responsive.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class PlacesCategories extends StatefulWidget {
-  const PlacesCategories({
+class TravelCategories extends StatefulWidget {
+  const TravelCategories({
     Key? key,
   }) : super(key: key);
 
   @override
-  State<PlacesCategories> createState() => _PlacesCategoriesState();
+  State<TravelCategories> createState() => _TravelCategoriesState();
 }
 
-class _PlacesCategoriesState extends State<PlacesCategories> {
+class _TravelCategoriesState extends State<TravelCategories> {
   int selectedIndex = 0;
   @override
   Widget build(BuildContext context) {
     List<String> placesCategoris = [
-      "Mini Zoo",
-      "Snowdome",
-      "French Landscaping",
-      "Kids Water Park",
-      "Zoo Kids Zone",
-      "Ku-Din-Khoo Temple"
+      "Mammal",
+      "Amphibibian",
+      "Poultry",
+      "Reptiles",
     ];
     return Padding(
       padding: EdgeInsets.all(30),

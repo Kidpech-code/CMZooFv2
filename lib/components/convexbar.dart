@@ -1,3 +1,4 @@
+import 'package:cmzoofv2/ui/pages/animal/animal_page.dart';
 import 'package:cmzoofv2/ui/pages/animal/animalpage.dart';
 import 'package:cmzoofv2/ui/pages/home/home_page.dart';
 import 'package:cmzoofv2/ui/pages/map/mappage.dart';
@@ -15,7 +16,8 @@ class _ConvexBarState extends State<ConvexBar> {
   final _pageOption = [
     // DashboradPage(),
     HomePage(),
-    AnimalPage(),
+    // AnimalPage(),
+    AnimalsPage(),
     //AquariumPage(),
     TicketPage(),
     //CarPage(),

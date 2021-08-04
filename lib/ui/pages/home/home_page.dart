@@ -1,6 +1,5 @@
 import 'package:cmzoofv2/components/app_bar.dart';
 import 'package:cmzoofv2/ui/pages/home/components/banner_places.dart';
-import 'package:cmzoofv2/ui/pages/home/components/places_categoris.dart';
 import 'package:cmzoofv2/ui/pages/home/components/recommended.dart';
 import 'package:cmzoofv2/ui/pages/home/components/recommended_places.dart';
 import 'package:flutter/material.dart';
@@ -18,7 +17,7 @@ class HomePage extends StatelessWidget {
         actions: [
           Notifi(),
         ],
-        leading: ReordeMenu(),
+        leading: EmptyMenu(),
       ),
       backgroundColor: Colors.white,
       body: SingleChildScrollView(

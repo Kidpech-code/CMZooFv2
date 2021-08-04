@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 class Mammals {
   String mammalsImg;
   String mammalsname;
@@ -157,12 +159,21 @@ class Author_R {
 }
 
 class Rareanimal {
-  String rareanimalName;
-  String rareanimalEngname;
-  String rareanimalImg;
-  String rareanimalType;
-  int rareanimalNum;
+  final int id;
+  final String rareanimalName;
+  final String rareanimalEngname;
+  final String rareanimalImg;
+  final String rareanimalType;
+  final String description;
+  final String location;
 
-  Rareanimal(this.rareanimalImg, this.rareanimalName, this.rareanimalEngname,
-      this.rareanimalType, this.rareanimalNum);
+  Rareanimal({
+    required this.id,
+    required this.rareanimalImg,
+    required this.rareanimalName,
+    required this.rareanimalEngname,
+    required this.rareanimalType,
+    required this.description,
+    required this.location,
+  });
 }

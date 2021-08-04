@@ -69,3 +69,14 @@ class ReordeMenu extends StatelessWidget {
         onPressed: () {});
   }
 }
+
+class EmptyMenu extends StatelessWidget {
+  const EmptyMenu({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container();
+  }
+}
