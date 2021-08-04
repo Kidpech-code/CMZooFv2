@@ -1,4 +1,3 @@
-import 'package:cmzoofv2/components/constants.dart';
 import 'package:cmzoofv2/responsive.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -11,6 +10,7 @@ class Recommended extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
+      top: false,
       bottom: false,
       child: Padding(
         padding: isLandscape(context)
@@ -25,17 +25,17 @@ class Recommended extends StatelessWidget {
                 fontSize: isTab(context) ? 24 : 20,
               ),
             ),
-            Spacer(),
-            TextButton(
-              onPressed: () {},
-              child: Text(
-                'View All',
-                style: GoogleFonts.merriweather(
-                  fontSize: isTab(context) ? 20 : 14,
-                  color: kPrimaryColor,
-                ),
-              ),
-            ),
+            // Spacer(),
+            // TextButton(
+            //   onPressed: () {},
+            //   child: Text(
+            //     'View All',
+            //     style: GoogleFonts.merriweather(
+            //       fontSize: isTab(context) ? 20 : 14,
+            //       color: kPrimaryColor,
+            //     ),
+            //   ),
+            // ),
           ],
         ),
       ),

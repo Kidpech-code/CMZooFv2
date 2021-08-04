@@ -24,7 +24,7 @@ class HomePage extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            PlacesCategories(),
+            // PlacesCategories(),
             BannerPlaces(),
             Recommended(),
             RecommendedPlaces(),

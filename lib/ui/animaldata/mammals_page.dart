@@ -14,36 +14,47 @@ class _ListMammalsState extends State<ListMammals> {
       body: Stack(
         children: [
           //ลูกศรย้อนกลับ
-          Padding(
-            padding: EdgeInsets.only(
-              top: 40,
-              left: 20,
+          CustomBackButton(),
+          
+        ],
+      ),
+    );
+  }
+}
+
+class CustomBackButton extends StatelessWidget {
+  const CustomBackButton({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: EdgeInsets.only(
+        top: 40,
+        left: 20,
+      ),
+      child: GestureDetector(
+        onTap: () {
+          Navigator.pop(context);
+        },
+        child: Align(
+          alignment: Alignment.topLeft,
+          child: Container(
+            height: 40.0,
+            width: 40.0,
+            decoration: BoxDecoration(
+              color: Colors.green,
+              shape: BoxShape.circle,
             ),
-            child: GestureDetector(
-              onTap: () {
-                Navigator.pop(context);
-              },
-              child: Align(
-                alignment: Alignment.topLeft,
-                child: Container(
-                  height: 40.0,
-                  width: 40.0,
-                  decoration: BoxDecoration(
-                    color: Colors.green,
-                    shape: BoxShape.circle,
-                  ),
-                  child: Center(
-                    child: Icon(
-                      Icons.arrow_back,
-                      color: Colors.white,
-                    ),
-                  ),
-                ),
+            child: Center(
+              child: Icon(
+                Icons.arrow_back,
+                color: Colors.white,
               ),
             ),
           ),
-          
-        ],
+        ),
       ),
     );
   }

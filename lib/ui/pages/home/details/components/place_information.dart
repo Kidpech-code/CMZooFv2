@@ -1,6 +1,6 @@
 import 'package:cmzoofv2/Model/travel.dart';
 import 'package:cmzoofv2/responsive.dart';
-import 'package:cmzoofv2/ui/pages/details/components/location.dart';
+import 'package:cmzoofv2/ui/pages/home/details/components/location.dart';
 import 'package:delayed_display/delayed_display.dart';
 import 'package:flutter/material.dart';
 

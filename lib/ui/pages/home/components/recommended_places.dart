@@ -1,7 +1,7 @@
 import 'package:cmzoofv2/responsive.dart';
 import 'package:cmzoofv2/service/data/travel_banner/travel_data.dart';
-import 'package:cmzoofv2/ui/pages/details/details.dart';
 import 'package:cmzoofv2/ui/pages/home/components/grid_place_card.dart';
+import 'package:cmzoofv2/ui/pages/home/details/details.dart';
 import 'package:flutter/material.dart';
 
 class RecommendedPlaces extends StatelessWidget {

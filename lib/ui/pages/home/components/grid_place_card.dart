@@ -31,7 +31,7 @@ class GridPlaceCard extends StatelessWidget {
                 child: Image.asset(
                   travel.image,
                   width: double.infinity,
-                  height: isTab(context) ? 400 : 200,
+                  height: isTab(context) ? 400 : 250,
                   fit: BoxFit.cover,
                 ),
               ),
