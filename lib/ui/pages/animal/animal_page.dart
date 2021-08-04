@@ -10,6 +10,7 @@ class AnimalsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return Scaffold(
       extendBody: true,
       appBar: buildAppBar(
@@ -22,7 +23,6 @@ class AnimalsPage extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            SizedBox(height: 5),
             TypeRemonmended(),
             TypeCategories(),
             RareRemonmended(),
