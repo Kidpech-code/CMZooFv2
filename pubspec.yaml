@@ -47,6 +47,7 @@ dependencies:
   animated_splash_screen: ^1.1.0
   google_fonts: ^2.1.0
   delayed_display: ^2.0.0
+  modal_bottom_sheet: ^2.0.0
   #audioplayers: ^0.17.1
 
 

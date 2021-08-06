@@ -8,28 +8,47 @@ import 'package:flutter/material.dart';
 class AnimalsPage extends StatelessWidget {
   const AnimalsPage({Key? key}) : super(key: key);
 
+  Widget bgImg() {
+    return Opacity(
+      opacity: 0.7,
+      child: Container(
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage("images/bg.jpg"),
+            fit: BoxFit.cover,
+          ),
+        ),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    return Scaffold(
-      extendBody: true,
-      appBar: buildAppBar(
-        context,
-        title: 'Animal',
-        actions: [],
-        leading: EmptyMenu(),
-      ),
-      backgroundColor: Colors.white,
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            TypeRemonmended(),
-            TypeCategories(),
-            RareRemonmended(),
-            RareAnimalRecommended(),
-          ],
+    return Stack(
+      children: [
+        bgImg(),
+        Scaffold(
+          extendBody: true,
+          appBar: buildAppBar(
+            context,
+            title: 'Animal',
+            actions: [],
+            leading: EmptyMenu(),
+          ),
+          backgroundColor: Colors.transparent,
+          body: SingleChildScrollView(
+            child: Column(
+              children: [
+                TypeRemonmended(),
+                TypeCategories(),
+                RareRemonmended(),
+                RareAnimalRecommended(),
+              ],
+            ),
+          ),
         ),
-      ),
+      ],
     );
   }
 }

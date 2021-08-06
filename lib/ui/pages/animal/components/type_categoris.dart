@@ -1,5 +1,3 @@
-import 'package:cmzoofv2/components/constants.dart';
-import 'package:cmzoofv2/responsive.dart';
 import 'package:cmzoofv2/ui/pages/animal/components/show_type_botton.dart';
 import 'package:flutter/material.dart';
 

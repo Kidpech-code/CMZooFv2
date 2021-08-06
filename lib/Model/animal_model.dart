@@ -177,3 +177,15 @@ class Rareanimal {
     required this.location,
   });
 }
+
+class Tryanimal {
+  final int id;
+  final String image;
+  final String name;
+
+  Tryanimal({
+    required this.id,
+    required this.image,
+    required this.name,
+  });
+}

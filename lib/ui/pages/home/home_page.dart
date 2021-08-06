@@ -7,29 +7,48 @@ import 'package:flutter/material.dart';
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      extendBody: true,
-      appBar: buildAppBar(
-        context,
-        title: 'ZooNews',
-        actions: [
-          Notifi(),
-        ],
-        leading: EmptyMenu(),
-      ),
-      backgroundColor: Colors.white,
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            // PlacesCategories(),
-            BannerPlaces(),
-            Recommended(),
-            RecommendedPlaces(),
-          ],
+  Widget bgImg() {
+    return Opacity(
+      opacity: 0.65,
+      child: Container(
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage("images/bg.jpg"),
+            fit: BoxFit.cover,
+          ),
         ),
       ),
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Stack(
+      children: [
+        bgImg(),
+        Scaffold(
+          extendBody: true,
+          appBar: buildAppBar(
+            context,
+            title: 'ZooNews',
+            actions: [
+              Notifi(),
+            ],
+            leading: EmptyMenu(),
+          ),
+          backgroundColor: Colors.transparent,
+          body: SingleChildScrollView(
+            child: Column(
+              children: [
+                // PlacesCategories(),
+                BannerPlaces(),
+                Recommended(),
+                RecommendedPlaces(),
+              ],
+            ),
+          ),
+        ),
+      ],
     );
   }
 }
