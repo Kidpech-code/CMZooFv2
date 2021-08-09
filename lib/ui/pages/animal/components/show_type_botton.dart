@@ -13,7 +13,6 @@ class ShowTypeBotton extends StatefulWidget {
 }
 
 class _ShowTypeBottonState extends State<ShowTypeBotton> {
-  
   void mammalsPage() {
     Navigator.of(context)
         .push(MaterialPageRoute(builder: (context) => ListMammals()));
@@ -36,81 +35,90 @@ class _ShowTypeBottonState extends State<ShowTypeBotton> {
 
   Widget mammalButton() {
     // ignore: deprecated_member_use
-    return RaisedButton(
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
-      color: Colors.green[700],
-      child: Text(
-        "สัตว์เลี้ยงลูกด้วยนม",
-        style: TextStyle(
-          color: Colors.white,
-          fontSize: 15.0,
-          fontWeight: FontWeight.w600,
-          fontFamily: 'mitr',
+    return Container(
+      width: 60,
+      height: 60,
+      // ignore: deprecated_member_use
+      child: FlatButton(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(15),
+          side: BorderSide(
+            color: Colors.black12,
+          ),
         ),
+        padding: EdgeInsets.all(8),
+        color: Colors.white,
+        child: Image.asset("images/icon_lion.png"),
+        onPressed: () {
+          mammalsPage();
+        },
       ),
-      onPressed: () {
-        mammalsPage();
-      },
     );
   }
 
   Widget amphibianButton() {
-    // ignore: deprecated_member_use
-    return RaisedButton(
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
-      color: Colors.amber[700],
-      child: Text(
-        "สัตว์เลื้อยคลาน",
-        style: TextStyle(
-          color: Colors.white,
-          fontSize: 15.0,
-          fontWeight: FontWeight.w600,
-          fontFamily: 'mitr',
+    return Container(
+      width: 60,
+      height: 60,
+      // ignore: deprecated_member_use
+      child: FlatButton(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(15),
+          side: BorderSide(
+            color: Colors.black12,
+          ),
         ),
+        padding: EdgeInsets.all(8),
+        color: Colors.white,
+        child: Image.asset("images/icon_crocodile.png"),
+        onPressed: () {
+          amphibianPage();
+        },
       ),
-      onPressed: () {
-        amphibianPage();
-      },
     );
   }
 
   Widget poultryButton() {
-    // ignore: deprecated_member_use
-    return RaisedButton(
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
-      color: Colors.purple[700],
-      child: Text(
-        "สัตว์ปีก",
-        style: TextStyle(
-          color: Colors.white,
-          fontSize: 15.0,
-          fontWeight: FontWeight.w600,
-          fontFamily: 'mitr',
+    return Container(
+      width: 60,
+      height: 60,
+      // ignore: deprecated_member_use
+      child: FlatButton(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(15),
+          side: BorderSide(
+            color: Colors.black12,
+          ),
         ),
+        padding: EdgeInsets.all(8),
+        color: Colors.white,
+        child: Image.asset("images/icon_raven.png"),
+        onPressed: () {
+          poultryPage();
+        },
       ),
-      onPressed: () {
-        poultryPage();
-      },
     );
   }
 
   Widget reptilesButton() {
-    // ignore: deprecated_member_use
-    return RaisedButton(
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
-      color: Colors.red[700],
-      child: Text(
-        "สัตว์สะเทินน้ำสะเทินบก",
-        style: TextStyle(
-          color: Colors.white,
-          fontSize: 15.0,
-          fontWeight: FontWeight.w600,
-          fontFamily: 'mitr',
+    return Container(
+      width: 60,
+      height: 60,
+      // ignore: deprecated_member_use
+      child: FlatButton(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(15),
+          side: BorderSide(
+            color: Colors.black12,
+          ),
         ),
+        padding: EdgeInsets.all(8),
+        color: Colors.white,
+        child: Image.asset("images/icon_turtle.png"),
+        onPressed: () {
+          reptilesPage();
+        },
       ),
-      onPressed: () {
-        reptilesPage();
-      },
     );
   }
 
@@ -139,16 +147,23 @@ class _ShowTypeBottonState extends State<ShowTypeBotton> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Padding(
-        padding: const EdgeInsets.all(30),
+        padding: EdgeInsets.only(top: 10, bottom: 5, left: 10, right: 10),
         child: Column(
           children: [
             Container(
-              height: isTab(context) ? 155 : 50,
-              child: ListView(
+              height: 100,
+              child: GridView(
                 physics: BouncingScrollPhysics(),
+                padding: EdgeInsets.symmetric(horizontal: 12),
                 scrollDirection: Axis.horizontal,
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 1, crossAxisSpacing: 4),
                 children: [
-                  showBottonTypeanimal(),
+                  // showBottonTypeanimal(),
+                  mammalButton(),
+                  amphibianButton(),
+                  poultryButton(),
+                  reptilesButton(),
                 ],
               ),
             ),

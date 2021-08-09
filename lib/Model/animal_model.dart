@@ -189,3 +189,17 @@ class Tryanimal {
     required this.name,
   });
 }
+
+class AnimalMenuModel {
+  final int id;
+  final String title;
+  final Color color;
+  final String image;
+
+  AnimalMenuModel({
+    required this.id,
+    required this.title,
+    required this.color,
+    required this.image,
+  });
+}

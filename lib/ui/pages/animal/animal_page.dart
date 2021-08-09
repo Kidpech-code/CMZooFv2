@@ -1,4 +1,6 @@
 import 'package:cmzoofv2/components/app_bar.dart';
+import 'package:cmzoofv2/ui/pages/animal/components/animal_menu.dart';
+import 'package:cmzoofv2/ui/pages/animal/components/new_animal_menu.dart';
 import 'package:cmzoofv2/ui/pages/animal/components/rare_recommended.dart';
 import 'package:cmzoofv2/ui/pages/animal/components/rareanimal_recommended.dart';
 import 'package:cmzoofv2/ui/pages/animal/components/type_categoris.dart';
@@ -41,6 +43,7 @@ class AnimalsPage extends StatelessWidget {
             child: Column(
               children: [
                 TypeRemonmended(),
+                //AnimalMenu(),
                 TypeCategories(),
                 RareRemonmended(),
                 RareAnimalRecommended(),
