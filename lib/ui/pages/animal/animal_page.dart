@@ -12,7 +12,7 @@ class AnimalsPage extends StatelessWidget {
 
   Widget bgImg() {
     return Opacity(
-      opacity: 0.7,
+      opacity: 0.6,
       child: Container(
         decoration: BoxDecoration(
           image: DecorationImage(

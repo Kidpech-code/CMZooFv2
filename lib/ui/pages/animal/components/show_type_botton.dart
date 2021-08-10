@@ -3,6 +3,7 @@ import 'package:cmzoofv2/ui/animaldata/mammals_page.dart';
 import 'package:cmzoofv2/ui/pages/animal/show/show_amphibian/amphibian.dart';
 import 'package:cmzoofv2/ui/pages/animal/show/show_poultry/poultry.dart';
 import 'package:cmzoofv2/ui/pages/animal/show/show_reptiles/reptiles.dart';
+import 'package:cmzoofv2/ui/video/video_page.dart';
 import 'package:flutter/material.dart';
 
 class ShowTypeBotton extends StatefulWidget {
@@ -31,6 +32,11 @@ class _ShowTypeBottonState extends State<ShowTypeBotton> {
   void reptilesPage() {
     Navigator.of(context)
         .push(MaterialPageRoute(builder: (context) => ReptilesPage()));
+  }
+
+  void videoPage() {
+    Navigator.of(context)
+        .push(MaterialPageRoute(builder: (context) => VideoPage()));
   }
 
   Widget mammalButton() {
@@ -70,7 +76,7 @@ class _ShowTypeBottonState extends State<ShowTypeBotton> {
         ),
         padding: EdgeInsets.all(8),
         color: Colors.white,
-        child: Image.asset("images/icon_crocodile.png"),
+        child: Image.asset("images/icon_snake.png"),
         onPressed: () {
           amphibianPage();
         },
@@ -92,7 +98,7 @@ class _ShowTypeBottonState extends State<ShowTypeBotton> {
         ),
         padding: EdgeInsets.all(8),
         color: Colors.white,
-        child: Image.asset("images/icon_raven.png"),
+        child: Image.asset("images/icon_parrot.png"),
         onPressed: () {
           poultryPage();
         },
@@ -117,6 +123,48 @@ class _ShowTypeBottonState extends State<ShowTypeBotton> {
         child: Image.asset("images/icon_turtle.png"),
         onPressed: () {
           reptilesPage();
+        },
+      ),
+    );
+  }
+
+  Widget arButton() {
+    return Container(
+      width: 60,
+      height: 60,
+      // ignore: deprecated_member_use
+      child: FlatButton(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(15),
+          side: BorderSide(
+            color: Colors.black12,
+          ),
+        ),
+        padding: EdgeInsets.all(8),
+        color: Colors.white,
+        child: Image.asset("images/icon_ar.png"),
+        onPressed: () {},
+      ),
+    );
+  }
+
+  Widget videoButton() {
+    return Container(
+      width: 60,
+      height: 60,
+      // ignore: deprecated_member_use
+      child: FlatButton(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(15),
+          side: BorderSide(
+            color: Colors.black12,
+          ),
+        ),
+        padding: EdgeInsets.all(8),
+        color: Colors.white,
+        child: Image.asset("images/icon_video.png"),
+        onPressed: () {
+          videoPage();
         },
       ),
     );
@@ -147,23 +195,27 @@ class _ShowTypeBottonState extends State<ShowTypeBotton> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Padding(
-        padding: EdgeInsets.only(top: 10, bottom: 5, left: 10, right: 10),
+        padding: isLandscape(context)
+            ? EdgeInsets.symmetric(vertical: 20, horizontal: 50)
+            : EdgeInsets.all(10),
         child: Column(
           children: [
             Container(
-              height: 100,
+              height: 80,
               child: GridView(
                 physics: BouncingScrollPhysics(),
                 padding: EdgeInsets.symmetric(horizontal: 12),
                 scrollDirection: Axis.horizontal,
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 1, crossAxisSpacing: 4),
+                    crossAxisCount: 1),
                 children: [
                   // showBottonTypeanimal(),
                   mammalButton(),
                   amphibianButton(),
                   poultryButton(),
                   reptilesButton(),
+                  arButton(),
+                  videoButton(),
                 ],
               ),
             ),
