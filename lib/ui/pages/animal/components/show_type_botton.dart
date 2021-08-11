@@ -58,7 +58,9 @@ class _ShowTypeBottonState extends State<ShowTypeBotton> {
         onPressed: () {
           mammalsPage();
         },
+        
       ),
+      
     );
   }
 

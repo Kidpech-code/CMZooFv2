@@ -11,8 +11,19 @@ class _ZoomapState extends State<Zoomap> {
   Completer<GoogleMapController> _controller = Completer();
 
   static final CameraPosition _zoomaps = CameraPosition(
-    target: LatLng(18.80955145449767, 98.9476815333245),
+    target: LatLng(19.030195931842357, 99.89762289307824),
     zoom: 15.0,
+  );
+
+  Set<Circle> circles = Set.from(
+    [
+      Circle(
+        circleId: CircleId('1'),
+        center: LatLng(19.030195931842357, 99.89762289307824),
+        radius: 80,
+        strokeWidth: 2,
+      ),
+    ],
   );
 
   @override
@@ -31,11 +42,14 @@ class _ZoomapState extends State<Zoomap> {
         ),
       ),
       body: GoogleMap(
-        mapType: MapType.hybrid,
+        mapType: MapType.normal,
+        myLocationEnabled: true,
+        myLocationButtonEnabled: true,
         initialCameraPosition: _zoomaps,
         onMapCreated: (GoogleMapController controller) {
           _controller.complete(controller);
         },
+        circles: circles,
       ),
     );
   }
