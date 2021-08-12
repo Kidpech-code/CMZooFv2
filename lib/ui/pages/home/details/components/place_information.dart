@@ -45,7 +45,7 @@ class PlaceInformation extends StatelessWidget {
                   ),
                 ),
                 SizedBox(height: 5),
-                Location(travel: travel),
+                LocationTravel(travel: travel),
                 SizedBox(height: 10),
                 Text(
                   'Description',

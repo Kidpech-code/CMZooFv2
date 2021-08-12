@@ -2,8 +2,8 @@ import 'package:cmzoofv2/Model/travel.dart';
 import 'package:cmzoofv2/responsive.dart';
 import 'package:flutter/material.dart';
 
-class Location extends StatelessWidget {
-  const Location({
+class LocationTravel extends StatelessWidget {
+  const LocationTravel({
     Key? key,
     required this.travel,
   }) : super(key: key);
