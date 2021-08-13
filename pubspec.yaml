@@ -99,6 +99,9 @@ flutter:
      - family: mitr
        fonts:
          - asset: fonts/mitr-regular.ttf
+     - family: orilla
+       fonts:
+         - asset: fonts/orilla.ttf    
   #      - asset: fonts/MITR-Italic.ttf
   #         style: italic
   #   - family: Trajan Pro
