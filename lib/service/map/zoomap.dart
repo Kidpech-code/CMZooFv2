@@ -84,6 +84,7 @@ class _ZoomapState extends State<Zoomap> {
               myLocationEnabled: true,
               compassEnabled: false,
               tiltGesturesEnabled: false,
+              mapToolbarEnabled: false,
               polylines: _polylines,
               markers: _markers,
               initialCameraPosition: _initialCameraPosition,
