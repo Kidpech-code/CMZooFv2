@@ -1,5 +1,6 @@
 import 'package:cmzoofv2/ui/screen/onboard_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_animated_button/flutter_animated_button.dart';
 
 class NewIndex extends StatefulWidget {
   const NewIndex({Key? key}) : super(key: key);
@@ -9,15 +10,15 @@ class NewIndex extends StatefulWidget {
 }
 
 class _NewIndexState extends State<NewIndex> {
-  Widget showLogo() {
-    return Container(
-      child: Image.asset(
-        'images/logo.png',
-        width: 230,
-        height: 230,
-      ),
-    );
-  }
+  // Widget showLogo() {
+  //   return Container(
+  //     child: Image.asset(
+  //       'images/logo.png',
+  //       width: 230,
+  //       height: 230,
+  //     ),
+  //   );
+  // }
 
   //ฟังก์ชันปุ่ม
   Widget welcomeButton() {
@@ -43,11 +44,38 @@ class _NewIndexState extends State<NewIndex> {
     );
   }
 
+  Widget animatedButton() {
+    return AnimatedButton(
+      height: 48,
+      width: 200,
+      text: 'เข้าสู่สวนสัตว์',
+      isReverse: true,
+      selectedTextColor: Colors.teal,
+      transitionType: TransitionType.LEFT_TO_RIGHT,
+      textStyle: TextStyle(
+        fontSize: 23.5,
+        color: Colors.white,
+        fontWeight: FontWeight.bold,
+        fontFamily: 'mitr',
+      ),
+      backgroundColor: Colors.teal,
+      borderColor: Colors.white,
+      borderRadius: 50,
+      borderWidth: 2,
+      onPress: () {
+        MaterialPageRoute materialPageRoute = MaterialPageRoute(
+            builder: (BuildContext context) => OnBoardScreen());
+        Navigator.of(context)
+            .pushAndRemoveUntil(materialPageRoute, (route) => false);
+      },
+    );
+  }
+
   Widget showBotton() {
     return Row(
       mainAxisSize: MainAxisSize.min,
       children: <Widget>[
-        welcomeButton(),
+        animatedButton(),
       ],
     );
   }

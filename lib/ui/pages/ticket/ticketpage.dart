@@ -1,24 +1,15 @@
 import 'package:cmzoofv2/components/app_bar.dart';
-import 'package:cmzoofv2/service/data/ticket_data/ticket_data.dart';
 import 'package:cmzoofv2/ui/pages/ticket/components/booking_ticket.dart';
+import 'package:cmzoofv2/ui/pages/ticket/components/new_price_ticket.dart';
 import 'package:cmzoofv2/ui/pages/ticket/components/price_ticket.dart';
-import 'package:cmzoofv2/ui/pages/ticket/detail/detailticket.dart';
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 class TicketPage extends StatefulWidget {
   @override
   _TicketPageState createState() => _TicketPageState();
 }
 
-class _TicketPageState extends State<TicketPage> {
-  //เชื่อมเว็บ
-  void openurl() {
-    String url = "https://www.eventpop.me/e/9199/chiangmaizoo";
-    launch(url);
-  }
-
-  
+class _TicketPageState extends State<TicketPage> {  
 
   Widget bgImg() {
     return Opacity(
