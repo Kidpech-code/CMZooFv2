@@ -1,14 +1,16 @@
-class MapData {
-  String namezone;
-  String imgzone;
-  Author_Ma detailzone;
 
-  MapData(this.imgzone, this.namezone, this.detailzone);
-}
+class ZoneData {
+  final int id;
+  final String image;
+  final String name;
+  final String description;
+  final String location;
 
-class Author_Ma {
-  String animal;
-  String place;
-
-  Author_Ma(this.animal, this.place);
+  ZoneData({
+    required this.id,
+    required this.image,
+    required this.name,
+    required this.description,
+    required this.location,
+  });
 }

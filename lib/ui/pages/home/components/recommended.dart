@@ -19,7 +19,7 @@ class Recommended extends StatelessWidget {
         child: Row(
           children: [
             Text(
-              'Recommemded',
+              'สถานที่แนะนำ',
               style: GoogleFonts.merriweather(
                 fontWeight: FontWeight.w700,
                 fontSize: isTab(context) ? 24 : 20,

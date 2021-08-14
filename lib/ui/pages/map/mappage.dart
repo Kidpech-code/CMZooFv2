@@ -1,4 +1,7 @@
 import 'package:cmzoofv2/Model/map_model.dart';
+import 'package:cmzoofv2/components/app_bar.dart';
+import 'package:cmzoofv2/ui/pages/map/components/map_mini.dart';
+import 'package:cmzoofv2/ui/pages/map/components/zone_places.dart';
 import 'package:cmzoofv2/ui/pages/map/show_zone/huaykaewzone.dart';
 import 'package:cmzoofv2/service/data/map_data/mapdata.dart';
 import 'package:cmzoofv2/service/map/zoomap.dart';
@@ -10,108 +13,55 @@ class MapPage extends StatefulWidget {
 }
 
 class _MapPageState extends State<MapPage> {
-  List<MapData> zonemap = zone();
+  //List<MapData> zonemap = zone();
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.lightGreen[100],
-      appBar: AppBar(
-        centerTitle: true,
-        automaticallyImplyLeading: false,
-        backgroundColor: Colors.lightGreen[900],
-        title: Text(
-          'แผนที่และโซนต่างๆ',
-          style: TextStyle(
-            fontSize: 20.0,
-            fontWeight: FontWeight.bold,
-            fontFamily: 'mitr',
+  Widget bgImg() {
+    return Opacity(
+      opacity: 0.65,
+      child: Container(
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage("images/bg.jpg"),
+            fit: BoxFit.cover,
           ),
         ),
-        actions: [
-          IconButton(
-            icon: Icon(Icons.assistant_navigation),
-            onPressed: () {
-              //Navigator.of(context).pop();
-              MaterialPageRoute route = MaterialPageRoute(
-                  builder: (BuildContext context) => Zoomap());
-              Navigator.push(context, route);
-            },
-          ),
-        ],
-      ),
-      body: Column(
-        children: [
-          Container(
-            child: ClipRect(
-              child: InteractiveViewer(
-                maxScale: 8,
-                child: Image.asset('images/map.png'),
-              ),
-            ),
-          ),
-          SizedBox(height: 0.0),
-          Expanded(
-            child: Padding(
-              padding: EdgeInsets.only(right: 15, left: 15, top: 10),
-              child: GridView.extent(
-                maxCrossAxisExtent: 201.80,
-                crossAxisSpacing: 10.0,
-                mainAxisSpacing: 10.0,
-                children: buildzone(),
-              ),
-            ),
-          )
-        ],
       ),
     );
   }
 
-  List<Widget> buildzone() {
-    List<Widget> list = [];
-    for (var i = 0; i < zonemap.length; i++) {
-      list.add(buildzones(zonemap[i]));
-    }
-    return list;
-  }
-
-  Widget buildzones(MapData zonemap) {
-    return GestureDetector(
-      onTap: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => HuaykaewZone(hzs: zonemap),
+  @override
+  Widget build(BuildContext context) {
+    return Stack(
+      children: [
+        bgImg(),
+        Scaffold(
+          backgroundColor: Colors.transparent,
+          appBar: buildAppBar(
+            context,
+            title: 'ZOOMAP',
+            actions: [
+              IconButton(
+                icon: Icon(Icons.assistant_navigation),
+                onPressed: () {
+                  //Navigator.of(context).pop();
+                  MaterialPageRoute route = MaterialPageRoute(
+                      builder: (BuildContext context) => Zoomap());
+                  Navigator.push(context, route);
+                },
+              ),
+            ],
+            leading: EmptyMenu(),
           ),
-        );
-      },
-      child: Card(
-        child: Column(
-          children: <Widget>[
-            SizedBox(height: 20.0),
-            Container(
-              width: 120.0,
-              height: 120.0,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10.0),
-                image: DecorationImage(
-                  image: AssetImage(zonemap.imgzone),
-                  fit: BoxFit.cover,
-                ),
-              ),
+          body: SingleChildScrollView(
+            child: Column(
+              children: [
+                MapMini(),
+                ZonePlaces(),
+              ],
             ),
-            SizedBox(height: 5.0),
-            Text(
-              zonemap.namezone,
-              style: TextStyle(
-                fontSize: 20.0,
-                fontWeight: FontWeight.bold,
-                fontFamily: 'mitr',
-              ),
-            ),
-          ],
+          ),
         ),
-      ),
+      ],
     );
   }
 }

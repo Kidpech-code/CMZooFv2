@@ -8,7 +8,7 @@ Widget detailTicket(TicketData ticket) {
     height: 50.0,
     decoration: BoxDecoration(
       borderRadius: BorderRadius.circular(8.0),
-      color: Colors.green[200],
+      color: Colors.white
     ),
     child: Container(
       child: Row(
