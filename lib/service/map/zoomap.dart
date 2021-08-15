@@ -3,6 +3,7 @@ import 'package:cmzoofv2/service/map/components/map_bottompill.dart';
 import 'package:cmzoofv2/service/map/components/map_userbadge.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_polyline_points/flutter_polyline_points.dart';
+import 'package:geolocator/geolocator.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 const LatLng SOURCE_LOCATION = LatLng(19.030227294266595, 99.89797479347233);
@@ -31,6 +32,7 @@ class _ZoomapState extends State<Zoomap> {
 
   late LatLng currentLocation;
   late LatLng destinationLocation;
+  late LatLng geoposition;
 
   // static final CameraPosition _zoomaps = CameraPosition(
   //   target: LatLng(19.030195931842357, 99.89762289307824),
@@ -44,15 +46,23 @@ class _ZoomapState extends State<Zoomap> {
     polylinePoints = PolylinePoints();
 
     //set up initial locations
+    this.myCurrentLocation();
     this.setInitialLocation();
     //set up the marker icons
     this.setSourceAndDestinationMarkerIcons();
   }
 
+  void myCurrentLocation() async {
+    Position position = await Geolocator.getCurrentPosition(
+        desiredAccuracy: LocationAccuracy.low);
+
+    geoposition = LatLng(position.latitude, position.longitude);
+  }
+
   void setSourceAndDestinationMarkerIcons() async {
-    sourceIcon = await BitmapDescriptor.fromAssetImage(
-        ImageConfiguration(devicePixelRatio: 2.0),
-        'images/source_pin_android.png');
+    // sourceIcon = await BitmapDescriptor.fromAssetImage(
+    //     ImageConfiguration(devicePixelRatio: 2.0),
+    //     'images/source_pin_android.png');
 
     destinationIcon = await BitmapDescriptor.fromAssetImage(
         ImageConfiguration(devicePixelRatio: 2.0),
@@ -60,8 +70,7 @@ class _ZoomapState extends State<Zoomap> {
   }
 
   void setInitialLocation() {
-    currentLocation =
-        LatLng(SOURCE_LOCATION.latitude, SOURCE_LOCATION.longitude);
+    //currentLocation = LatLng(SOURCE_LOCATION.latitude, SOURCE_LOCATION.longitude);
 
     destinationLocation =
         LatLng(DEST_LOCATION.latitude, DEST_LOCATION.longitude);
@@ -137,13 +146,13 @@ class _ZoomapState extends State<Zoomap> {
   void showPinsOnMap() {
     setState(
       () {
-        _markers.add(
-          Marker(
-            markerId: MarkerId('sourcePin'),
-            position: currentLocation,
-            icon: sourceIcon,
-          ),
-        );
+        // _markers.add(
+        //   Marker(
+        //     markerId: MarkerId('sourcePin'),
+        //     position: geoposition,
+        //     icon: sourceIcon,
+        //   ),
+        // );
 
         _markers.add(
           Marker(
@@ -165,14 +174,14 @@ class _ZoomapState extends State<Zoomap> {
     PolylineResult result = await polylinePoints.getRouteBetweenCoordinates(
       "AIzaSyDM6Vv13W73C025lvkKOQByS39nIOdAH4w",
       PointLatLng(
-        currentLocation.latitude,
-        currentLocation.longitude,
+        geoposition.latitude,
+        geoposition.longitude,
       ),
       PointLatLng(
         destinationLocation.latitude,
         destinationLocation.longitude,
       ),
-      travelMode: TravelMode.walking,
+      travelMode: TravelMode.driving,
     );
     if (result.status == 'OK') {
       result.points.forEach((PointLatLng point) {

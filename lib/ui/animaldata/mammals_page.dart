@@ -1,3 +1,5 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:cmzoofv2/components/app_bar.dart';
 import 'package:flutter/material.dart';
 
 class ListMammals extends StatefulWidget {
@@ -8,22 +10,29 @@ class ListMammals extends StatefulWidget {
 }
 
 class _ListMammalsState extends State<ListMammals> {
+  final CollectionReference _mammals =
+      FirebaseFirestore.instance.collection("listmammals");
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: buildAppBar(
+        context,
+        title: 'สัตว์เลี้ยงลูกด้วยนม',
+        actions: [],
+        leading: EmptyMenu(),
+      ),
       body: Stack(
         children: [
           //ลูกศรย้อนกลับ
-          CustomBackButton(),
-          
+          CustomBackButtonA(),
         ],
       ),
     );
   }
 }
 
-class CustomBackButton extends StatelessWidget {
-  const CustomBackButton({
+class CustomBackButtonA extends StatelessWidget {
+  const CustomBackButtonA({
     Key? key,
   }) : super(key: key);
 
