@@ -1,8 +1,8 @@
 import 'package:cmzoofv2/responsive.dart';
-import 'package:cmzoofv2/ui/animaldata/mammals_page.dart';
-import 'package:cmzoofv2/ui/pages/animal/show/show_amphibian/amphibian.dart';
-import 'package:cmzoofv2/ui/pages/animal/show/show_poultry/poultry.dart';
-import 'package:cmzoofv2/ui/pages/animal/show/show_reptiles/reptiles.dart';
+import 'package:cmzoofv2/ui/pages/animal/show/show_amphibian/amphibian_page.dart';
+import 'package:cmzoofv2/ui/pages/animal/show/show_mammals/mammals_page.dart';
+import 'package:cmzoofv2/ui/pages/animal/show/show_poultry/poultry_page.dart';
+import 'package:cmzoofv2/ui/pages/animal/show/show_reptiles/reptiles_page.dart';
 import 'package:cmzoofv2/ui/video/video_page.dart';
 import 'package:flutter/material.dart';
 
@@ -21,17 +21,17 @@ class _ShowTypeBottonState extends State<ShowTypeBotton> {
 
   void amphibianPage() {
     Navigator.of(context)
-        .push(MaterialPageRoute(builder: (context) => AmphibianPage()));
+        .push(MaterialPageRoute(builder: (context) => ListAmphibian()));
   }
 
   void poultryPage() {
     Navigator.of(context)
-        .push(MaterialPageRoute(builder: (context) => PoultryPage()));
+        .push(MaterialPageRoute(builder: (context) => ListPoultry()));
   }
 
   void reptilesPage() {
     Navigator.of(context)
-        .push(MaterialPageRoute(builder: (context) => ReptilesPage()));
+        .push(MaterialPageRoute(builder: (context) => ListReptiles()));
   }
 
   void videoPage() {
@@ -58,9 +58,7 @@ class _ShowTypeBottonState extends State<ShowTypeBotton> {
         onPressed: () {
           mammalsPage();
         },
-        
       ),
-      
     );
   }
 
