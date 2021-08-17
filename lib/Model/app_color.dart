@@ -1,6 +1,8 @@
 import 'dart:core';
 import 'dart:ui';
 
+import 'package:flutter/material.dart';
+
 class AppColors {
   static const Color MAIN_COLOR = Color(0xFF80C038);
   static const Color MEATS = Color(0xFFC02828);
@@ -16,3 +18,13 @@ class AppColors {
   static const Color HIGHTLIGHT_DEFAULT = Color(0xFF5A8E12);
   static const Color LIGHTER_GREEN = Color(0xFFC1E09E);
 }
+
+Color green100 = Color(0xFFC8E6C9);
+Color teal100 = Color(0xFFB2DFDB);
+Color teal200 = Color(0xFF80CBC4);
+Color teal = Colors.teal;
+Color teal800 = Color(0xFF00695C);
+Color blue100 = Color(0xFFBBDEFB);
+Color white = Colors.white;
+Color black = Colors.black;
+Color orange300 = Color(0xFFFFB74D);

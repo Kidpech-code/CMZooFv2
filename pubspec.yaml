@@ -79,6 +79,7 @@ dependencies:
   introduction_screen: ^2.1.0
   animated_splash_screen: ^1.1.0
   modal_bottom_sheet: ^2.0.0
+  shared_preferences: ^2.0.5
   #----SCREEN----#
 
   delayed_display: ^2.0.0
@@ -100,7 +101,6 @@ flutter:
      - audio/
      - images/
      - icons/
-     - img_animal/
      - img_mammals/
      - img_pic_home/
 

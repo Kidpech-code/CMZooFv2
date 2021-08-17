@@ -1,3 +1,4 @@
+import 'package:cmzoofv2/ui/screen/new_onboard_screen.dart';
 import 'package:cmzoofv2/ui/screen/onboard_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animated_button/flutter_animated_button.dart';
@@ -63,8 +64,9 @@ class _NewIndexState extends State<NewIndex> {
       borderRadius: 50,
       borderWidth: 2,
       onPress: () {
-        MaterialPageRoute materialPageRoute = MaterialPageRoute(
-            builder: (BuildContext context) => OnBoardScreen());
+        Duration(seconds: 5);
+        MaterialPageRoute materialPageRoute =
+            MaterialPageRoute(builder: (BuildContext context) => NewOnborad());
         Navigator.of(context)
             .pushAndRemoveUntil(materialPageRoute, (route) => false);
       },
