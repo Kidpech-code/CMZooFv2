@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'package:cmzoofv2/components/app_bar.dart';
 import 'package:cmzoofv2/service/map/components/map_bottompill.dart';
 import 'package:cmzoofv2/service/map/components/map_userbadge.dart';
 import 'package:flutter/material.dart';
@@ -6,7 +7,7 @@ import 'package:flutter_polyline_points/flutter_polyline_points.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
-const LatLng SOURCE_LOCATION = LatLng(19.030227294266595, 99.89797479347233);
+const LatLng SOURCE_LOCATION = LatLng(19.02997945521926, 99.89656121475909);
 const LatLng DEST_LOCATION = LatLng(19.028861142490218, 99.89576722954645);
 const double CAMERA_ZOOM = 16;
 const double CAMERA_TILT = 80;
@@ -54,15 +55,15 @@ class _ZoomapState extends State<Zoomap> {
 
   void myCurrentLocation() async {
     Position position = await Geolocator.getCurrentPosition(
-        desiredAccuracy: LocationAccuracy.low);
+        desiredAccuracy: LocationAccuracy.high);
 
     geoposition = LatLng(position.latitude, position.longitude);
   }
 
   void setSourceAndDestinationMarkerIcons() async {
-    // sourceIcon = await BitmapDescriptor.fromAssetImage(
-    //     ImageConfiguration(devicePixelRatio: 2.0),
-    //     'images/source_pin_android.png');
+    sourceIcon = await BitmapDescriptor.fromAssetImage(
+        ImageConfiguration(devicePixelRatio: 2.0),
+        'images/source_pin_android.png');
 
     destinationIcon = await BitmapDescriptor.fromAssetImage(
         ImageConfiguration(devicePixelRatio: 2.0),
@@ -70,10 +71,37 @@ class _ZoomapState extends State<Zoomap> {
   }
 
   void setInitialLocation() {
-    //currentLocation = LatLng(SOURCE_LOCATION.latitude, SOURCE_LOCATION.longitude);
+    currentLocation =
+        LatLng(SOURCE_LOCATION.latitude, SOURCE_LOCATION.longitude);
 
     destinationLocation =
         LatLng(DEST_LOCATION.latitude, DEST_LOCATION.longitude);
+  }
+
+  Widget CanrelButton() {
+    return Container(
+      //margin: EdgeInsets.only(top: 710, left: 50),
+      // ignore: deprecated_member_use
+      child: RaisedButton(
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
+        color: Colors.red[400],
+        child: Text(
+          'ยกเลิกเส้นทาง',
+          style: TextStyle(
+            fontSize: 18,
+            color: Colors.white,
+            fontWeight: FontWeight.bold,
+            fontFamily: 'mitr',
+          ),
+        ),
+        onPressed: () {
+          _polylines.clear();
+          setState(() {
+            this.pinPillPosition = PIN_VISIBLE_POSITION;
+          });
+        },
+      ),
+    );
   }
 
   @override
@@ -87,39 +115,28 @@ class _ZoomapState extends State<Zoomap> {
     return Scaffold(
       body: Stack(
         children: [
-          Positioned.fill(
-            child: GoogleMap(
-              mapType: MapType.normal,
-              myLocationEnabled: true,
-              compassEnabled: false,
-              tiltGesturesEnabled: false,
-              mapToolbarEnabled: false,
-              polylines: _polylines,
-              markers: _markers,
-              initialCameraPosition: _initialCameraPosition,
-              onTap: (LatLng loc) {
-                // tapping on the map will dismiss the bottom pill
-                setState(
-                  () {
-                    this.pinPillPosition = PIN_INVISIBLE_POSITION;
-                  },
-                );
-              },
-              onMapCreated: (GoogleMapController controller) {
-                _controller.complete(controller);
+          GoogleMap(
+            mapType: MapType.normal,
+            myLocationEnabled: true,
+            compassEnabled: false,
+            tiltGesturesEnabled: false,
+            mapToolbarEnabled: false,
+            polylines: _polylines,
+            markers: _markers,
+            initialCameraPosition: _initialCameraPosition,
+            onTap: (LatLng loc) {
+              // tapping on the map will dismiss the bottom pill
+              setState(
+                () {
+                  this.pinPillPosition = PIN_INVISIBLE_POSITION;
+                },
+              );
+            },
+            onMapCreated: (GoogleMapController controller) {
+              _controller.complete(controller);
 
-                showPinsOnMap();
-                setPolylines();
-              },
-            ),
-          ),
-          AnimatedPositioned(
-            duration: const Duration(milliseconds: 500),
-            curve: Curves.easeInOut,
-            top: 100,
-            left: 0,
-            right: 0,
-            child: MapUserBadge(),
+              showPinsOnMap();
+            },
           ),
           AnimatedPositioned(
             duration: const Duration(milliseconds: 500),
@@ -129,15 +146,14 @@ class _ZoomapState extends State<Zoomap> {
             bottom: this.pinPillPosition,
             child: MapBottomPill(),
           ),
-          // Positioned(
-          //   top: 0,
-          //   left: 0,
-          //   right: 0,
-          //   bottom: 0,
-          //   child: MainAppBar(
-          //     showProfilePic: false,
-          //   ),
-          // ),
+          AnimatedPositioned(
+            duration: const Duration(milliseconds: 500),
+            curve: Curves.easeInOut,
+            left: 130,
+            right: 130,
+            bottom: this.pinPillPosition,
+            child: CanrelButton(),
+          ),
         ],
       ),
     );
@@ -146,13 +162,17 @@ class _ZoomapState extends State<Zoomap> {
   void showPinsOnMap() {
     setState(
       () {
-        // _markers.add(
-        //   Marker(
-        //     markerId: MarkerId('sourcePin'),
-        //     position: geoposition,
-        //     icon: sourceIcon,
-        //   ),
-        // );
+        _markers.add(
+          Marker(
+            markerId: MarkerId('sourcePin'),
+            position: currentLocation,
+            icon: sourceIcon,
+            onTap: () {
+              //_polylines.clear();
+              setPolylines1();
+            },
+          ),
+        );
 
         _markers.add(
           Marker(
@@ -160,6 +180,8 @@ class _ZoomapState extends State<Zoomap> {
             position: destinationLocation,
             icon: destinationIcon,
             onTap: () {
+              //_polylines.clear();
+              setPolylines2();
               setState(() {
                 this.pinPillPosition = PIN_VISIBLE_POSITION;
               });
@@ -170,7 +192,41 @@ class _ZoomapState extends State<Zoomap> {
     );
   }
 
-  void setPolylines() async {
+  void setPolylines1() async {
+    PolylineResult result = await polylinePoints.getRouteBetweenCoordinates(
+      "AIzaSyDM6Vv13W73C025lvkKOQByS39nIOdAH4w",
+      PointLatLng(
+        geoposition.latitude,
+        geoposition.longitude,
+      ),
+      PointLatLng(
+        currentLocation.latitude,
+        currentLocation.longitude,
+      ),
+      travelMode: TravelMode.walking,
+    );
+    polylineCoordinates.clear();
+    if (result.status == 'OK') {
+      result.points.forEach((PointLatLng point) {
+        polylineCoordinates.add(LatLng(point.latitude, point.longitude));
+      });
+      setState(() {
+        print(polylineCoordinates);
+        _polylines.add(
+          Polyline(
+            width: 5,
+            polylineId: PolylineId('polyLine'),
+            color: Colors.black,
+            points: polylineCoordinates,
+          ),
+        );
+      });
+    } else {
+      print('err_poly ${result.errorMessage}');
+    }
+  }
+
+  void setPolylines2() async {
     PolylineResult result = await polylinePoints.getRouteBetweenCoordinates(
       "AIzaSyDM6Vv13W73C025lvkKOQByS39nIOdAH4w",
       PointLatLng(
@@ -181,13 +237,15 @@ class _ZoomapState extends State<Zoomap> {
         destinationLocation.latitude,
         destinationLocation.longitude,
       ),
-      travelMode: TravelMode.driving,
+      travelMode: TravelMode.walking,
     );
+    polylineCoordinates.clear();
     if (result.status == 'OK') {
       result.points.forEach((PointLatLng point) {
         polylineCoordinates.add(LatLng(point.latitude, point.longitude));
       });
       setState(() {
+        //polylines.clear();
         _polylines.add(
           Polyline(
             width: 5,

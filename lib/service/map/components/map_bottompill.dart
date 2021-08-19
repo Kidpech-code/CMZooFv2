@@ -67,12 +67,6 @@ class MapBottomPill extends StatelessWidget {
                         ),
                       ),
                       Text('มหาวิทยาลัยพะเยา'),
-                      Text(
-                        '150 m',
-                        style: TextStyle(
-                          color: AppColors.MEATS,
-                        ),
-                      ),
                     ],
                   ),
                 ),

@@ -27,4 +27,5 @@ Color teal800 = Color(0xFF00695C);
 Color blue100 = Color(0xFFBBDEFB);
 Color white = Colors.white;
 Color black = Colors.black;
+Color red400 = Color(0xFFEF5350);
 Color orange300 = Color(0xFFFFB74D);
