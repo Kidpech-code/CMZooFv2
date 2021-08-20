@@ -1,6 +1,4 @@
-import 'package:cmzoofv2/responsive.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class VideoPage extends StatefulWidget {
   const VideoPage({Key? key}) : super(key: key);
@@ -16,18 +14,9 @@ class _VideoPageState extends State<VideoPage> {
       body: Stack(
         children: [
           //ลูกศรย้อนกลับ
-          CustomBackButton(),
+          CustomBackButtonV(),
           Center(
-            child: Container(
-              child: Text(
-                "ไปซื้อชานมแปป",
-                style: GoogleFonts.merriweather(
-                  fontWeight: FontWeight.w700,
-                  fontSize: isTab(context) ? 26 : 100,
-                  color: Colors.green[900],
-                ),
-              ),
-            ),
+            child: Container(),
           ),
         ],
       ),
@@ -35,8 +24,8 @@ class _VideoPageState extends State<VideoPage> {
   }
 }
 
-class CustomBackButton extends StatelessWidget {
-  const CustomBackButton({
+class CustomBackButtonV extends StatelessWidget {
+  const CustomBackButtonV({
     Key? key,
   }) : super(key: key);
 

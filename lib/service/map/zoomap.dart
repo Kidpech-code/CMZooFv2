@@ -1,12 +1,13 @@
 import 'dart:async';
 import 'package:cmzoofv2/components/app_bar.dart';
+import 'package:cmzoofv2/service/map/api_key/api_key.dart';
 import 'package:cmzoofv2/service/map/components/map_bottompill.dart';
-import 'package:cmzoofv2/service/map/components/map_userbadge.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_polyline_points/flutter_polyline_points.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
+const LatLng SEVEN_LOCATION = LatLng(19.029634482705127, 99.92776927988392);
 const LatLng SOURCE_LOCATION = LatLng(19.02997945521926, 99.89656121475909);
 const LatLng DEST_LOCATION = LatLng(19.028861142490218, 99.89576722954645);
 const double CAMERA_ZOOM = 16;
@@ -33,6 +34,7 @@ class _ZoomapState extends State<Zoomap> {
 
   late LatLng currentLocation;
   late LatLng destinationLocation;
+  late LatLng sevenLocation;
   late LatLng geoposition;
 
   // static final CameraPosition _zoomaps = CameraPosition(
@@ -71,6 +73,8 @@ class _ZoomapState extends State<Zoomap> {
   }
 
   void setInitialLocation() {
+    sevenLocation = LatLng(SEVEN_LOCATION.latitude, SEVEN_LOCATION.longitude);
+
     currentLocation =
         LatLng(SOURCE_LOCATION.latitude, SOURCE_LOCATION.longitude);
 
@@ -78,9 +82,8 @@ class _ZoomapState extends State<Zoomap> {
         LatLng(DEST_LOCATION.latitude, DEST_LOCATION.longitude);
   }
 
-  Widget CanrelButton() {
+  Widget cancelButton() {
     return Container(
-      //margin: EdgeInsets.only(top: 710, left: 50),
       // ignore: deprecated_member_use
       child: RaisedButton(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
@@ -138,6 +141,7 @@ class _ZoomapState extends State<Zoomap> {
               showPinsOnMap();
             },
           ),
+          //animation bottom data
           AnimatedPositioned(
             duration: const Duration(milliseconds: 500),
             curve: Curves.easeInOut,
@@ -146,14 +150,17 @@ class _ZoomapState extends State<Zoomap> {
             bottom: this.pinPillPosition,
             child: MapBottomPill(),
           ),
+          //animation bottom cancel
           AnimatedPositioned(
             duration: const Duration(milliseconds: 500),
             curve: Curves.easeInOut,
             left: 130,
             right: 130,
             bottom: this.pinPillPosition,
-            child: CanrelButton(),
+            child: cancelButton(),
           ),
+
+          CustomBackButtonM(),
         ],
       ),
     );
@@ -164,12 +171,30 @@ class _ZoomapState extends State<Zoomap> {
       () {
         _markers.add(
           Marker(
+            markerId: MarkerId('sevenPin'),
+            position: sevenLocation,
+            icon: sourceIcon,
+            onTap: () {
+              //_polylines.clear();
+              setPolylines3();
+              setState(() {
+                this.pinPillPosition = PIN_VISIBLE_POSITION;
+              });
+            },
+          ),
+        );
+
+        _markers.add(
+          Marker(
             markerId: MarkerId('sourcePin'),
             position: currentLocation,
             icon: sourceIcon,
             onTap: () {
               //_polylines.clear();
               setPolylines1();
+              setState(() {
+                this.pinPillPosition = PIN_VISIBLE_POSITION;
+              });
             },
           ),
         );
@@ -180,7 +205,6 @@ class _ZoomapState extends State<Zoomap> {
             position: destinationLocation,
             icon: destinationIcon,
             onTap: () {
-              //_polylines.clear();
               setPolylines2();
               setState(() {
                 this.pinPillPosition = PIN_VISIBLE_POSITION;
@@ -194,7 +218,7 @@ class _ZoomapState extends State<Zoomap> {
 
   void setPolylines1() async {
     PolylineResult result = await polylinePoints.getRouteBetweenCoordinates(
-      "AIzaSyDM6Vv13W73C025lvkKOQByS39nIOdAH4w",
+      apikey,
       PointLatLng(
         geoposition.latitude,
         geoposition.longitude,
@@ -228,7 +252,7 @@ class _ZoomapState extends State<Zoomap> {
 
   void setPolylines2() async {
     PolylineResult result = await polylinePoints.getRouteBetweenCoordinates(
-      "AIzaSyDM6Vv13W73C025lvkKOQByS39nIOdAH4w",
+      apikey,
       PointLatLng(
         geoposition.latitude,
         geoposition.longitude,
@@ -258,5 +282,77 @@ class _ZoomapState extends State<Zoomap> {
     } else {
       print('err_poly ${result.errorMessage}');
     }
+  }
+
+  void setPolylines3() async {
+    PolylineResult result = await polylinePoints.getRouteBetweenCoordinates(
+      apikey,
+      PointLatLng(
+        geoposition.latitude,
+        geoposition.longitude,
+      ),
+      PointLatLng(
+        sevenLocation.latitude,
+        sevenLocation.longitude,
+      ),
+      travelMode: TravelMode.walking,
+    );
+    polylineCoordinates.clear();
+    if (result.status == 'OK') {
+      result.points.forEach((PointLatLng point) {
+        polylineCoordinates.add(LatLng(point.latitude, point.longitude));
+      });
+      setState(() {
+        //polylines.clear();
+        _polylines.add(
+          Polyline(
+            width: 5,
+            polylineId: PolylineId('polyLine'),
+            color: Colors.black,
+            points: polylineCoordinates,
+          ),
+        );
+      });
+    } else {
+      print('err_poly ${result.errorMessage}');
+    }
+  }
+}
+
+class CustomBackButtonM extends StatelessWidget {
+  const CustomBackButtonM({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: EdgeInsets.only(
+        top: 40,
+        left: 20,
+      ),
+      child: GestureDetector(
+        onTap: () {
+          Navigator.pop(context);
+        },
+        child: Align(
+          alignment: Alignment.topLeft,
+          child: Container(
+            height: 40.0,
+            width: 40.0,
+            decoration: BoxDecoration(
+              color: Colors.green,
+              shape: BoxShape.circle,
+            ),
+            child: Center(
+              child: Icon(
+                Icons.arrow_back,
+                color: Colors.white,
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
   }
 }

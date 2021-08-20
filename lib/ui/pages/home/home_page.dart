@@ -31,9 +31,7 @@ class HomePage extends StatelessWidget {
           appBar: buildAppBar(
             context,
             title: 'ZooNews',
-            actions: [
-              Notifi(),
-            ],
+            actions: [],
             leading: EmptyMenu(),
           ),
           backgroundColor: Colors.transparent,
