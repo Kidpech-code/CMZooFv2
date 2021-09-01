@@ -1,5 +1,6 @@
 import 'package:cmzoofv2/ui/pages/animal/animal_page.dart';
 import 'package:cmzoofv2/ui/pages/animal/animalpage.dart';
+import 'package:cmzoofv2/ui/pages/contact/contact_page.dart';
 import 'package:cmzoofv2/ui/pages/home/home_page.dart';
 import 'package:cmzoofv2/ui/pages/map/mappage.dart';
 import 'package:cmzoofv2/ui/pages/ticket/ticketpage.dart';
@@ -22,6 +23,7 @@ class _ConvexBarState extends State<ConvexBar> {
     TicketPage(),
     //CarPage(),
     MapPage(),
+    ContactPage(),
   ];
 
   @override
@@ -38,6 +40,7 @@ class _ConvexBarState extends State<ConvexBar> {
           TabItem(icon: Icons.confirmation_num, title: "บัตรสวนสัตว์"),
           //TabItem(icon: Icons.airport_shuttle, title: "รถบริการ"),
           TabItem(icon: Icons.map, title: "แผนที่"),
+          TabItem(icon: Icons.near_me_outlined, title: "โซเชียล"),
         ],
         initialActiveIndex: selectpage,
         onTap: (int index) {

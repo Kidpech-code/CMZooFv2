@@ -9,11 +9,11 @@ class HomePage extends StatelessWidget {
 
   Widget bgImg() {
     return Opacity(
-      opacity: 0.65,
+      opacity: 0.55,
       child: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage("images/bg.jpg"),
+            image: AssetImage("images/titlebg_1.jpg"),
             fit: BoxFit.cover,
           ),
         ),

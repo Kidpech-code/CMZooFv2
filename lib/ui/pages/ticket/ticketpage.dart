@@ -1,6 +1,5 @@
 import 'package:cmzoofv2/components/app_bar.dart';
 import 'package:cmzoofv2/ui/pages/ticket/components/booking_ticket.dart';
-import 'package:cmzoofv2/ui/pages/ticket/components/new_price_ticket.dart';
 import 'package:cmzoofv2/ui/pages/ticket/components/price_ticket.dart';
 import 'package:flutter/material.dart';
 
@@ -17,7 +16,7 @@ class _TicketPageState extends State<TicketPage> {
       child: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage("images/bg.jpg"),
+            image: AssetImage("images/titlebg_1.jpg"),
             fit: BoxFit.cover,
           ),
         ),

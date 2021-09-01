@@ -82,53 +82,38 @@ class _NewIndexState extends State<NewIndex> {
     );
   }
 
+  Widget bgImg() {
+    return Container(
+      decoration: BoxDecoration(
+        image: DecorationImage(
+          image: AssetImage("images/titlebg_1.jpg"),
+          fit: BoxFit.cover,
+        ),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.teal[100],
-      body: Column(
-        children: <Widget>[
-          Container(
-            height: 300,
-            child: Stack(
-              children: <Widget>[
-                Positioned(
-                  child: Container(
-                    decoration: BoxDecoration(
-                      image: DecorationImage(
-                        image: AssetImage('img_pic_home/home_pic_top.png'),
-                        fit: BoxFit.fill,
-                      ),
-                    ),
-                  ),
-                ),
+    return Stack(
+      children: [
+        bgImg(),
+        Scaffold(
+          extendBody: true,
+          backgroundColor: Colors.transparent,
+          body: Container(
+            alignment: Alignment.center,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                AnimatedImage(),
+                SizedBox(height: 10),
+                showBotton(),
               ],
             ),
           ),
-          SizedBox(height: 5),
-          AnimatedImage(),
-          SizedBox(height: 10),
-          showBotton(),
-          SizedBox(height: 5),
-          Container(
-            height: 300,
-            child: Stack(
-              children: <Widget>[
-                Positioned(
-                  child: Container(
-                    decoration: BoxDecoration(
-                      image: DecorationImage(
-                        image: AssetImage('img_pic_home/home_pic_botton.png'),
-                        fit: BoxFit.fill,
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }

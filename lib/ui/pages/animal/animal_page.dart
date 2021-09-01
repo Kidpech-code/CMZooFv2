@@ -14,7 +14,7 @@ class AnimalsPage extends StatelessWidget {
       child: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage("images/bg.jpg"),
+            image: AssetImage("images/titlebg_1.jpg"),
             fit: BoxFit.cover,
           ),
         ),
