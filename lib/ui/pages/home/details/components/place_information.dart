@@ -12,7 +12,7 @@ class PlaceInformation extends StatelessWidget {
 
   final Travel travel;
 
-  @override
+  @override 
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return DelayedDisplay(

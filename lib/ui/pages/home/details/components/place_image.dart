@@ -10,7 +10,7 @@ class PlaceImage extends StatelessWidget {
   final Travel travel;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context) { 
     Size size = MediaQuery.of(context).size;
     return Container(
       height: size.height * 0.4,
