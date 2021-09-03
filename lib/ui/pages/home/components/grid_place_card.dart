@@ -14,7 +14,7 @@ class GridPlaceCard extends StatelessWidget {
   final GestureTapCallback tapEvent;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context) { 
     return GestureDetector(
       onTap: tapEvent,
       child: Container(

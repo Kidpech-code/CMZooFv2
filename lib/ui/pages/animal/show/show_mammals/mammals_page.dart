@@ -13,7 +13,7 @@ class ListMammals extends StatefulWidget {
 
 class _ListMammalsState extends State<ListMammals> {
   final CollectionReference _mammals =
-      FirebaseFirestore.instance.collection("listmammals");
+      FirebaseFirestore.instance.collection("list_mammals");
 
   Widget bgImg() {
     return Opacity(
@@ -107,7 +107,7 @@ class _ListMammalsState extends State<ListMammals> {
                                                         ),
                                                         SizedBox(width: 2),
                                                         Text(
-                                                          document['nameth'] ??
+                                                          document['nameTh'] ??
                                                               "Animal name",
                                                           style: TextStyle(
                                                             fontSize: 18.0,
@@ -132,7 +132,7 @@ class _ListMammalsState extends State<ListMammals> {
                                                         ),
                                                         SizedBox(width: 2),
                                                         Text(
-                                                          document['nameeng'] ??
+                                                          document['nameEng'] ??
                                                               "Animal engname",
                                                           style: TextStyle(
                                                             fontSize: 18.0,
@@ -511,7 +511,7 @@ class _ListMammalsState extends State<ListMammals> {
                                                   Row(
                                                     children: [
                                                       Text(
-                                                        document['nameth'] ??
+                                                        document['nameTh'] ??
                                                             "Animal name",
                                                         style: TextStyle(
                                                             color: Colors.white,
@@ -528,7 +528,7 @@ class _ListMammalsState extends State<ListMammals> {
                                                   Row(
                                                     children: [
                                                       Text(
-                                                        document['nameeng'] ??
+                                                        document['nameEng'] ??
                                                             "Animal engname",
                                                         style: TextStyle(
                                                           color: Colors.white,
