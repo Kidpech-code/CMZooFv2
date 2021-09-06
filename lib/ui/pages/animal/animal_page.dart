@@ -1,6 +1,7 @@
 import 'package:cmzoofv2/components/app_bar.dart';
 import 'package:cmzoofv2/ui/pages/animal/components/rare_recommended.dart';
 import 'package:cmzoofv2/ui/pages/animal/components/rareanimal_recommended.dart';
+import 'package:cmzoofv2/ui/pages/animal/components/rareanimal_recommended_fb.dart';
 import 'package:cmzoofv2/ui/pages/animal/components/type_categoris.dart';
 import 'package:cmzoofv2/ui/pages/animal/components/type_animal.dart';
 import 'package:flutter/material.dart';
@@ -43,7 +44,7 @@ class AnimalsPage extends StatelessWidget {
                 TypeRemonmended(),
                 TypeCategories(),
                 RareRemonmended(),
-                RareAnimalRecommended(),
+                RareRecommendedFB(),
               ],
             ),
           ),
