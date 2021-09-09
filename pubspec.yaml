@@ -101,8 +101,6 @@ flutter:
      - audio/
      - images/
      - icons/
-     - img_mammals/
-     - img_pic_home/
 
 
   fonts:

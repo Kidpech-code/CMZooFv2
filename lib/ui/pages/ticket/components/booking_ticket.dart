@@ -1,14 +1,22 @@
+import 'dart:html';
+
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class BookingTicket extends StatelessWidget {
+class BookingTicket extends StatefulWidget {
   const BookingTicket({Key? key}) : super(key: key);
 
-  //เชื่อมเว็บ
+  @override
+  State<BookingTicket> createState() => _BookingTicketState();
+}
+
+class _BookingTicketState extends State<BookingTicket> {
+
   void openurl() {
     String url = "https://www.eventpop.me/e/9199/chiangmaizoo";
     launch(url);
-  } 
+  }
 
   @override
   Widget build(BuildContext context) {

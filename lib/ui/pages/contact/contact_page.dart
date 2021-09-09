@@ -1,3 +1,4 @@
+import 'package:cmzoofv2/components/app_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -127,11 +128,14 @@ Widget webbotton() {
 }
 
 Widget bgImg() {
-  return Container(
-    decoration: BoxDecoration(
-      image: DecorationImage(
-        image: AssetImage("images/titlebg_1.jpg"),
-        fit: BoxFit.cover,
+  return Opacity(
+    opacity: 0.6,
+    child: Container(
+      decoration: BoxDecoration(
+        image: DecorationImage(
+          image: AssetImage("images/titlebg_1.jpg"),
+          fit: BoxFit.cover,
+        ),
       ),
     ),
   );
@@ -157,42 +161,51 @@ class _ContactPageState extends State<ContactPage> {
         Scaffold(
           extendBody: true,
           backgroundColor: Colors.transparent,
-          body: Container(
-            alignment: Alignment.center,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Container(
-                  height: 160,
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                    image: DecorationImage(
-                      image: AssetImage("images/facebook_page.png"),
+          appBar: buildAppBar(
+            context,
+            title: 'Contact',
+            actions: [],
+            leading: EmptyMenu(),
+          ),
+          body: SingleChildScrollView(
+            child: Container(
+              padding: EdgeInsets.all(25),
+              alignment: Alignment.center,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Container(
+                    height: 160,
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                        image: AssetImage("images/facebook_page.png"),
+                      ),
                     ),
                   ),
-                ),
-                facebookbotton(),
-                Container(
-                  height: 160,
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                    image: DecorationImage(
-                      image: AssetImage("images/youtube_page.jpg"),
+                  facebookbotton(),
+                  Container(
+                    height: 160,
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                        image: AssetImage("images/youtube_page.jpg"),
+                      ),
                     ),
                   ),
-                ),
-                youtubebotton(),
-                Container(
-                  height: 160,
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                    image: DecorationImage(
-                      image: AssetImage("images/web_page.png"),
+                  youtubebotton(),
+                  Container(
+                    height: 160,
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                        image: AssetImage("images/web_page.png"),
+                      ),
                     ),
                   ),
-                ),
-                webbotton(),
-              ],
+                  webbotton(),
+                ],
+              ),
             ),
           ),
         ),
