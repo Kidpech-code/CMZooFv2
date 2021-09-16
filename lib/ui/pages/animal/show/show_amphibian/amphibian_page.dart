@@ -771,7 +771,7 @@ class _ListAmphibianState extends State<ListAmphibian> {
                                                   Row(
                                                     children: [
                                                       Text(
-                                                        document['nameth'] ??
+                                                        document['nameTh'] ??
                                                             "Animal name",
                                                         style: TextStyle(
                                                             color: Colors.white,
@@ -788,7 +788,7 @@ class _ListAmphibianState extends State<ListAmphibian> {
                                                   Row(
                                                     children: [
                                                       Text(
-                                                        document['nameeng'] ??
+                                                        document['nameEng'] ??
                                                             "Animal engname",
                                                         style: TextStyle(
                                                           color: Colors.white,

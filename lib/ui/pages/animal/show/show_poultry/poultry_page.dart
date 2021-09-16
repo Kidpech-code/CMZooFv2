@@ -156,7 +156,7 @@ class _ListPoultryState extends State<ListPoultry> {
                                                           document['nameEng'] ??
                                                               "Animal engname",
                                                           style: TextStyle(
-                                                            color: Colors.teal,
+                                                            color: Colors.pink,
                                                             fontSize: 18.0,
                                                             fontWeight:
                                                                 FontWeight.bold,
@@ -200,7 +200,7 @@ class _ListPoultryState extends State<ListPoultry> {
                                                               BorderRadius
                                                                   .circular(15),
                                                         ),
-                                                        color: Colors.teal[100],
+                                                        color: Colors.pink[50],
                                                         child: Column(
                                                           crossAxisAlignment:
                                                               CrossAxisAlignment
@@ -371,7 +371,7 @@ class _ListPoultryState extends State<ListPoultry> {
                                                       SizedBox(height: 8),
                                                       //พฤติกรรม/สถานภาพปัจจุบัน/อายุเฉลี่ย
                                                       Card(
-                                                        color: Colors.teal[200],
+                                                        color: Colors.pink[100],
                                                         shape:
                                                             RoundedRectangleBorder(
                                                           borderRadius:
@@ -548,7 +548,7 @@ class _ListPoultryState extends State<ListPoultry> {
                                                       SizedBox(height: 8),
                                                       //วัยเจริญพันธุ์/ขนาดและน้ำหนัก/สถานที่ชม
                                                       Card(
-                                                        color: Colors.teal[300],
+                                                        color: Colors.pink[200],
                                                         shape:
                                                             RoundedRectangleBorder(
                                                           borderRadius:
@@ -771,7 +771,7 @@ class _ListPoultryState extends State<ListPoultry> {
                                                   Row(
                                                     children: [
                                                       Text(
-                                                        document['nameth'] ??
+                                                        document['nameTh'] ??
                                                             "Animal name",
                                                         style: TextStyle(
                                                             color: Colors.white,
@@ -788,7 +788,7 @@ class _ListPoultryState extends State<ListPoultry> {
                                                   Row(
                                                     children: [
                                                       Text(
-                                                        document['nameeng'] ??
+                                                        document['nameEng'] ??
                                                             "Animal engname",
                                                         style: TextStyle(
                                                           color: Colors.white,

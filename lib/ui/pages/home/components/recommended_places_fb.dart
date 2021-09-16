@@ -67,10 +67,25 @@ class _RecommendedPlacesFBState extends State<RecommendedPlacesFB> {
                                               crossAxisAlignment:
                                                   CrossAxisAlignment.stretch,
                                               children: [
-                                                Container(
-                                                  height: 140,
-                                                  child: Image.network(
-                                                      "${document['images']} "),
+                                                //รูป
+                                                Card(
+                                                  shape: RoundedRectangleBorder(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            15),
+                                                  ),
+                                                  child: Container(
+                                                    child: ClipRRect(
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              15),
+                                                      child: Image.network(
+                                                        "${document['images']}",
+                                                        width: double.infinity,
+                                                        fit: BoxFit.cover,
+                                                      ),
+                                                    ),
+                                                  ),
                                                 ),
                                                 SizedBox(height: 10),
                                                 //ชื่อสถานที่
