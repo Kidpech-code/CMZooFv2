@@ -87,12 +87,31 @@ class _ListMammalsState extends State<ListMammals> {
                                                         CrossAxisAlignment
                                                             .stretch,
                                                     children: [
-                                                      Container(
-                                                        height: 140,
-                                                        child: Image.network(
-                                                            "${document['images']} "),
+                                                      //รูป
+                                                      Card(
+                                                        shape:
+                                                            RoundedRectangleBorder(
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(15),
+                                                        ),
+                                                        child: Container(
+                                                          child: ClipRRect(
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        15),
+                                                            child:
+                                                                Image.network(
+                                                              "${document['images']}",
+                                                              width: double
+                                                                  .infinity,
+                                                              fit: BoxFit.cover,
+                                                            ),
+                                                          ),
+                                                        ),
                                                       ),
-                                                      SizedBox(height: 10),
+                                                      SizedBox(height: 13),
                                                       //ชื่อไทย
                                                       Row(children: [
                                                         Text(
@@ -118,6 +137,7 @@ class _ListMammalsState extends State<ListMammals> {
                                                           ),
                                                         ),
                                                       ]),
+                                                      SizedBox(height: 3),
                                                       //ชื่ออังกฤษ
                                                       Row(children: [
                                                         Text(
@@ -135,6 +155,7 @@ class _ListMammalsState extends State<ListMammals> {
                                                           document['nameEng'] ??
                                                               "Animal engname",
                                                           style: TextStyle(
+                                                            color: Colors.teal,
                                                             fontSize: 18.0,
                                                             fontWeight:
                                                                 FontWeight.bold,
@@ -143,6 +164,7 @@ class _ListMammalsState extends State<ListMammals> {
                                                           ),
                                                         ),
                                                       ]),
+                                                      SizedBox(height: 3),
                                                       //ชื่อวิทยาศาสตร์
                                                       Row(children: [
                                                         Text(
@@ -169,297 +191,534 @@ class _ListMammalsState extends State<ListMammals> {
                                                         ),
                                                       ]),
                                                       SizedBox(height: 10),
-                                                      //สิ่งที่น่าสนใจ
-                                                      Row(children: [
-                                                        Icon(
-                                                          Icons.favorite,
-                                                          color:
-                                                              Colors.red[600],
+                                                      //สิ่งที่น่าสนใจ/ถื่นอาศัย/อาหาร
+                                                      Card(
+                                                        shape:
+                                                            RoundedRectangleBorder(
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(15),
                                                         ),
-                                                        SizedBox(width: 2.0),
-                                                        Text(
-                                                          "สิ่งที่น่าสนใจ",
-                                                          style: TextStyle(
-                                                            fontSize: 18.0,
-                                                            fontWeight:
-                                                                FontWeight.bold,
-                                                            fontFamily: 'mitr',
-                                                            height: 1,
-                                                          ),
-                                                        ),
-                                                      ]),
-                                                      SizedBox(height: 2.0),
-                                                      Text(
-                                                        document[
-                                                                'interestingthing'] ??
-                                                            "Animal engname",
-                                                        style: TextStyle(
-                                                          fontSize: 18.0,
-                                                          fontWeight:
-                                                              FontWeight.bold,
-                                                          fontFamily: 'mitr',
-                                                          height: 1,
-                                                        ),
-                                                      ),
-                                                      SizedBox(height: 8.0),
-                                                      //ถื่นอาศัย
-                                                      Row(children: [
-                                                        Icon(
-                                                          Icons.filter_hdr,
-                                                          color:
-                                                              Colors.red[600],
-                                                        ),
-                                                        SizedBox(width: 2.0),
-                                                        Text(
-                                                          "ถื่นอาศัย",
-                                                          style: TextStyle(
-                                                            fontSize: 18.0,
-                                                            fontWeight:
-                                                                FontWeight.bold,
-                                                            fontFamily: 'mitr',
-                                                            height: 1,
-                                                          ),
-                                                        ),
-                                                      ]),
-                                                      SizedBox(height: 2.0),
-                                                      Text(
-                                                        document['habitat'] ??
-                                                            "Animal engname",
-                                                        style: TextStyle(
-                                                          fontSize: 18.0,
-                                                          fontWeight:
-                                                              FontWeight.bold,
-                                                          fontFamily: 'mitr',
-                                                          height: 1,
-                                                        ),
-                                                      ),
-                                                      SizedBox(height: 8.0),
-                                                      //อาหาร
-                                                      Row(children: [
-                                                        Icon(
-                                                          Icons.restaurant,
-                                                          color:
-                                                              Colors.red[600],
-                                                        ),
-                                                        SizedBox(width: 2.0),
-                                                        Text(
-                                                          "อาหาร",
-                                                          style: TextStyle(
-                                                            fontSize: 18.0,
-                                                            fontWeight:
-                                                                FontWeight.bold,
-                                                            fontFamily: 'mitr',
-                                                            height: 1,
-                                                          ),
-                                                        ),
-                                                      ]),
-                                                      SizedBox(height: 2.0),
-                                                      Text(
-                                                        document['food'] ??
-                                                            "Animal engname",
-                                                        style: TextStyle(
-                                                          fontSize: 18.0,
-                                                          fontWeight:
-                                                              FontWeight.bold,
-                                                          fontFamily: 'mitr',
-                                                          height: 1,
-                                                        ),
-                                                      ),
-                                                      SizedBox(height: 8.0),
-                                                      //พฤติกรรม
-                                                      Row(children: [
-                                                        Icon(
-                                                          Icons.psychology,
-                                                          color:
-                                                              Colors.red[600],
-                                                        ),
-                                                        SizedBox(width: 2.0),
-                                                        Text(
-                                                          "พฤติกรรม",
-                                                          style: TextStyle(
-                                                            fontSize: 18.0,
-                                                            fontWeight:
-                                                                FontWeight.bold,
-                                                            fontFamily: 'mitr',
-                                                            height: 1,
-                                                          ),
-                                                        ),
-                                                      ]),
-                                                      SizedBox(height: 2.0),
-                                                      Text(
-                                                        document['behavior'] ??
-                                                            "Animal engname",
-                                                        style: TextStyle(
-                                                          fontSize: 18.0,
-                                                          fontWeight:
-                                                              FontWeight.bold,
-                                                          fontFamily: 'mitr',
-                                                          height: 1,
-                                                        ),
-                                                      ),
-                                                      SizedBox(height: 8.0),
-                                                      //สถานภาพปัจจุบัน
-                                                      Row(children: [
-                                                        Icon(
-                                                          Icons
-                                                              .download_done_outlined,
-                                                          color:
-                                                              Colors.red[600],
-                                                        ),
-                                                        SizedBox(width: 2.0),
-                                                        Text(
-                                                          "สถานภาพปัจจุบัน",
-                                                          style: TextStyle(
-                                                            fontSize: 18.0,
-                                                            fontWeight:
-                                                                FontWeight.bold,
-                                                            fontFamily: 'mitr',
-                                                            height: 1,
-                                                          ),
-                                                        ),
-                                                      ]),
-                                                      SizedBox(height: 2.0),
-                                                      Text(
-                                                        document[
-                                                                'currentstatus'] ??
-                                                            "Animal engname",
-                                                        style: TextStyle(
-                                                          fontSize: 18.0,
-                                                          fontWeight:
-                                                              FontWeight.bold,
-                                                          fontFamily: 'mitr',
-                                                          height: 1,
-                                                        ),
-                                                      ),
-                                                      SizedBox(height: 8.0),
-                                                      //อายุเฉลี่ย
-                                                      Row(children: [
-                                                        Icon(
-                                                          Icons.filter_1,
-                                                          color:
-                                                              Colors.red[600],
-                                                        ),
-                                                        SizedBox(width: 2.0),
-                                                        Text(
-                                                          "อายุเฉลี่ย",
-                                                          style: TextStyle(
-                                                            fontSize: 18.0,
-                                                            fontWeight:
-                                                                FontWeight.bold,
-                                                            fontFamily: 'mitr',
-                                                            height: 1,
-                                                          ),
-                                                        ),
-                                                      ]),
-                                                      SizedBox(height: 2.0),
-                                                      Text(
-                                                        document['ageavg'] ??
-                                                            "Animal engname",
-                                                        style: TextStyle(
-                                                          fontSize: 18.0,
-                                                          fontWeight:
-                                                              FontWeight.bold,
-                                                          fontFamily: 'mitr',
-                                                          height: 1,
+                                                        color: Colors.teal[100],
+                                                        child: Column(
+                                                          crossAxisAlignment:
+                                                              CrossAxisAlignment
+                                                                  .start,
+                                                          children: [
+                                                            //สิ่งที่น่าสนใจ
+                                                            Container(
+                                                              margin: EdgeInsets
+                                                                  .all(3),
+                                                              child: Row(
+                                                                children: [
+                                                                  Icon(
+                                                                    Icons
+                                                                        .favorite,
+                                                                    color: Colors
+                                                                            .red[
+                                                                        600],
+                                                                  ),
+                                                                  SizedBox(
+                                                                      width: 2),
+                                                                  Text(
+                                                                    "สิ่งที่น่าสนใจ",
+                                                                    style:
+                                                                        TextStyle(
+                                                                      fontSize:
+                                                                          18.0,
+                                                                      fontWeight:
+                                                                          FontWeight
+                                                                              .bold,
+                                                                      fontFamily:
+                                                                          'mitr',
+                                                                      height: 1,
+                                                                    ),
+                                                                  ),
+                                                                ],
+                                                              ),
+                                                            ),
+                                                            SizedBox(height: 2),
+                                                            Container(
+                                                              margin: EdgeInsets
+                                                                  .all(4),
+                                                              child: Text(
+                                                                document[
+                                                                        'interestingthing'] ??
+                                                                    "Animal engname",
+                                                                style:
+                                                                    TextStyle(
+                                                                  fontSize: 16,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .bold,
+                                                                  fontFamily:
+                                                                      'mitr',
+                                                                  height: 1.2,
+                                                                ),
+                                                              ),
+                                                            ),
+                                                            SizedBox(height: 8),
+                                                            //ถื่นอาศัย
+                                                            Container(
+                                                              margin: EdgeInsets
+                                                                  .all(3),
+                                                              child: Row(
+                                                                children: [
+                                                                  Icon(
+                                                                    Icons
+                                                                        .filter_hdr,
+                                                                    color: Colors
+                                                                            .red[
+                                                                        600],
+                                                                  ),
+                                                                  SizedBox(
+                                                                      width:
+                                                                          2.0),
+                                                                  Text(
+                                                                    "ถื่นอาศัย",
+                                                                    style:
+                                                                        TextStyle(
+                                                                      fontSize:
+                                                                          18.0,
+                                                                      fontWeight:
+                                                                          FontWeight
+                                                                              .bold,
+                                                                      fontFamily:
+                                                                          'mitr',
+                                                                      height: 1,
+                                                                    ),
+                                                                  ),
+                                                                ],
+                                                              ),
+                                                            ),
+                                                            SizedBox(height: 2),
+                                                            Container(
+                                                              margin: EdgeInsets
+                                                                  .all(3),
+                                                              child: Text(
+                                                                document[
+                                                                        'habitat'] ??
+                                                                    "Animal engname",
+                                                                style:
+                                                                    TextStyle(
+                                                                  fontSize: 16,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .bold,
+                                                                  fontFamily:
+                                                                      'mitr',
+                                                                  height: 1.2,
+                                                                ),
+                                                              ),
+                                                            ),
+                                                            SizedBox(height: 8),
+                                                            //อาหาร
+                                                            Container(
+                                                              margin: EdgeInsets
+                                                                  .all(3),
+                                                              child: Row(
+                                                                  children: [
+                                                                    Icon(
+                                                                      Icons
+                                                                          .restaurant,
+                                                                      color: Colors
+                                                                              .red[
+                                                                          600],
+                                                                    ),
+                                                                    SizedBox(
+                                                                        width:
+                                                                            2.0),
+                                                                    Text(
+                                                                      "อาหาร",
+                                                                      style:
+                                                                          TextStyle(
+                                                                        fontSize:
+                                                                            18,
+                                                                        fontWeight:
+                                                                            FontWeight.bold,
+                                                                        fontFamily:
+                                                                            'mitr',
+                                                                        height:
+                                                                            1,
+                                                                      ),
+                                                                    ),
+                                                                  ]),
+                                                            ),
+                                                            SizedBox(height: 2),
+                                                            Container(
+                                                              margin: EdgeInsets
+                                                                  .all(3),
+                                                              child: Text(
+                                                                document[
+                                                                        'food'] ??
+                                                                    "Animal engname",
+                                                                style:
+                                                                    TextStyle(
+                                                                  fontSize: 16,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .bold,
+                                                                  fontFamily:
+                                                                      'mitr',
+                                                                  height: 1.2,
+                                                                ),
+                                                              ),
+                                                            ),
+                                                          ],
                                                         ),
                                                       ),
-                                                      SizedBox(height: 8.0),
-                                                      //วัยเจริญพันธุ์
-                                                      Row(children: [
-                                                        Icon(
-                                                          Icons.whatshot,
-                                                          color:
-                                                              Colors.red[600],
+                                                      SizedBox(height: 8),
+                                                      //พฤติกรรม/สถานภาพปัจจุบัน/อายุเฉลี่ย
+                                                      Card(
+                                                        color: Colors.teal[200],
+                                                        shape:
+                                                            RoundedRectangleBorder(
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(15),
                                                         ),
-                                                        SizedBox(width: 2.0),
-                                                        Text(
-                                                          "วัยเจริญพันธุ์",
-                                                          style: TextStyle(
-                                                            fontSize: 18.0,
-                                                            fontWeight:
-                                                                FontWeight.bold,
-                                                            fontFamily: 'mitr',
-                                                            height: 1,
-                                                          ),
-                                                        ),
-                                                      ]),
-                                                      SizedBox(height: 2.0),
-                                                      Text(
-                                                        document[
-                                                                'reproductiveage'] ??
-                                                            "Animal engname",
-                                                        style: TextStyle(
-                                                          fontSize: 18.0,
-                                                          fontWeight:
-                                                              FontWeight.bold,
-                                                          fontFamily: 'mitr',
-                                                          height: 1,
+                                                        child: Column(
+                                                          crossAxisAlignment:
+                                                              CrossAxisAlignment
+                                                                  .start,
+                                                          children: [
+                                                            //พฤติกรรม
+                                                            Container(
+                                                              margin: EdgeInsets
+                                                                  .all(3),
+                                                              child: Row(
+                                                                children: [
+                                                                  Icon(
+                                                                    Icons
+                                                                        .psychology,
+                                                                    color: Colors
+                                                                            .red[
+                                                                        600],
+                                                                  ),
+                                                                  SizedBox(
+                                                                      width:
+                                                                          2.0),
+                                                                  Text(
+                                                                    "พฤติกรรม",
+                                                                    style:
+                                                                        TextStyle(
+                                                                      fontSize:
+                                                                          18.0,
+                                                                      fontWeight:
+                                                                          FontWeight
+                                                                              .bold,
+                                                                      fontFamily:
+                                                                          'mitr',
+                                                                      height: 1,
+                                                                    ),
+                                                                  ),
+                                                                ],
+                                                              ),
+                                                            ),
+                                                            SizedBox(height: 2),
+                                                            Container(
+                                                              margin: EdgeInsets
+                                                                  .all(3),
+                                                              child: Text(
+                                                                document[
+                                                                        'behavior'] ??
+                                                                    "Animal engname",
+                                                                style:
+                                                                    TextStyle(
+                                                                  fontSize: 16,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .bold,
+                                                                  fontFamily:
+                                                                      'mitr',
+                                                                  height: 1.2,
+                                                                ),
+                                                              ),
+                                                            ),
+                                                            SizedBox(height: 8),
+                                                            //สถานภาพปัจจุบัน
+                                                            Container(
+                                                              margin: EdgeInsets
+                                                                  .all(3),
+                                                              child: Row(
+                                                                  children: [
+                                                                    Icon(
+                                                                      Icons
+                                                                          .download_done_outlined,
+                                                                      color: Colors
+                                                                              .red[
+                                                                          600],
+                                                                    ),
+                                                                    SizedBox(
+                                                                        width:
+                                                                            2.0),
+                                                                    Text(
+                                                                      "สถานภาพปัจจุบัน",
+                                                                      style:
+                                                                          TextStyle(
+                                                                        fontSize:
+                                                                            18.0,
+                                                                        fontWeight:
+                                                                            FontWeight.bold,
+                                                                        fontFamily:
+                                                                            'mitr',
+                                                                        height:
+                                                                            1,
+                                                                      ),
+                                                                    ),
+                                                                  ]),
+                                                            ),
+                                                            SizedBox(height: 2),
+                                                            Container(
+                                                              margin: EdgeInsets
+                                                                  .all(3),
+                                                              child: Text(
+                                                                document[
+                                                                        'currentstatus'] ??
+                                                                    "Animal engname",
+                                                                style:
+                                                                    TextStyle(
+                                                                  fontSize: 16,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .bold,
+                                                                  fontFamily:
+                                                                      'mitr',
+                                                                  height: 1.2,
+                                                                ),
+                                                              ),
+                                                            ),
+                                                            SizedBox(height: 8),
+                                                            //อายุเฉลี่ย
+                                                            Container(
+                                                              margin: EdgeInsets
+                                                                  .all(3),
+                                                              child: Row(
+                                                                  children: [
+                                                                    Icon(
+                                                                      Icons
+                                                                          .filter_1,
+                                                                      color: Colors
+                                                                              .red[
+                                                                          600],
+                                                                    ),
+                                                                    SizedBox(
+                                                                        width:
+                                                                            2),
+                                                                    Text(
+                                                                      "อายุเฉลี่ย",
+                                                                      style:
+                                                                          TextStyle(
+                                                                        fontSize:
+                                                                            18.0,
+                                                                        fontWeight:
+                                                                            FontWeight.bold,
+                                                                        fontFamily:
+                                                                            'mitr',
+                                                                        height:
+                                                                            1,
+                                                                      ),
+                                                                    ),
+                                                                  ]),
+                                                            ),
+                                                            SizedBox(height: 2),
+                                                            Container(
+                                                              margin: EdgeInsets
+                                                                  .all(3),
+                                                              child: Text(
+                                                                document[
+                                                                        'ageavg'] ??
+                                                                    "Animal engname",
+                                                                style:
+                                                                    TextStyle(
+                                                                  fontSize: 16,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .bold,
+                                                                  fontFamily:
+                                                                      'mitr',
+                                                                  height: 1.2,
+                                                                ),
+                                                              ),
+                                                            ),
+                                                          ],
                                                         ),
                                                       ),
-                                                      SizedBox(height: 8.0),
-                                                      //ขนาดและน้ำหนัก
-                                                      Row(children: [
-                                                        Icon(
-                                                          Icons.format_size,
-                                                          color:
-                                                              Colors.red[600],
+                                                      SizedBox(height: 8),
+                                                      //วัยเจริญพันธุ์/ขนาดและน้ำหนัก/สถานที่ชม
+                                                      Card(
+                                                        color: Colors.teal[300],
+                                                        shape:
+                                                            RoundedRectangleBorder(
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(15),
                                                         ),
-                                                        SizedBox(width: 2.0),
-                                                        Text(
-                                                          "ขนาดและน้ำหนัก",
-                                                          style: TextStyle(
-                                                            fontSize: 18.0,
-                                                            fontWeight:
-                                                                FontWeight.bold,
-                                                            fontFamily: 'mitr',
-                                                            height: 1,
-                                                          ),
-                                                        ),
-                                                      ]),
-                                                      SizedBox(height: 2.0),
-                                                      Text(
-                                                        document[
-                                                                'sizeandweight'] ??
-                                                            "Animal engname",
-                                                        style: TextStyle(
-                                                          fontSize: 18.0,
-                                                          fontWeight:
-                                                              FontWeight.bold,
-                                                          fontFamily: 'mitr',
-                                                          height: 1,
-                                                        ),
-                                                      ),
-                                                      SizedBox(height: 8.0),
-                                                      //สถานที่ชม
-                                                      Row(children: [
-                                                        Icon(
-                                                          Icons.museum,
-                                                          color:
-                                                              Colors.red[600],
-                                                        ),
-                                                        SizedBox(width: 2.0),
-                                                        Text(
-                                                          "สถานที่ชม",
-                                                          style: TextStyle(
-                                                            fontSize: 18.0,
-                                                            fontWeight:
-                                                                FontWeight.bold,
-                                                            fontFamily: 'mitr',
-                                                            height: 1,
-                                                          ),
-                                                        ),
-                                                      ]),
-                                                      SizedBox(height: 2.0),
-                                                      Text(
-                                                        document[
-                                                                'placetowatch'] ??
-                                                            "Animal engname",
-                                                        style: TextStyle(
-                                                          fontSize: 18.0,
-                                                          fontWeight:
-                                                              FontWeight.bold,
-                                                          fontFamily: 'mitr',
-                                                          height: 1,
+                                                        child: Column(
+                                                          crossAxisAlignment:
+                                                              CrossAxisAlignment
+                                                                  .start,
+                                                          children: [
+                                                            //วัยเจริญพันธุ์
+                                                            Container(
+                                                              margin: EdgeInsets
+                                                                  .all(3),
+                                                              child: Row(
+                                                                children: [
+                                                                  Icon(
+                                                                    Icons
+                                                                        .whatshot,
+                                                                    color: Colors
+                                                                            .red[
+                                                                        600],
+                                                                  ),
+                                                                  SizedBox(
+                                                                      width:
+                                                                          2.0),
+                                                                  Text(
+                                                                    "วัยเจริญพันธุ์",
+                                                                    style:
+                                                                        TextStyle(
+                                                                      fontSize:
+                                                                          18.0,
+                                                                      fontWeight:
+                                                                          FontWeight
+                                                                              .bold,
+                                                                      fontFamily:
+                                                                          'mitr',
+                                                                      height: 1,
+                                                                    ),
+                                                                  ),
+                                                                ],
+                                                              ),
+                                                            ),
+                                                            SizedBox(height: 2),
+                                                            Container(
+                                                              margin: EdgeInsets
+                                                                  .all(3),
+                                                              child: Text(
+                                                                document[
+                                                                        'reproductiveage'] ??
+                                                                    "Animal engname",
+                                                                style:
+                                                                    TextStyle(
+                                                                  fontSize: 16,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .bold,
+                                                                  fontFamily:
+                                                                      'mitr',
+                                                                  height: 1.2,
+                                                                ),
+                                                              ),
+                                                            ),
+                                                            SizedBox(height: 8),
+                                                            //ขนาดและน้ำหนัก
+                                                            Container(
+                                                              margin: EdgeInsets
+                                                                  .all(3),
+                                                              child: Row(
+                                                                  children: [
+                                                                    Icon(
+                                                                      Icons
+                                                                          .format_size,
+                                                                      color: Colors
+                                                                              .red[
+                                                                          600],
+                                                                    ),
+                                                                    SizedBox(
+                                                                        width:
+                                                                            2),
+                                                                    Text(
+                                                                      "ขนาดและน้ำหนัก",
+                                                                      style:
+                                                                          TextStyle(
+                                                                        fontSize:
+                                                                            18,
+                                                                        fontWeight:
+                                                                            FontWeight.bold,
+                                                                        fontFamily:
+                                                                            'mitr',
+                                                                        height:
+                                                                            1,
+                                                                      ),
+                                                                    ),
+                                                                  ]),
+                                                            ),
+                                                            SizedBox(height: 2),
+                                                            Container(
+                                                              margin: EdgeInsets
+                                                                  .all(3),
+                                                              child: Text(
+                                                                document[
+                                                                        'sizeandweight'] ??
+                                                                    "Animal engname",
+                                                                style:
+                                                                    TextStyle(
+                                                                  fontSize: 16,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .bold,
+                                                                  fontFamily:
+                                                                      'mitr',
+                                                                  height: 1.2,
+                                                                ),
+                                                              ),
+                                                            ),
+                                                            SizedBox(height: 8),
+                                                            //สถานที่ชม
+                                                            Container(
+                                                              margin: EdgeInsets
+                                                                  .all(3),
+                                                              child: Row(
+                                                                  children: [
+                                                                    Icon(
+                                                                      Icons
+                                                                          .museum,
+                                                                      color: Colors
+                                                                              .red[
+                                                                          600],
+                                                                    ),
+                                                                    SizedBox(
+                                                                        width:
+                                                                            2),
+                                                                    Text(
+                                                                      "สถานที่ชม",
+                                                                      style:
+                                                                          TextStyle(
+                                                                        fontSize:
+                                                                            18,
+                                                                        fontWeight:
+                                                                            FontWeight.bold,
+                                                                        fontFamily:
+                                                                            'mitr',
+                                                                        height:
+                                                                            1,
+                                                                      ),
+                                                                    ),
+                                                                  ]),
+                                                            ),
+                                                            SizedBox(height: 2),
+                                                            Container(
+                                                              margin: EdgeInsets
+                                                                  .all(3),
+                                                              child: Text(
+                                                                document[
+                                                                        'placetowatch'] ??
+                                                                    "Animal engname",
+                                                                style:
+                                                                    TextStyle(
+                                                                  fontSize: 16,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .bold,
+                                                                  fontFamily:
+                                                                      'mitr',
+                                                                  height: 1.2,
+                                                                ),
+                                                              ),
+                                                            ),
+                                                          ],
                                                         ),
                                                       ),
                                                     ],

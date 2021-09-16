@@ -37,7 +37,6 @@ class _BannerPlacesState extends State<BannerPlaces> {
               sliderItem(bannerNews[1]),
               sliderItem(bannerNews[2]),
               sliderItem(bannerNews[3]),
-              sliderItem(bannerNews[4]),
             ],
           ),
         ],

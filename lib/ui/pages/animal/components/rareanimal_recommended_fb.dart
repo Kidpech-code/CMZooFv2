@@ -66,7 +66,6 @@ class _RareRecommendedFBState extends State<RareRecommendedFB> {
                                                   CrossAxisAlignment.stretch,
                                               children: [
                                                 Container(
-                                                  height: 140,
                                                   child: Image.network(
                                                       "${document['images']} "),
                                                 ),
