@@ -33,15 +33,16 @@ dependencies:
   #arcore_flutter_plugin: ^0.0.10
 
   #----GOOGLE----#
-  google_maps_flutter: ^2.0.6
+  google_maps_flutter: ^2.0.8
   flutter_polyline_points: ^1.0.0
   google_fonts: ^2.1.0
   #----GOOGLE----#
 
   #----MAP----#
-  geoflutterfire2: ^2.3.9
+  geoflutterfire2: ^2.3.10
   geolocator: ^7.3.1
-
+  rxdart: ^0.27.2
+  location: ^4.3.0
   #----MAP----#
 
   carousel_slider: ^4.0.0
@@ -56,11 +57,11 @@ dependencies:
   
   #----FIREBASE----#
   #firebase: ^9.0.1
-  firebase_core: ^1.4.0
+  firebase_core: ^1.6.0
   #firebase_storage: ^8.1.3
   #firebase_database: ^7.1.1
-  cloud_firestore: ^2.4.0
-  firebase_messaging: ^10.0.3
+  cloud_firestore: ^2.5.3
+  firebase_messaging: ^10.0.7
   #----FIREBASE----#
 
   cupertino_icons: ^1.0.3
