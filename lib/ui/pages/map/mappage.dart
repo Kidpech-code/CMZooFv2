@@ -1,6 +1,7 @@
 import 'package:cmzoofv2/Model/map_model.dart';
 import 'package:cmzoofv2/components/app_bar.dart';
 import 'package:cmzoofv2/service/map/zoomap_fb.dart';
+import 'package:cmzoofv2/service/map/zoomap_fb1.dart';
 import 'package:cmzoofv2/ui/pages/map/components/map_mini.dart';
 import 'package:cmzoofv2/ui/pages/map/components/zone_places.dart';
 import 'package:cmzoofv2/service/map/zoomap.dart';
@@ -44,7 +45,8 @@ class _MapPageState extends State<MapPage> {
                 onPressed: () {
                   //Navigator.of(context).pop();
                   MaterialPageRoute route = MaterialPageRoute(
-                      builder: (BuildContext context) => ZoomapFB());
+                    builder: (BuildContext context) => ZooMapFB(),
+                  );
                   Navigator.push(context, route);
                 },
               ),
