@@ -3,7 +3,7 @@ import 'package:cmzoofv2/Model/map_model.dart';
 List<ZoneData> zonePlaces = [
   ZoneData(
     id: 1,
-    image: "images/hz.png",
+    image: "images/hz.png", 
     name: "HUAYKAEW ZONE",
     description: "1.ห้องน้ำ 4 แห่ง 2.ร้านอาหาร 3 แห่ง 3.จุดรอรถ 3 แห่ง",
     location: 'Huaykaew Zone, ChaingMaiZoo',
