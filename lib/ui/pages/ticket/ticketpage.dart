@@ -12,7 +12,7 @@ class _TicketPageState extends State<TicketPage> {
 
   Widget bgImg() {
     return Opacity(
-      opacity: 0.5,
+      opacity: 0.4,
       child: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
