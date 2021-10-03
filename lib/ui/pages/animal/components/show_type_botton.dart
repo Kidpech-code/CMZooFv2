@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:cmzoofv2/responsive.dart';
 import 'package:cmzoofv2/ui/pages/animal/show/show_amphibian/amphibian_page.dart';
 import 'package:cmzoofv2/ui/pages/animal/show/show_mammals/mammals_page.dart';
@@ -5,6 +6,7 @@ import 'package:cmzoofv2/ui/pages/animal/show/show_poultry/poultry_page.dart';
 import 'package:cmzoofv2/ui/pages/animal/show/show_reptiles/reptiles_page.dart';
 import 'package:cmzoofv2/ui/video/video_page.dart';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class ShowTypeBotton extends StatefulWidget {
   const ShowTypeBotton({Key? key}) : super(key: key);
@@ -14,6 +16,9 @@ class ShowTypeBotton extends StatefulWidget {
 }
 
 class _ShowTypeBottonState extends State<ShowTypeBotton> {
+  CollectionReference _link_ar =
+      FirebaseFirestore.instance.collection("link_ar");
+
   void mammalsPage() {
     Navigator.of(context)
         .push(MaterialPageRoute(builder: (context) => ListMammals()));
@@ -133,17 +138,53 @@ class _ShowTypeBottonState extends State<ShowTypeBotton> {
       width: 60,
       height: 60,
       // ignore: deprecated_member_use
-      child: FlatButton(
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(15),
-          side: BorderSide(
-            color: Colors.black12,
+      child: Column(
+        children: <Widget>[
+          FutureBuilder<QuerySnapshot>(
+            future: _link_ar.get(),
+            builder: (context, snapshot) {
+              if (snapshot.hasError) {
+                return Scaffold(
+                  body: Center(
+                    child: Text("Error: ${snapshot.error}"),
+                  ),
+                );
+              }
+
+              if (snapshot.connectionState == ConnectionState.done) {
+                return Stack(
+                  children: snapshot.data!.docs.map(
+                    (document) {
+                      return Container(
+                        // ignore: deprecated_member_use
+                        child: FlatButton(
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(15),
+                            side: BorderSide(
+                              color: Colors.black12,
+                            ),
+                          ),
+                          padding: EdgeInsets.all(8),
+                          color: Colors.white,
+                          child: Image.asset("images/icon_ar.png"),
+                          onPressed: () {
+                            launch("${document['url']}");
+                          },
+                        ),
+                      );
+                    },
+                  ).toList(),
+                );
+              }
+
+              return Scaffold(
+                body: Center(
+                  child: CircularProgressIndicator(),
+                ),
+              );
+            },
           ),
-        ),
-        padding: EdgeInsets.all(8),
-        color: Colors.white,
-        child: Image.asset("images/icon_ar.png"),
-        onPressed: () {},
+        ],
       ),
     );
   }

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 class TypeCategories extends StatefulWidget {
   const TypeCategories({
-    Key? key,
+    Key? key, 
   }) : super(key: key);
 
   @override

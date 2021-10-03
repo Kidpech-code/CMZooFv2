@@ -10,8 +10,7 @@ class BookingTicket extends StatefulWidget {
 }
 
 class _BookingTicketState extends State<BookingTicket> {
-
-  CollectionReference _listurl =
+  CollectionReference _link_ticket =
       FirebaseFirestore.instance.collection("link_ticket");
 
   @override
@@ -20,7 +19,7 @@ class _BookingTicketState extends State<BookingTicket> {
       child: Row(
         children: <Widget>[
           FutureBuilder<QuerySnapshot>(
-            future: _listurl.get(),
+            future: _link_ticket.get(),
             builder: (context, snapshot) {
               if (snapshot.hasError) {
                 return Scaffold(
