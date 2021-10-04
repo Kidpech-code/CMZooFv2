@@ -1,11 +1,7 @@
-import 'package:cmzoofv2/Model/map_model.dart';
 import 'package:cmzoofv2/components/app_bar.dart';
-import 'package:cmzoofv2/service/map/zoomap_fb.dart';
 import 'package:cmzoofv2/service/map/zoomap_fb1.dart';
-import 'package:cmzoofv2/ui/pages/home/components/recommended.dart';
 import 'package:cmzoofv2/ui/pages/map/components/map_mini.dart';
 import 'package:cmzoofv2/ui/pages/map/components/zone_places.dart';
-import 'package:cmzoofv2/service/map/zoomap.dart';
 import 'package:flutter/material.dart';
 
 class MapPage extends StatefulWidget {
