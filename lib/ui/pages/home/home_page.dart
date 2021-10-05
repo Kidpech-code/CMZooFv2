@@ -1,7 +1,6 @@
 import 'package:cmzoofv2/components/app_bar.dart';
 import 'package:cmzoofv2/ui/pages/home/components/banner_places.dart';
 import 'package:cmzoofv2/ui/pages/home/components/recommended.dart';
-import 'package:cmzoofv2/ui/pages/home/components/recommended_places.dart';
 import 'package:cmzoofv2/ui/pages/home/components/recommended_places_fb.dart';
 import 'package:flutter/material.dart';
 
@@ -39,7 +38,6 @@ class HomePage extends StatelessWidget {
           body: SingleChildScrollView(
             child: Column(
               children: [
-                // PlacesCategories(),
                 BannerPlaces(),
                 Recommended(),
                 RecommendedPlacesFB(),

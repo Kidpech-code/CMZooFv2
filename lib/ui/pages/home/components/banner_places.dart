@@ -1,6 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:cmzoofv2/responsive.dart';
-import 'package:cmzoofv2/service/data/travel_banner/banner_data.dart';
+import 'package:cmzoofv2/service/fire_base/firebase.dart';
 import 'package:flutter/material.dart';
 
 class BannerPlaces extends StatefulWidget {
@@ -13,52 +13,53 @@ class BannerPlaces extends StatefulWidget {
 }
 
 class _BannerPlacesState extends State<BannerPlaces> {
-  int currentSlider = 0;
+
+  List imgs = [];
+
+  get getCarouselImage async {
+    final img = await FBService().getCarouselImage;
+    print(img);
+    setState(() {
+      imgs = img!;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
+    getCarouselImage;
     return SizedBox(
       width: double.infinity,
       height: isTab(context) ? 450 : 200,
       child: Column(
         children: [
-          CarouselSlider(
-            options: CarouselOptions(
-              height: isTab(context) ? 450 : 200,
-              enlargeCenterPage: true,
-              autoPlay: true,
-              aspectRatio: 16 / 9,
-              autoPlayCurve: Curves.fastOutSlowIn,
-              enableInfiniteScroll: true,
-              autoPlayAnimationDuration: Duration(milliseconds: 800),
-              viewportFraction: 0.8,
-            ),
-            items: [
-              sliderItem(bannerNews[0]),
-              sliderItem(bannerNews[1]),
-              sliderItem(bannerNews[2]),
-              sliderItem(bannerNews[3]),
-            ],
-          ),
-        ],
-      ),
-    );
-  }
-
-  Widget sliderItem(String img) {
-    return Container(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Container(
-            height: isTab(context) ? 250 : 150,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(10.0),
-              image: DecorationImage(
-                image: AssetImage(img),
-                fit: BoxFit.cover,
+          Stack(
+            children: [
+              CarouselSlider.builder(
+                itemCount: imgs.length,
+                itemBuilder: (context, i, idx) {
+                  return Container(
+                    height: isTab(context) ? 250 : 150,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10.0),
+                      image: DecorationImage(
+                        image: NetworkImage(imgs[i]),
+                        fit: BoxFit.fill,
+                      ),
+                    ),
+                  );
+                },
+                options: CarouselOptions(
+                  height: isTab(context) ? 450 : 165,
+                  enlargeCenterPage: true,
+                  autoPlay: true,
+                  aspectRatio: 16 / 9,
+                  autoPlayCurve: Curves.fastOutSlowIn,
+                  enableInfiniteScroll: true,
+                  autoPlayAnimationDuration: Duration(milliseconds: 800),
+                  viewportFraction: 0.8,
+                ),
               ),
-            ),
+            ],
           ),
         ],
       ),
