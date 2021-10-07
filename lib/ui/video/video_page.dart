@@ -1,5 +1,6 @@
 import 'package:better_player/better_player.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:cmzoofv2/components/app_bar.dart';
 import 'package:expansion_tile_card/expansion_tile_card.dart';
 import 'package:flutter/material.dart';
 
@@ -34,6 +35,13 @@ class _VideoPageState extends State<VideoPage> {
       children: [
         bgImg(),
         Scaffold(
+          extendBody: true,
+          appBar: buildAppBar(
+            context,
+            title: '',
+            actions: [],
+            leading: EmptyMenu(),
+          ),
           backgroundColor: Colors.transparent,
           body: Stack(
             children: [
@@ -103,10 +111,10 @@ class _VideoPageState extends State<VideoPage> {
                   ),
                 ],
               ),
-              CustomBackButtonVi(),
             ],
           ),
         ),
+        CustomBackButtonVi(),
       ],
     );
   }

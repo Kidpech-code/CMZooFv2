@@ -1,6 +1,6 @@
 import 'package:cmzoofv2/components/app_bar.dart';
+import 'package:cmzoofv2/service/fire_base/search_animal.dart';
 import 'package:cmzoofv2/ui/pages/animal/components/rare_recommended.dart';
-import 'package:cmzoofv2/ui/pages/animal/components/rareanimal_recommended.dart';
 import 'package:cmzoofv2/ui/pages/animal/components/rareanimal_recommended_fb.dart';
 import 'package:cmzoofv2/ui/pages/animal/components/type_categoris.dart';
 import 'package:cmzoofv2/ui/pages/animal/components/type_animal.dart';
@@ -34,7 +34,20 @@ class AnimalsPage extends StatelessWidget {
           appBar: buildAppBar(
             context,
             title: 'Animal',
-            actions: [],
+            actions: [
+              IconButton(
+                iconSize: 45,
+                icon: Icon(Icons.search),
+                color: Colors.orangeAccent[700],
+                onPressed: () {
+                  //Navigator.of(context).pop();
+                  MaterialPageRoute route = MaterialPageRoute(
+                    builder: (BuildContext context) => SearchAnimal(),
+                  );
+                  Navigator.push(context, route);
+                },
+              ),
+            ],
             leading: EmptyMenu(),
           ),
           backgroundColor: Colors.transparent,
