@@ -49,7 +49,7 @@ class _SearchAnimalState extends State<SearchAnimal> {
 
   Widget bgImg() {
     return Opacity(
-      opacity: 0.9,
+      opacity: 1,
       child: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
