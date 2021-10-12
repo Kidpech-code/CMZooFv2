@@ -55,7 +55,7 @@ class _ZooMapFBState extends State<ZooMapFB> {
 
   //ดึงข้อมูล
   getMarkerData() async {
-    FirebaseFirestore.instance.collection("location_test").get().then(
+    FirebaseFirestore.instance.collection("loca_animal").get().then(
       (myMockData) {
         //isNotEmpty คือ ค่า ไม่Null
         if (myMockData.docs.isNotEmpty) {

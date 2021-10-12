@@ -38,7 +38,7 @@ class _SearchAnimalState extends State<SearchAnimal> {
     } else {
       tempSearchStore = [];
       queryResultSet.forEach((element) {
-        if (element['nameEng'].startsWith(capitalizedValue)) {
+        if (element['nameTH'].startsWith(capitalizedValue)) {
           setState(() {
             tempSearchStore.add(element);
           });
