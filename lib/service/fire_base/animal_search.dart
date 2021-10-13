@@ -1,19 +1,18 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:cmzoofv2/components/app_bar.dart';
 import 'package:cmzoofv2/responsive.dart';
 import 'package:cmzoofv2/service/fire_base/search_service.dart';
 import 'package:cmzoofv2/util.dart';
 import 'package:flutter/material.dart';
 import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 
-class SearchAnimal extends StatefulWidget {
-  const SearchAnimal({Key? key}) : super(key: key);
+class AnimalSearch extends StatefulWidget {
+  const AnimalSearch({Key? key}) : super(key: key);
 
   @override
-  _SearchAnimalState createState() => _SearchAnimalState();
+  _AnimalSearchState createState() => _AnimalSearchState();
 }
 
-class _SearchAnimalState extends State<SearchAnimal> {
+class _AnimalSearchState extends State<AnimalSearch> {
   var queryResultSet = [];
   var tempSearchStore = [];
 
@@ -47,67 +46,57 @@ class _SearchAnimalState extends State<SearchAnimal> {
     }
   }
 
-  Widget bgImg() {
-    return Opacity(
-      opacity: 1,
-      child: Container(
-        decoration: BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage("images/titlebg_1.jpg"),
-            fit: BoxFit.cover,
-          ),
-        ),
-      ),
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        bgImg(),
-        Scaffold(
-          extendBody: true,
-          appBar: buildAppBar(
-            context,
-            title: 'Search Animal',
-            actions: [],
-            leading: EmptyMenu(),
-          ),
-          backgroundColor: Colors.transparent,
-          body: ListView(
-            children: <Widget>[
-              Padding(
-                padding: const EdgeInsets.all(10),
-                child: TextField(
-                  onChanged: (val) {
-                    initiaeSearch(val);
-                  },
-                  decoration: InputDecoration(
-                    contentPadding: EdgeInsets.only(left: 25),
-                    hintText: 'Search by name',
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(4),
-                    ),
-                  ),
+    return Column(
+      children: <Widget>[
+        Padding(
+          padding: const EdgeInsets.all(10),
+          child: TextField(
+            onChanged: (val) {
+              initiaeSearch(val);
+            },
+            cursorColor: Colors.green[900],
+            decoration: InputDecoration(
+              prefixIcon: Icon(
+                Icons.search,
+                color: Colors.green[900],
+              ),
+              contentPadding: EdgeInsets.only(left: 25),
+              labelText: 'กรุณากรอกชื่อสัตว์',
+              labelStyle: TextStyle(
+                color: Colors.green[900],
+                fontWeight: FontWeight.bold,
+              ),
+              enabledBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(15),
+                borderSide: BorderSide(
+                  color: Colors.green,
+                  width: 1.0,
                 ),
               ),
-              SizedBox(height: 10),
-              GridView.count(
-                padding: EdgeInsets.only(left: 10, right: 10),
-                crossAxisCount: 2,
-                crossAxisSpacing: 4,
-                mainAxisSpacing: 4,
-                primary: false,
-                shrinkWrap: true,
-                children: tempSearchStore.map((element) {
-                  return buildResultCard(element);
-                }).toList(),
+              focusedBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(30),
+                borderSide: BorderSide(
+                  color: Colors.green.shade900,
+                  width: 2.0,
+                ),
               ),
-            ],
+            ),
           ),
         ),
-        CustomBackButtonS(),
+        SizedBox(height: 10),
+        GridView.count(
+          padding: EdgeInsets.only(left: 10, right: 10),
+          crossAxisCount: 2,
+          crossAxisSpacing: 4,
+          mainAxisSpacing: 4,
+          primary: false,
+          shrinkWrap: true,
+          children: tempSearchStore.map((element) {
+            return buildResultCard(element);
+          }).toList(),
+        ),
       ],
     );
   }
@@ -636,44 +625,6 @@ class _SearchAnimalState extends State<SearchAnimal> {
               ],
             )
           ],
-        ),
-      ),
-    );
-  }
-}
-
-class CustomBackButtonS extends StatelessWidget {
-  const CustomBackButtonS({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.only(
-        top: 40,
-        left: 20,
-      ),
-      child: GestureDetector(
-        onTap: () {
-          Navigator.pop(context);
-        },
-        child: Align(
-          alignment: Alignment.topLeft,
-          child: Container(
-            height: 40.0,
-            width: 40.0,
-            decoration: BoxDecoration(
-              color: Colors.green,
-              shape: BoxShape.circle,
-            ),
-            child: Center(
-              child: Icon(
-                Icons.arrow_back,
-                color: Colors.white,
-              ),
-            ),
-          ),
         ),
       ),
     );

@@ -47,14 +47,23 @@ class _ZonePlacesState extends State<ZonePlaces> {
                     children: snapshot.data!.docs.map(
                       (document) {
                         return ExpansionTileCard(
-                          title: Text(document['title']),
-                          subtitle: Text(document['subtitle']),
+                          expandedTextColor: Colors.teal,
+                          title: Text(
+                            document['title'],
+                            style: TextStyle(
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          subtitle: Text(
+                            document['subtitle'],
+                          ),
                           leading: CircleAvatar(
-                            radius: 35,
+                            radius: 30,
                             child: Hero(
                               tag: document.id,
                               child: ClipRRect(
-                                borderRadius: BorderRadius.circular(10),
+                                borderRadius: BorderRadius.circular(30),
                                 child: Image.network(
                                   document['ico'],
                                   width: double.infinity,

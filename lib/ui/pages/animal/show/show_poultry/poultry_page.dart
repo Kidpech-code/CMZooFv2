@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:cmzoofv2/components/app_bar.dart';
 import 'package:cmzoofv2/responsive.dart';
 import 'package:cmzoofv2/util.dart';
 import 'package:flutter/material.dart';
@@ -36,10 +37,15 @@ class _ListPoultryState extends State<ListPoultry> {
         bgImg(),
         Scaffold(
           backgroundColor: Colors.transparent,
+          appBar: buildAppBar(
+            context,
+            title: '',
+            actions: [],
+            leading: EmptyMenu(),
+          ),
           body: Container(
             child: Stack(
               children: [
-                //ลูกศรย้อนกลับ
                 FutureBuilder<QuerySnapshot>(
                   future: _poultry.get(),
                   builder: (context, snapshot) {
@@ -826,11 +832,12 @@ class _ListPoultryState extends State<ListPoultry> {
                     );
                   },
                 ),
-                CustomBackButtonA(),
               ],
             ),
           ),
         ),
+        //ลูกศรย้อนกลับ
+        CustomBackButtonA(),
       ],
     );
   }

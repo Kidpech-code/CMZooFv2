@@ -252,7 +252,7 @@ class _ShowTypeBottonState extends State<ShowTypeBotton> {
                 children: [
                   // showBottonTypeanimal(),
                   mammalButton(),
-                  amphibianButton(),
+                  //amphibianButton(),
                   poultryButton(),
                   reptilesButton(),
                   arButton(),

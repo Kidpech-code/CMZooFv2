@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:cmzoofv2/components/app_bar.dart';
 import 'package:cmzoofv2/responsive.dart';
 import 'package:cmzoofv2/util.dart';
 import 'package:flutter/material.dart';
@@ -36,6 +37,12 @@ class _ListReptilesState extends State<ListReptiles> {
         bgImg(),
         Scaffold(
           backgroundColor: Colors.transparent,
+          appBar: buildAppBar(
+            context,
+            title: '',
+            actions: [],
+            leading: EmptyMenu(),
+          ),
           body: Container(
             child: Stack(
               children: [
@@ -156,7 +163,7 @@ class _ListReptilesState extends State<ListReptiles> {
                                                           document['nameEng'] ??
                                                               "Animal engname",
                                                           style: TextStyle(
-                                                            color: Colors.teal,
+                                                            color: Colors.brown,
                                                             fontSize: 18.0,
                                                             fontWeight:
                                                                 FontWeight.bold,
@@ -200,7 +207,8 @@ class _ListReptilesState extends State<ListReptiles> {
                                                               BorderRadius
                                                                   .circular(15),
                                                         ),
-                                                        color: Colors.teal[100],
+                                                        color:
+                                                            Colors.brown[100],
                                                         child: Column(
                                                           crossAxisAlignment:
                                                               CrossAxisAlignment
@@ -371,7 +379,8 @@ class _ListReptilesState extends State<ListReptiles> {
                                                       SizedBox(height: 8),
                                                       //พฤติกรรม/สถานภาพปัจจุบัน/อายุเฉลี่ย
                                                       Card(
-                                                        color: Colors.teal[200],
+                                                        color:
+                                                            Colors.brown[200],
                                                         shape:
                                                             RoundedRectangleBorder(
                                                           borderRadius:
@@ -548,7 +557,8 @@ class _ListReptilesState extends State<ListReptiles> {
                                                       SizedBox(height: 8),
                                                       //วัยเจริญพันธุ์/ขนาดและน้ำหนัก/สถานที่ชม
                                                       Card(
-                                                        color: Colors.teal[300],
+                                                        color:
+                                                            Colors.brown[300],
                                                         shape:
                                                             RoundedRectangleBorder(
                                                           borderRadius:
@@ -826,11 +836,11 @@ class _ListReptilesState extends State<ListReptiles> {
                     );
                   },
                 ),
-                CustomBackButtonA(),
               ],
             ),
           ),
         ),
+        CustomBackButtonA(),
       ],
     );
   }

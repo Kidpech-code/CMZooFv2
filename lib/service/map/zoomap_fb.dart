@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:cmzoofv2/service/map/api_key/api_key.dart';
 import 'package:flutter/material.dart';
@@ -10,6 +11,11 @@ const double CAMERA_BEARING = 30;
 const LatLng SOURCE_LOCATION = LatLng(18.8107748473475, 98.94787742930968);
 const double PIN_VISIBLE_POSITION = 20;
 const double PIN_INVISIBLE_POSITION = -220;
+late GoogleMapController myController;
+late LatLng geoposition;
+late PolylinePoints polylinePoints;
+List<LatLng> polylineCoordinates = [];
+late LatLng firebaseLocation;
 
 class ZooMapFB extends StatefulWidget {
   @override
@@ -17,11 +23,9 @@ class ZooMapFB extends StatefulWidget {
 }
 
 class _ZooMapFBState extends State<ZooMapFB> {
-  late GoogleMapController myController;
-  late LatLng geoposition;
-  late PolylinePoints polylinePoints;
-  List<LatLng> polylineCoordinates = [];
-  late LatLng firebaseLocation;
+  bool track_button = true;
+
+  StreamSubscription<Position>? positionStream;
 
   double pinPillPosition = PIN_INVISIBLE_POSITION;
 
@@ -29,9 +33,69 @@ class _ZooMapFBState extends State<ZooMapFB> {
 
   Map<MarkerId, Marker> markers = <MarkerId, Marker>{};
 
+  void _cameratrack() {
+    positionStream =
+        Geolocator.getPositionStream(desiredAccuracy: LocationAccuracy.best)
+            .listen((Position position) {
+      myController.animateCamera(
+        CameraUpdate.newCameraPosition(
+          CameraPosition(
+            target: LatLng(position.latitude, position.longitude),
+            zoom: 16.0,
+          ),
+        ),
+      );
+    });
+  }
+
+  void _uncameratrack() {
+    positionStream?.cancel();
+  }
+
+  Widget trackBotton() {
+    return Padding(
+      padding: const EdgeInsets.only(
+        top: 40,
+        right: 20,
+      ),
+      child: Align(
+        alignment: Alignment.topRight,
+        child: ClipOval(
+          child: Material(
+            color: Colors.grey, // button color
+            child: InkWell(
+              splashColor: Colors.grey[200], // inkwell color
+              child: CircleAvatar(
+                backgroundColor: Colors.green,
+                radius: 25,
+                child: track_button
+                    ? Icon(
+                        Icons.explore,
+                        color: Colors.white,
+                        size: 25,
+                      )
+                    : Icon(
+                        Icons.my_location,
+                        color: Colors.white,
+                        size: 25,
+                      ),
+              ),
+              onTap: () {
+                setState(() {
+                  track_button ? _cameratrack() : _uncameratrack();
+                  track_button = !track_button;
+                });
+              },
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
   //เพิ่มและสร้าง Marker
   void initMarker(specify, specifyId) async {
-    print('Marker5555');
+    print('ShowMarker');
     var markerIdval = specifyId;
     final MarkerId markerId = MarkerId(markerIdval);
     final Marker marker = Marker(
@@ -158,6 +222,9 @@ class _ZooMapFBState extends State<ZooMapFB> {
         Scaffold(
           body: GoogleMap(
             myLocationEnabled: true,
+            myLocationButtonEnabled: false,
+            rotateGesturesEnabled: false,
+            tiltGesturesEnabled: false,
             polylines: _polylines,
             markers: Set<Marker>.of(markers.values),
             mapType: MapType.normal,
@@ -183,7 +250,13 @@ class _ZooMapFBState extends State<ZooMapFB> {
           bottom: this.pinPillPosition,
           child: cancelButton(),
         ),
-        CustomBackButtonM(),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            CustomBackButtonM(),
+            trackBotton(),
+          ],
+        ),
       ],
     );
   }

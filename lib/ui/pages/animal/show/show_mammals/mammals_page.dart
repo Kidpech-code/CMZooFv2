@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:cmzoofv2/components/app_bar.dart';
 import 'package:cmzoofv2/responsive.dart';
 import 'package:cmzoofv2/util.dart';
 import 'package:flutter/material.dart';
@@ -36,6 +37,12 @@ class _ListMammalsState extends State<ListMammals> {
         bgImg(),
         Scaffold(
           backgroundColor: Colors.transparent,
+          appBar: buildAppBar(
+            context,
+            title: '',
+            actions: [],
+            leading: EmptyMenu(),
+          ),
           body: Container(
             child: Stack(
               children: [
@@ -825,12 +832,12 @@ class _ListMammalsState extends State<ListMammals> {
                     );
                   },
                 ),
-                //ลูกศรย้อนกลับ
-                CustomBackButtonA(),
               ],
             ),
           ),
         ),
+        //ลูกศรย้อนกลับ
+        CustomBackButtonA(),
       ],
     );
   }
