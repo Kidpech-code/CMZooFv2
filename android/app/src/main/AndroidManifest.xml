@@ -12,7 +12,7 @@
 
    <application
         android:name="io.flutter.app.FlutterApplication"
-        android:label="cmzoofv2"
+        android:label="CMZoo"
         android:icon="@mipmap/ic_launcher">
         <meta-data android:name="com.google.android.geo.API_KEY"
                android:value="AIzaSyDM6Vv13W73C025lvkKOQByS39nIOdAH4w"/>
