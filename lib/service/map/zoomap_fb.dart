@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:cmzoofv2/service/map/api_key/api_key.dart';
+import 'package:cmzoofv2/service/map/components/map_bottompill.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_polyline_points/flutter_polyline_points.dart';
 import 'package:geolocator/geolocator.dart';
@@ -24,6 +25,7 @@ class ZooMapFB extends StatefulWidget {
 
 class _ZooMapFBState extends State<ZooMapFB> {
   bool track_button = true;
+  bool poly_button = true;
 
   StreamSubscription<Position>? positionStream;
 
@@ -225,6 +227,7 @@ class _ZooMapFBState extends State<ZooMapFB> {
             myLocationButtonEnabled: false,
             rotateGesturesEnabled: false,
             tiltGesturesEnabled: false,
+            mapToolbarEnabled: false,
             polylines: _polylines,
             markers: Set<Marker>.of(markers.values),
             mapType: MapType.normal,

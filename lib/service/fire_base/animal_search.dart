@@ -175,7 +175,7 @@ class _AnimalSearchState extends State<AnimalSearch> {
                             Text(
                               data['nameEng'] ?? "Not Found",
                               style: TextStyle(
-                                color: Colors.teal,
+                                color: Colors.green,
                                 fontSize: 18.0,
                                 fontWeight: FontWeight.bold,
                                 fontFamily: 'mitr',
@@ -212,7 +212,7 @@ class _AnimalSearchState extends State<AnimalSearch> {
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(15),
                             ),
-                            color: Colors.teal[100],
+                            color: Colors.green[100],
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
@@ -327,7 +327,7 @@ class _AnimalSearchState extends State<AnimalSearch> {
                           SizedBox(height: 8),
                           //พฤติกรรม/สถานภาพปัจจุบัน/อายุเฉลี่ย
                           Card(
-                            color: Colors.teal[200],
+                            color: Colors.green[200],
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(15),
                             ),
@@ -443,7 +443,7 @@ class _AnimalSearchState extends State<AnimalSearch> {
                           SizedBox(height: 8),
                           //วัยเจริญพันธุ์/ขนาดและน้ำหนัก/สถานที่ชม
                           Card(
-                            color: Colors.teal[300],
+                            color: Colors.green[300],
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(15),
                             ),

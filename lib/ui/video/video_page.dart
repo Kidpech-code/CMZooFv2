@@ -1,6 +1,7 @@
 import 'package:better_player/better_player.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:cmzoofv2/components/app_bar.dart';
+import 'package:cmzoofv2/responsive.dart';
 import 'package:expansion_tile_card/expansion_tile_card.dart';
 import 'package:flutter/material.dart';
 
@@ -43,23 +44,23 @@ class _VideoPageState extends State<VideoPage> {
             leading: EmptyMenu(),
           ),
           backgroundColor: Colors.transparent,
-          body: Stack(
-            children: [
-              Column(
-                children: <Widget>[
-                  FutureBuilder<QuerySnapshot>(
-                    future: _list_Video.get(),
-                    builder: (context, snapshot) {
-                      if (snapshot.hasError) {
-                        return Scaffold(
-                          body: Center(
-                            child: Text("Error: ${snapshot.error}"),
-                          ),
-                        );
-                      }
+          body: Container(
+            child: Stack(
+              children: [
+                FutureBuilder<QuerySnapshot>(
+                  future: _list_Video.get(),
+                  builder: (context, snapshot) {
+                    if (snapshot.hasError) {
+                      return Scaffold(
+                        body: Center(
+                          child: Text("Error: ${snapshot.error}"),
+                        ),
+                      );
+                    }
 
-                      if (snapshot.connectionState == ConnectionState.done) {
-                        return Padding(
+                    if (snapshot.connectionState == ConnectionState.done) {
+                      return SingleChildScrollView(
+                        child: Padding(
                           padding: const EdgeInsets.symmetric(
                               horizontal: 12.0, vertical: 12),
                           child: Column(
@@ -69,6 +70,21 @@ class _VideoPageState extends State<VideoPage> {
                                 return ExpansionTileCard(
                                   title: Text(document['title']),
                                   subtitle: Text(document['subtitle']),
+                                  leading: CircleAvatar(
+                                    radius: 30,
+                                    child: Hero(
+                                      tag: document.id,
+                                      child: ClipRRect(
+                                        borderRadius: BorderRadius.circular(30),
+                                        child: Image.network(
+                                          document['img'],
+                                          width: double.infinity,
+                                          height: isTab(context) ? 400 : 250,
+                                          fit: BoxFit.cover,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
                                   initialPadding: EdgeInsets.all(5),
                                   children: <Widget>[
                                     Divider(
@@ -99,19 +115,19 @@ class _VideoPageState extends State<VideoPage> {
                               },
                             ).toList(),
                           ),
-                        );
-                      }
-
-                      return Scaffold(
-                        body: Center(
-                          child: CircularProgressIndicator(),
                         ),
                       );
-                    },
-                  ),
-                ],
-              ),
-            ],
+                    }
+
+                    return Scaffold(
+                      body: Center(
+                        child: CircularProgressIndicator(),
+                      ),
+                    );
+                  },
+                ),
+              ],
+            ),
           ),
         ),
         CustomBackButtonVi(),

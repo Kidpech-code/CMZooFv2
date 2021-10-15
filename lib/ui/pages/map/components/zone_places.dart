@@ -14,10 +14,10 @@ class ZonePlaces extends StatefulWidget {
 }
 
 class _ZonePlacesState extends State<ZonePlaces> {
-  final GlobalKey<ExpansionTileCardState> hz = new GlobalKey();
-  final GlobalKey<ExpansionTileCardState> sz = new GlobalKey();
-  final GlobalKey<ExpansionTileCardState> dz = new GlobalKey();
-  final GlobalKey<ExpansionTileCardState> wz = new GlobalKey();
+  // final GlobalKey<ExpansionTileCardState> hz = new GlobalKey();
+  // final GlobalKey<ExpansionTileCardState> sz = new GlobalKey();
+  // final GlobalKey<ExpansionTileCardState> dz = new GlobalKey();
+  // final GlobalKey<ExpansionTileCardState> wz = new GlobalKey();
 
   CollectionReference _zone =
       FirebaseFirestore.instance.collection("list_zone");
