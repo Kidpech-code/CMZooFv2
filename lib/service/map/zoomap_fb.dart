@@ -225,8 +225,8 @@ class _ZooMapFBState extends State<ZooMapFB> {
           body: GoogleMap(
             myLocationEnabled: true,
             myLocationButtonEnabled: false,
-            rotateGesturesEnabled: false,
-            tiltGesturesEnabled: false,
+            //rotateGesturesEnabled: false,
+            //tiltGesturesEnabled: false,
             mapToolbarEnabled: false,
             polylines: _polylines,
             markers: Set<Marker>.of(markers.values),
