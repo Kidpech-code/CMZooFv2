@@ -1,8 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:cmzoofv2/responsive.dart';
-import 'package:cmzoofv2/service/data/map_data/mapdata.dart';
-import 'package:cmzoofv2/ui/pages/map/components/zone_gird_card.dart';
-import 'package:cmzoofv2/ui/pages/map/detail/detail_zone.dart';
 import 'package:expansion_tile_card/expansion_tile_card.dart';
 import 'package:flutter/material.dart';
 
@@ -14,11 +11,6 @@ class ZonePlaces extends StatefulWidget {
 }
 
 class _ZonePlacesState extends State<ZonePlaces> {
-  // final GlobalKey<ExpansionTileCardState> hz = new GlobalKey();
-  // final GlobalKey<ExpansionTileCardState> sz = new GlobalKey();
-  // final GlobalKey<ExpansionTileCardState> dz = new GlobalKey();
-  // final GlobalKey<ExpansionTileCardState> wz = new GlobalKey();
-
   CollectionReference _zone =
       FirebaseFirestore.instance.collection("list_zone");
 
@@ -86,7 +78,45 @@ class _ZonePlacesState extends State<ZonePlaces> {
                                   horizontal: 16.0,
                                   vertical: 8.0,
                                 ),
-                                child: Text(document['description']),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      document['tiltle_animal'] ?? " ",
+                                      style: TextStyle(
+                                        color: Colors.teal,
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.w800,
+                                        fontFamily: 'mitr',
+                                      ),
+                                    ),
+                                    Text(
+                                      document['animal_list'] ?? " ",
+                                      style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 14,
+                                        fontFamily: 'mitr',
+                                      ),
+                                    ),
+                                    Text(
+                                      document['tiltle_loca'] ?? " ",
+                                      style: TextStyle(
+                                        color: Colors.teal,
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.w800,
+                                        fontFamily: 'mitr',
+                                      ),
+                                    ),
+                                    Text(
+                                      document['loca_list'] ?? " ",
+                                      style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 14,
+                                        fontFamily: 'mitr',
+                                      ),
+                                    ),
+                                  ],
+                                ),
                               ),
                             ),
                           ],

@@ -17,7 +17,7 @@ class RareRemonmended extends StatelessWidget {
         child: Row(
           children: [
             Text(
-              'RareAnimal',
+              'สัตว์หายาก',
               style: GoogleFonts.merriweather(
                 fontWeight: FontWeight.w700,
                 fontSize: isTab(context) ? 26 : 22,

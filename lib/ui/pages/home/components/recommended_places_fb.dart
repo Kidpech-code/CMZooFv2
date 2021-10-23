@@ -88,10 +88,9 @@ class _RecommendedPlacesFBState extends State<RecommendedPlacesFB> {
                                                   ),
                                                 ),
                                                 SizedBox(height: 10),
-                                                //ชื่อสถานที่
+                                                //ชื่อกิจกรรม
                                                 Text(
-                                                  document['name'] ??
-                                                      "Animal name",
+                                                  document['name'] ?? " ",
                                                   style: TextStyle(
                                                     fontSize: 18.0,
                                                     fontWeight: FontWeight.bold,
@@ -107,12 +106,11 @@ class _RecommendedPlacesFBState extends State<RecommendedPlacesFB> {
                                                   ),
                                                   SizedBox(width: 10),
                                                   Text(
-                                                    document['location'] ??
-                                                        "Animal engname",
+                                                    document['location'] ?? " ",
                                                     style: TextStyle(
                                                       fontSize: isTab(context)
                                                           ? 16
-                                                          : 12,
+                                                          : 13,
                                                       fontWeight:
                                                           FontWeight.bold,
                                                       fontFamily: 'mitr',
@@ -120,9 +118,9 @@ class _RecommendedPlacesFBState extends State<RecommendedPlacesFB> {
                                                   ),
                                                 ]),
                                                 SizedBox(height: 5),
-                                                //Title Description
+                                                //รายระเอียด
                                                 Text(
-                                                  "Description",
+                                                  "รายระเอียด",
                                                   style: TextStyle(
                                                     fontSize: isTab(context)
                                                         ? 28
@@ -135,7 +133,7 @@ class _RecommendedPlacesFBState extends State<RecommendedPlacesFB> {
                                                 //Description
                                                 Text(
                                                   document['description'] ??
-                                                      "Animal engname",
+                                                      " ",
                                                   style: TextStyle(
                                                     fontSize: 16.0,
                                                     fontFamily: 'mitr',
@@ -188,8 +186,7 @@ class _RecommendedPlacesFBState extends State<RecommendedPlacesFB> {
                                             Row(
                                               children: [
                                                 Text(
-                                                  document['name'] ??
-                                                      "Animal name",
+                                                  document['name'] ?? " ",
                                                   style: TextStyle(
                                                       color: Colors.white,
                                                       fontSize: isTab(context)
@@ -203,13 +200,12 @@ class _RecommendedPlacesFBState extends State<RecommendedPlacesFB> {
                                             Row(
                                               children: [
                                                 Text(
-                                                  document['location'] ??
-                                                      "Animal engname",
+                                                  document['location'] ?? " ",
                                                   style: TextStyle(
                                                     color: Colors.white,
                                                     fontSize: isTab(context)
                                                         ? 24
-                                                        : 11,
+                                                        : 12,
                                                     fontWeight: FontWeight.w700,
                                                   ),
                                                 ),

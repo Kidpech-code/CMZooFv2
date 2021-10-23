@@ -111,7 +111,7 @@ class _RareRecommendedFBState extends State<RareRecommendedFB> {
                                                       style: TextStyle(
                                                         fontSize: isTab(context)
                                                             ? 16
-                                                            : 12,
+                                                            : 13,
                                                         fontWeight:
                                                             FontWeight.bold,
                                                         fontFamily: 'mitr',
@@ -151,7 +151,7 @@ class _RareRecommendedFBState extends State<RareRecommendedFB> {
                                                 SizedBox(height: 5),
                                                 //Title Description
                                                 Text(
-                                                  "Description",
+                                                  "รายระเอียด",
                                                   style: TextStyle(
                                                     fontSize: isTab(context)
                                                         ? 28
@@ -164,7 +164,7 @@ class _RareRecommendedFBState extends State<RareRecommendedFB> {
                                                 //Description
                                                 Text(
                                                   document['description'] ??
-                                                      "Animal engname",
+                                                      " ",
                                                   style: TextStyle(
                                                     fontSize: 16.0,
                                                     fontFamily: 'mitr',
@@ -238,7 +238,7 @@ class _RareRecommendedFBState extends State<RareRecommendedFB> {
                                                     color: Colors.white,
                                                     fontSize: isTab(context)
                                                         ? 24
-                                                        : 11,
+                                                        : 12,
                                                     fontWeight: FontWeight.w700,
                                                   ),
                                                 ),

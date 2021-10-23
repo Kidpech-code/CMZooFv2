@@ -19,23 +19,12 @@ class Recommended extends StatelessWidget {
         child: Row(
           children: [
             Text(
-              'สถานที่แนะนำ',
+              'กิจกรรมของสวนสัตว์',
               style: GoogleFonts.merriweather(
                 fontWeight: FontWeight.w700,
                 fontSize: isTab(context) ? 24 : 20,
               ),
             ),
-            // Spacer(),
-            // TextButton(
-            //   onPressed: () {},
-            //   child: Text(
-            //     'View All',
-            //     style: GoogleFonts.merriweather(
-            //       fontSize: isTab(context) ? 20 : 14,
-            //       color: kPrimaryColor,
-            //     ),
-            //   ),
-            // ),
           ],
         ),
       ),
