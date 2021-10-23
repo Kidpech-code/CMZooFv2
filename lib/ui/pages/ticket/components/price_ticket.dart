@@ -21,9 +21,7 @@ class PriceTicket extends StatelessWidget {
               fontFamily: 'mitr',
             ),
           ),
-          SizedBox(
-            height: 8.0,
-          ),
+          SizedBox(height: 8.0),
           detailTicket(ticket[0]),
           detailTicket(ticket[1]),
           detailTicket(ticket[2]),
@@ -37,9 +35,7 @@ class PriceTicket extends StatelessWidget {
               fontFamily: 'mitr',
             ),
           ),
-          SizedBox(
-            height: 8.0,
-          ),
+          SizedBox(height: 8.0),
           detailTicket(ticket[4]),
           detailTicket(ticket[5]),
           Text(
@@ -51,9 +47,7 @@ class PriceTicket extends StatelessWidget {
               fontFamily: 'mitr',
             ),
           ),
-          SizedBox(
-            height: 8.0,
-          ),
+          SizedBox(height: 8.0),
           detailTicket(ticket[6]),
           detailTicket(ticket[7]),
           Text(
@@ -65,9 +59,7 @@ class PriceTicket extends StatelessWidget {
               fontFamily: 'mitr',
             ),
           ),
-          SizedBox(
-            height: 8.0,
-          ),
+          SizedBox(height: 8.0),
           detailTicket(ticket[8]),
           detailTicket(ticket[9]),
           Text(

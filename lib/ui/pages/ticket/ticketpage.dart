@@ -1,6 +1,6 @@
 import 'package:cmzoofv2/components/app_bar.dart';
 import 'package:cmzoofv2/ui/pages/ticket/components/booking_ticket.dart';
-import 'package:cmzoofv2/ui/pages/ticket/components/price_ticket.dart';
+import 'package:cmzoofv2/ui/pages/ticket/components/price_ticket_fb.dart';
 import 'package:flutter/material.dart';
 
 class TicketPage extends StatefulWidget {
@@ -8,8 +8,7 @@ class TicketPage extends StatefulWidget {
   _TicketPageState createState() => _TicketPageState();
 }
 
-class _TicketPageState extends State<TicketPage> {  
-
+class _TicketPageState extends State<TicketPage> {
   Widget bgImg() {
     return Opacity(
       opacity: 0.4,
@@ -45,7 +44,7 @@ class _TicketPageState extends State<TicketPage> {
               child: Column(
                 children: [
                   BookingTicket(),
-                  PriceTicket(),
+                  PriceTicketFB(),
                 ],
               ),
             ),

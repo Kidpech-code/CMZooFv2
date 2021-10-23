@@ -11,6 +11,7 @@ class BookingTicket extends StatefulWidget {
 }
 
 class _BookingTicketState extends State<BookingTicket> {
+  // ignore: non_constant_identifier_names
   CollectionReference _link_ticket =
       FirebaseFirestore.instance.collection("link_ticket");
 
