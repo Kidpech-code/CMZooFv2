@@ -68,7 +68,14 @@ class _VideoPageState extends State<VideoPage> {
                             children: snapshot.data!.docs.map(
                               (document) {
                                 return ExpansionTileCard(
-                                  title: Text(document['title']),
+                                  expandedTextColor: Colors.teal,
+                                  title: Text(
+                                    document['title'],
+                                    style: TextStyle(
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
                                   subtitle: Text(document['subtitle']),
                                   leading: CircleAvatar(
                                     radius: 30,

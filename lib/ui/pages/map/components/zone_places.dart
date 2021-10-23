@@ -47,9 +47,7 @@ class _ZonePlacesState extends State<ZonePlaces> {
                               fontWeight: FontWeight.bold,
                             ),
                           ),
-                          subtitle: Text(
-                            document['subtitle'],
-                          ),
+                          subtitle: Text(document['subtitle']),
                           leading: CircleAvatar(
                             radius: 30,
                             child: Hero(
