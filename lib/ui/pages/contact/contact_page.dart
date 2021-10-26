@@ -11,7 +11,7 @@ class ContactPage extends StatefulWidget {
 
 //เชื่อมเว็บ
 void facebookurl() {
-  String url = "https://www.facebook.com/FanpageChiangMaiZoo";
+  String url = "http://pili.app/pg/2IyOkXCo6";
   launch(url);
 }
 

@@ -79,9 +79,12 @@ class _NewOnboradState extends State<NewOnborad> {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Image.asset(screens[index].img),
+                Image.asset(
+                  screens[index].img,
+                  height: 450,
+                ),
                 Container(
-                  height: 10,
+                  height: 5,
                   child: ListView.builder(
                     itemCount: screens.length,
                     shrinkWrap: true,
@@ -110,7 +113,7 @@ class _NewOnboradState extends State<NewOnborad> {
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     color: index % 2 == 0 ? teal800 : teal,
-                    fontSize: 25.0,
+                    fontSize: 20,
                     fontWeight: FontWeight.bold,
                     fontFamily: 'mitr',
                   ),

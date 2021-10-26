@@ -218,6 +218,7 @@ class _AnimalSearchState extends State<AnimalSearch> {
                               children: [
                                 //สิ่งที่น่าสนใจ
                                 Container(
+                                  padding: EdgeInsets.only(top: 10, left: 5),
                                   margin: EdgeInsets.all(3),
                                   child: Row(
                                     children: [
@@ -240,6 +241,7 @@ class _AnimalSearchState extends State<AnimalSearch> {
                                 ),
                                 SizedBox(height: 2),
                                 Container(
+                                  padding: EdgeInsets.all(5),
                                   margin: EdgeInsets.all(4),
                                   child: Text(
                                     data['interestingthing'] ?? "Not Found",
@@ -254,6 +256,7 @@ class _AnimalSearchState extends State<AnimalSearch> {
                                 SizedBox(height: 8),
                                 //ถื่นอาศัย
                                 Container(
+                                  padding: EdgeInsets.only(top: 5, left: 5),
                                   margin: EdgeInsets.all(3),
                                   child: Row(
                                     children: [
@@ -276,6 +279,7 @@ class _AnimalSearchState extends State<AnimalSearch> {
                                 ),
                                 SizedBox(height: 2),
                                 Container(
+                                  padding: EdgeInsets.all(5),
                                   margin: EdgeInsets.all(3),
                                   child: Text(
                                     data['habitat'] ?? "Not Found",
@@ -290,6 +294,7 @@ class _AnimalSearchState extends State<AnimalSearch> {
                                 SizedBox(height: 8),
                                 //อาหาร
                                 Container(
+                                  padding: EdgeInsets.only(top: 5, left: 5),
                                   margin: EdgeInsets.all(3),
                                   child: Row(children: [
                                     Icon(
@@ -310,6 +315,7 @@ class _AnimalSearchState extends State<AnimalSearch> {
                                 ),
                                 SizedBox(height: 2),
                                 Container(
+                                  padding: EdgeInsets.all(5),
                                   margin: EdgeInsets.all(3),
                                   child: Text(
                                     data['food'] ?? "Not Found",
@@ -336,6 +342,7 @@ class _AnimalSearchState extends State<AnimalSearch> {
                               children: [
                                 //พฤติกรรม
                                 Container(
+                                  padding: EdgeInsets.only(top: 10, left: 5),
                                   margin: EdgeInsets.all(3),
                                   child: Row(
                                     children: [
@@ -358,6 +365,7 @@ class _AnimalSearchState extends State<AnimalSearch> {
                                 ),
                                 SizedBox(height: 2),
                                 Container(
+                                  padding: EdgeInsets.all(5),
                                   margin: EdgeInsets.all(3),
                                   child: Text(
                                     data['behavior'] ?? "Not Found",
@@ -372,6 +380,7 @@ class _AnimalSearchState extends State<AnimalSearch> {
                                 SizedBox(height: 8),
                                 //สถานภาพปัจจุบัน
                                 Container(
+                                  padding: EdgeInsets.only(top: 5, left: 5),
                                   margin: EdgeInsets.all(3),
                                   child: Row(children: [
                                     Icon(
@@ -392,6 +401,7 @@ class _AnimalSearchState extends State<AnimalSearch> {
                                 ),
                                 SizedBox(height: 2),
                                 Container(
+                                  padding: EdgeInsets.all(5),
                                   margin: EdgeInsets.all(3),
                                   child: Text(
                                     data['currentstatus'] ?? "Not Found",
@@ -406,6 +416,7 @@ class _AnimalSearchState extends State<AnimalSearch> {
                                 SizedBox(height: 8),
                                 //อายุเฉลี่ย
                                 Container(
+                                  padding: EdgeInsets.only(top: 5, left: 5),
                                   margin: EdgeInsets.all(3),
                                   child: Row(children: [
                                     Icon(
@@ -426,6 +437,7 @@ class _AnimalSearchState extends State<AnimalSearch> {
                                 ),
                                 SizedBox(height: 2),
                                 Container(
+                                  padding: EdgeInsets.all(5),
                                   margin: EdgeInsets.all(3),
                                   child: Text(
                                     data['ageavg'] ?? "Not Found",
@@ -452,6 +464,7 @@ class _AnimalSearchState extends State<AnimalSearch> {
                               children: [
                                 //วัยเจริญพันธุ์
                                 Container(
+                                  padding: EdgeInsets.only(top: 10, left: 5),
                                   margin: EdgeInsets.all(3),
                                   child: Row(
                                     children: [
@@ -474,6 +487,7 @@ class _AnimalSearchState extends State<AnimalSearch> {
                                 ),
                                 SizedBox(height: 2),
                                 Container(
+                                  padding: EdgeInsets.all(5),
                                   margin: EdgeInsets.all(3),
                                   child: Text(
                                     data['reproductiveage'] ?? "Not Found",
@@ -488,6 +502,7 @@ class _AnimalSearchState extends State<AnimalSearch> {
                                 SizedBox(height: 8),
                                 //ขนาดและน้ำหนัก
                                 Container(
+                                  padding: EdgeInsets.only(top: 5, left: 5),
                                   margin: EdgeInsets.all(3),
                                   child: Row(children: [
                                     Icon(
@@ -508,6 +523,7 @@ class _AnimalSearchState extends State<AnimalSearch> {
                                 ),
                                 SizedBox(height: 2),
                                 Container(
+                                  padding: EdgeInsets.all(5),
                                   margin: EdgeInsets.all(3),
                                   child: Text(
                                     data['sizeandweight'] ?? "Not Found",
@@ -522,6 +538,7 @@ class _AnimalSearchState extends State<AnimalSearch> {
                                 SizedBox(height: 8),
                                 //สถานที่ชม
                                 Container(
+                                  padding: EdgeInsets.only(top: 5, left: 5),
                                   margin: EdgeInsets.all(3),
                                   child: Row(children: [
                                     Icon(
@@ -542,6 +559,7 @@ class _AnimalSearchState extends State<AnimalSearch> {
                                 ),
                                 SizedBox(height: 2),
                                 Container(
+                                  padding: EdgeInsets.all(5),
                                   margin: EdgeInsets.all(3),
                                   child: Text(
                                     data['placetowatch'] ?? "Not Found",

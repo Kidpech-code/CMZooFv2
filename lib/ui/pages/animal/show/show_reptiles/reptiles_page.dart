@@ -135,7 +135,7 @@ class _ListReptilesState extends State<ListReptiles> {
                                                         SizedBox(width: 2),
                                                         Text(
                                                           document['nameTh'] ??
-                                                              "Animal name",
+                                                              " ",
                                                           style: TextStyle(
                                                             fontSize: 18.0,
                                                             fontWeight:
@@ -161,7 +161,7 @@ class _ListReptilesState extends State<ListReptiles> {
                                                         SizedBox(width: 2),
                                                         Text(
                                                           document['nameEng'] ??
-                                                              "Animal engname",
+                                                              " ",
                                                           style: TextStyle(
                                                             color: Colors.brown,
                                                             fontSize: 18.0,
@@ -188,7 +188,7 @@ class _ListReptilesState extends State<ListReptiles> {
                                                         SizedBox(width: 2),
                                                         Text(
                                                           document['nameSci'] ??
-                                                              "Animal engname",
+                                                              " ",
                                                           style: TextStyle(
                                                             fontSize: 18.0,
                                                             fontWeight:
@@ -216,6 +216,10 @@ class _ListReptilesState extends State<ListReptiles> {
                                                           children: [
                                                             //สิ่งที่น่าสนใจ
                                                             Container(
+                                                              padding: EdgeInsets
+                                                                  .only(
+                                                                      top: 10,
+                                                                      left: 5),
                                                               margin: EdgeInsets
                                                                   .all(3),
                                                               child: Row(
@@ -248,12 +252,15 @@ class _ListReptilesState extends State<ListReptiles> {
                                                             ),
                                                             SizedBox(height: 2),
                                                             Container(
+                                                              padding:
+                                                                  EdgeInsets
+                                                                      .all(5),
                                                               margin: EdgeInsets
                                                                   .all(4),
                                                               child: Text(
                                                                 document[
                                                                         'interestingthing'] ??
-                                                                    "Animal engname",
+                                                                    " ",
                                                                 style:
                                                                     TextStyle(
                                                                   fontSize: 16,
@@ -269,6 +276,10 @@ class _ListReptilesState extends State<ListReptiles> {
                                                             SizedBox(height: 8),
                                                             //ถื่นอาศัย
                                                             Container(
+                                                              padding: EdgeInsets
+                                                                  .only(
+                                                                      top: 5,
+                                                                      left: 5),
                                                               margin: EdgeInsets
                                                                   .all(3),
                                                               child: Row(
@@ -302,12 +313,15 @@ class _ListReptilesState extends State<ListReptiles> {
                                                             ),
                                                             SizedBox(height: 2),
                                                             Container(
+                                                              padding:
+                                                                  EdgeInsets
+                                                                      .all(5),
                                                               margin: EdgeInsets
                                                                   .all(3),
                                                               child: Text(
                                                                 document[
                                                                         'habitat'] ??
-                                                                    "Animal engname",
+                                                                    " ",
                                                                 style:
                                                                     TextStyle(
                                                                   fontSize: 16,
@@ -323,6 +337,10 @@ class _ListReptilesState extends State<ListReptiles> {
                                                             SizedBox(height: 8),
                                                             //อาหาร
                                                             Container(
+                                                              padding: EdgeInsets
+                                                                  .only(
+                                                                      top: 5,
+                                                                      left: 5),
                                                               margin: EdgeInsets
                                                                   .all(3),
                                                               child: Row(
@@ -355,12 +373,15 @@ class _ListReptilesState extends State<ListReptiles> {
                                                             ),
                                                             SizedBox(height: 2),
                                                             Container(
+                                                              padding:
+                                                                  EdgeInsets
+                                                                      .all(5),
                                                               margin: EdgeInsets
                                                                   .all(3),
                                                               child: Text(
                                                                 document[
                                                                         'food'] ??
-                                                                    "Animal engname",
+                                                                    " ",
                                                                 style:
                                                                     TextStyle(
                                                                   fontSize: 16,
@@ -394,6 +415,10 @@ class _ListReptilesState extends State<ListReptiles> {
                                                           children: [
                                                             //พฤติกรรม
                                                             Container(
+                                                              padding: EdgeInsets
+                                                                  .only(
+                                                                      top: 10,
+                                                                      left: 5),
                                                               margin: EdgeInsets
                                                                   .all(3),
                                                               child: Row(
@@ -427,12 +452,15 @@ class _ListReptilesState extends State<ListReptiles> {
                                                             ),
                                                             SizedBox(height: 2),
                                                             Container(
+                                                              padding:
+                                                                  EdgeInsets
+                                                                      .all(5),
                                                               margin: EdgeInsets
                                                                   .all(3),
                                                               child: Text(
                                                                 document[
                                                                         'behavior'] ??
-                                                                    "Animal engname",
+                                                                    " ",
                                                                 style:
                                                                     TextStyle(
                                                                   fontSize: 16,
@@ -448,6 +476,10 @@ class _ListReptilesState extends State<ListReptiles> {
                                                             SizedBox(height: 8),
                                                             //สถานภาพปัจจุบัน
                                                             Container(
+                                                              padding: EdgeInsets
+                                                                  .only(
+                                                                      top: 5,
+                                                                      left: 5),
                                                               margin: EdgeInsets
                                                                   .all(3),
                                                               child: Row(
@@ -480,12 +512,15 @@ class _ListReptilesState extends State<ListReptiles> {
                                                             ),
                                                             SizedBox(height: 2),
                                                             Container(
+                                                              padding:
+                                                                  EdgeInsets
+                                                                      .all(5),
                                                               margin: EdgeInsets
                                                                   .all(3),
                                                               child: Text(
                                                                 document[
                                                                         'currentstatus'] ??
-                                                                    "Animal engname",
+                                                                    " ",
                                                                 style:
                                                                     TextStyle(
                                                                   fontSize: 16,
@@ -501,6 +536,10 @@ class _ListReptilesState extends State<ListReptiles> {
                                                             SizedBox(height: 8),
                                                             //อายุเฉลี่ย
                                                             Container(
+                                                              padding: EdgeInsets
+                                                                  .only(
+                                                                      top: 5,
+                                                                      left: 5),
                                                               margin: EdgeInsets
                                                                   .all(3),
                                                               child: Row(
@@ -533,12 +572,15 @@ class _ListReptilesState extends State<ListReptiles> {
                                                             ),
                                                             SizedBox(height: 2),
                                                             Container(
+                                                              padding:
+                                                                  EdgeInsets
+                                                                      .all(5),
                                                               margin: EdgeInsets
                                                                   .all(3),
                                                               child: Text(
                                                                 document[
                                                                         'ageavg'] ??
-                                                                    "Animal engname",
+                                                                    " ",
                                                                 style:
                                                                     TextStyle(
                                                                   fontSize: 16,
@@ -572,6 +614,10 @@ class _ListReptilesState extends State<ListReptiles> {
                                                           children: [
                                                             //วัยเจริญพันธุ์
                                                             Container(
+                                                              padding: EdgeInsets
+                                                                  .only(
+                                                                      top: 10,
+                                                                      left: 5),
                                                               margin: EdgeInsets
                                                                   .all(3),
                                                               child: Row(
@@ -605,12 +651,15 @@ class _ListReptilesState extends State<ListReptiles> {
                                                             ),
                                                             SizedBox(height: 2),
                                                             Container(
+                                                              padding:
+                                                                  EdgeInsets
+                                                                      .all(5),
                                                               margin: EdgeInsets
                                                                   .all(3),
                                                               child: Text(
                                                                 document[
                                                                         'reproductiveage'] ??
-                                                                    "Animal engname",
+                                                                    " ",
                                                                 style:
                                                                     TextStyle(
                                                                   fontSize: 16,
@@ -626,6 +675,10 @@ class _ListReptilesState extends State<ListReptiles> {
                                                             SizedBox(height: 8),
                                                             //ขนาดและน้ำหนัก
                                                             Container(
+                                                              padding: EdgeInsets
+                                                                  .only(
+                                                                      top: 5,
+                                                                      left: 5),
                                                               margin: EdgeInsets
                                                                   .all(3),
                                                               child: Row(
@@ -658,12 +711,15 @@ class _ListReptilesState extends State<ListReptiles> {
                                                             ),
                                                             SizedBox(height: 2),
                                                             Container(
+                                                              padding:
+                                                                  EdgeInsets
+                                                                      .all(5),
                                                               margin: EdgeInsets
                                                                   .all(3),
                                                               child: Text(
                                                                 document[
                                                                         'sizeandweight'] ??
-                                                                    "Animal engname",
+                                                                    " ",
                                                                 style:
                                                                     TextStyle(
                                                                   fontSize: 16,
@@ -679,6 +735,10 @@ class _ListReptilesState extends State<ListReptiles> {
                                                             SizedBox(height: 8),
                                                             //สถานที่ชม
                                                             Container(
+                                                              padding: EdgeInsets
+                                                                  .only(
+                                                                      top: 5,
+                                                                      left: 5),
                                                               margin: EdgeInsets
                                                                   .all(3),
                                                               child: Row(
@@ -711,12 +771,15 @@ class _ListReptilesState extends State<ListReptiles> {
                                                             ),
                                                             SizedBox(height: 2),
                                                             Container(
+                                                              padding:
+                                                                  EdgeInsets
+                                                                      .all(5),
                                                               margin: EdgeInsets
                                                                   .all(3),
                                                               child: Text(
                                                                 document[
                                                                         'placetowatch'] ??
-                                                                    "Animal engname",
+                                                                    " ",
                                                                 style:
                                                                     TextStyle(
                                                                   fontSize: 16,

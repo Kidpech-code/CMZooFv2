@@ -107,7 +107,7 @@ class _RareRecommendedFBState extends State<RareRecommendedFB> {
                                                     SizedBox(width: 10),
                                                     Text(
                                                       document['location'] ??
-                                                          "Animal engname",
+                                                          " ",
                                                       style: TextStyle(
                                                         fontSize: isTab(context)
                                                             ? 16
@@ -137,8 +137,7 @@ class _RareRecommendedFBState extends State<RareRecommendedFB> {
                                                     SizedBox(width: 10),
                                                     //Description
                                                     Text(
-                                                      document['type'] ??
-                                                          "Animal engname",
+                                                      document['type'] ?? " ",
                                                       style: TextStyle(
                                                         color: Colors.teal,
                                                         fontSize: 20,

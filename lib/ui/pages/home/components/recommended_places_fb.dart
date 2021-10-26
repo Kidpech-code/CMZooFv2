@@ -118,6 +118,25 @@ class _RecommendedPlacesFBState extends State<RecommendedPlacesFB> {
                                                   ),
                                                 ]),
                                                 SizedBox(height: 5),
+                                                Row(children: [
+                                                  Icon(
+                                                    Icons.timer,
+                                                    color: Colors.grey,
+                                                  ),
+                                                  SizedBox(width: 10),
+                                                  Text(
+                                                    document['time'] ?? " ",
+                                                    style: TextStyle(
+                                                      fontSize: isTab(context)
+                                                          ? 16
+                                                          : 13,
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                      fontFamily: 'mitr',
+                                                    ),
+                                                  ),
+                                                ]),
+                                                SizedBox(height: 5),
                                                 //รายระเอียด
                                                 Text(
                                                   "รายระเอียด",

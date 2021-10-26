@@ -214,6 +214,10 @@ class _ListPoultryState extends State<ListPoultry> {
                                                           children: [
                                                             //สิ่งที่น่าสนใจ
                                                             Container(
+                                                              padding: EdgeInsets
+                                                                  .only(
+                                                                      top: 10,
+                                                                      left: 5),
                                                               margin: EdgeInsets
                                                                   .all(3),
                                                               child: Row(
@@ -222,7 +226,7 @@ class _ListPoultryState extends State<ListPoultry> {
                                                                     Icons
                                                                         .favorite,
                                                                     color: Colors
-                                                                            .red[
+                                                                            .teal[
                                                                         600],
                                                                   ),
                                                                   SizedBox(
@@ -246,12 +250,15 @@ class _ListPoultryState extends State<ListPoultry> {
                                                             ),
                                                             SizedBox(height: 2),
                                                             Container(
+                                                              padding:
+                                                                  EdgeInsets
+                                                                      .all(5),
                                                               margin: EdgeInsets
                                                                   .all(4),
                                                               child: Text(
                                                                 document[
                                                                         'interestingthing'] ??
-                                                                    "Animal engname",
+                                                                    " ",
                                                                 style:
                                                                     TextStyle(
                                                                   fontSize: 16,
@@ -267,6 +274,10 @@ class _ListPoultryState extends State<ListPoultry> {
                                                             SizedBox(height: 8),
                                                             //ถื่นอาศัย
                                                             Container(
+                                                              padding: EdgeInsets
+                                                                  .only(
+                                                                      top: 5,
+                                                                      left: 5),
                                                               margin: EdgeInsets
                                                                   .all(3),
                                                               child: Row(
@@ -275,7 +286,7 @@ class _ListPoultryState extends State<ListPoultry> {
                                                                     Icons
                                                                         .filter_hdr,
                                                                     color: Colors
-                                                                            .red[
+                                                                            .teal[
                                                                         600],
                                                                   ),
                                                                   SizedBox(
@@ -300,12 +311,15 @@ class _ListPoultryState extends State<ListPoultry> {
                                                             ),
                                                             SizedBox(height: 2),
                                                             Container(
+                                                              padding:
+                                                                  EdgeInsets
+                                                                      .all(5),
                                                               margin: EdgeInsets
                                                                   .all(3),
                                                               child: Text(
                                                                 document[
                                                                         'habitat'] ??
-                                                                    "Animal engname",
+                                                                    " ",
                                                                 style:
                                                                     TextStyle(
                                                                   fontSize: 16,
@@ -321,6 +335,10 @@ class _ListPoultryState extends State<ListPoultry> {
                                                             SizedBox(height: 8),
                                                             //อาหาร
                                                             Container(
+                                                              padding: EdgeInsets
+                                                                  .only(
+                                                                      top: 5,
+                                                                      left: 5),
                                                               margin: EdgeInsets
                                                                   .all(3),
                                                               child: Row(
@@ -329,7 +347,7 @@ class _ListPoultryState extends State<ListPoultry> {
                                                                       Icons
                                                                           .restaurant,
                                                                       color: Colors
-                                                                              .red[
+                                                                              .teal[
                                                                           600],
                                                                     ),
                                                                     SizedBox(
@@ -353,12 +371,15 @@ class _ListPoultryState extends State<ListPoultry> {
                                                             ),
                                                             SizedBox(height: 2),
                                                             Container(
+                                                              padding:
+                                                                  EdgeInsets
+                                                                      .all(5),
                                                               margin: EdgeInsets
                                                                   .all(3),
                                                               child: Text(
                                                                 document[
                                                                         'food'] ??
-                                                                    "Animal engname",
+                                                                    " ",
                                                                 style:
                                                                     TextStyle(
                                                                   fontSize: 16,
@@ -391,6 +412,10 @@ class _ListPoultryState extends State<ListPoultry> {
                                                           children: [
                                                             //พฤติกรรม
                                                             Container(
+                                                              padding: EdgeInsets
+                                                                  .only(
+                                                                      top: 10,
+                                                                      left: 5),
                                                               margin: EdgeInsets
                                                                   .all(3),
                                                               child: Row(
@@ -399,7 +424,7 @@ class _ListPoultryState extends State<ListPoultry> {
                                                                     Icons
                                                                         .psychology,
                                                                     color: Colors
-                                                                            .red[
+                                                                            .teal[
                                                                         600],
                                                                   ),
                                                                   SizedBox(
@@ -424,6 +449,9 @@ class _ListPoultryState extends State<ListPoultry> {
                                                             ),
                                                             SizedBox(height: 2),
                                                             Container(
+                                                              padding:
+                                                                  EdgeInsets
+                                                                      .all(5),
                                                               margin: EdgeInsets
                                                                   .all(3),
                                                               child: Text(
@@ -445,6 +473,10 @@ class _ListPoultryState extends State<ListPoultry> {
                                                             SizedBox(height: 8),
                                                             //สถานภาพปัจจุบัน
                                                             Container(
+                                                              padding: EdgeInsets
+                                                                  .only(
+                                                                      top: 5,
+                                                                      left: 5),
                                                               margin: EdgeInsets
                                                                   .all(3),
                                                               child: Row(
@@ -453,7 +485,7 @@ class _ListPoultryState extends State<ListPoultry> {
                                                                       Icons
                                                                           .download_done_outlined,
                                                                       color: Colors
-                                                                              .red[
+                                                                              .teal[
                                                                           600],
                                                                     ),
                                                                     SizedBox(
@@ -477,6 +509,9 @@ class _ListPoultryState extends State<ListPoultry> {
                                                             ),
                                                             SizedBox(height: 2),
                                                             Container(
+                                                              padding:
+                                                                  EdgeInsets
+                                                                      .all(5),
                                                               margin: EdgeInsets
                                                                   .all(3),
                                                               child: Text(
@@ -498,6 +533,10 @@ class _ListPoultryState extends State<ListPoultry> {
                                                             SizedBox(height: 8),
                                                             //อายุเฉลี่ย
                                                             Container(
+                                                              padding: EdgeInsets
+                                                                  .only(
+                                                                      top: 5,
+                                                                      left: 5),
                                                               margin: EdgeInsets
                                                                   .all(3),
                                                               child: Row(
@@ -506,7 +545,7 @@ class _ListPoultryState extends State<ListPoultry> {
                                                                       Icons
                                                                           .filter_1,
                                                                       color: Colors
-                                                                              .red[
+                                                                              .teal[
                                                                           600],
                                                                     ),
                                                                     SizedBox(
@@ -530,6 +569,9 @@ class _ListPoultryState extends State<ListPoultry> {
                                                             ),
                                                             SizedBox(height: 2),
                                                             Container(
+                                                              padding:
+                                                                  EdgeInsets
+                                                                      .all(5),
                                                               margin: EdgeInsets
                                                                   .all(3),
                                                               child: Text(
@@ -568,6 +610,10 @@ class _ListPoultryState extends State<ListPoultry> {
                                                           children: [
                                                             //วัยเจริญพันธุ์
                                                             Container(
+                                                              padding: EdgeInsets
+                                                                  .only(
+                                                                      top: 10,
+                                                                      left: 5),
                                                               margin: EdgeInsets
                                                                   .all(3),
                                                               child: Row(
@@ -576,7 +622,7 @@ class _ListPoultryState extends State<ListPoultry> {
                                                                     Icons
                                                                         .whatshot,
                                                                     color: Colors
-                                                                            .red[
+                                                                            .teal[
                                                                         600],
                                                                   ),
                                                                   SizedBox(
@@ -601,12 +647,15 @@ class _ListPoultryState extends State<ListPoultry> {
                                                             ),
                                                             SizedBox(height: 2),
                                                             Container(
+                                                              padding:
+                                                                  EdgeInsets
+                                                                      .all(5),
                                                               margin: EdgeInsets
                                                                   .all(3),
                                                               child: Text(
                                                                 document[
                                                                         'reproductiveage'] ??
-                                                                    "Animal engname",
+                                                                    " ",
                                                                 style:
                                                                     TextStyle(
                                                                   fontSize: 16,
@@ -622,6 +671,10 @@ class _ListPoultryState extends State<ListPoultry> {
                                                             SizedBox(height: 8),
                                                             //ขนาดและน้ำหนัก
                                                             Container(
+                                                              padding: EdgeInsets
+                                                                  .only(
+                                                                      top: 5,
+                                                                      left: 5),
                                                               margin: EdgeInsets
                                                                   .all(3),
                                                               child: Row(
@@ -630,7 +683,7 @@ class _ListPoultryState extends State<ListPoultry> {
                                                                       Icons
                                                                           .format_size,
                                                                       color: Colors
-                                                                              .red[
+                                                                              .teal[
                                                                           600],
                                                                     ),
                                                                     SizedBox(
@@ -654,12 +707,15 @@ class _ListPoultryState extends State<ListPoultry> {
                                                             ),
                                                             SizedBox(height: 2),
                                                             Container(
+                                                              padding:
+                                                                  EdgeInsets
+                                                                      .all(5),
                                                               margin: EdgeInsets
                                                                   .all(3),
                                                               child: Text(
                                                                 document[
                                                                         'sizeandweight'] ??
-                                                                    "Animal engname",
+                                                                    " ",
                                                                 style:
                                                                     TextStyle(
                                                                   fontSize: 16,
@@ -675,6 +731,10 @@ class _ListPoultryState extends State<ListPoultry> {
                                                             SizedBox(height: 8),
                                                             //สถานที่ชม
                                                             Container(
+                                                              padding: EdgeInsets
+                                                                  .only(
+                                                                      top: 5,
+                                                                      left: 5),
                                                               margin: EdgeInsets
                                                                   .all(3),
                                                               child: Row(
@@ -683,7 +743,7 @@ class _ListPoultryState extends State<ListPoultry> {
                                                                       Icons
                                                                           .museum,
                                                                       color: Colors
-                                                                              .red[
+                                                                              .teal[
                                                                           600],
                                                                     ),
                                                                     SizedBox(
@@ -707,12 +767,15 @@ class _ListPoultryState extends State<ListPoultry> {
                                                             ),
                                                             SizedBox(height: 2),
                                                             Container(
+                                                              padding:
+                                                                  EdgeInsets
+                                                                      .all(5),
                                                               margin: EdgeInsets
                                                                   .all(3),
                                                               child: Text(
                                                                 document[
                                                                         'placetowatch'] ??
-                                                                    "Animal engname",
+                                                                    " ",
                                                                 style:
                                                                     TextStyle(
                                                                   fontSize: 16,

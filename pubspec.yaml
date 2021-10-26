@@ -92,6 +92,7 @@ flutter:
      - audio/
      - images/
      - icons/
+     - imguse/
 
 
   fonts:
