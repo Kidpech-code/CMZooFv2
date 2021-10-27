@@ -1,4 +1,4 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
+ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:cmzoofv2/responsive.dart';
 import 'package:cmzoofv2/util.dart';
 import 'package:flutter/material.dart';
@@ -232,8 +232,9 @@ class _RareRecommendedFBState extends State<RareRecommendedFB> {
                                               children: [
                                                 Text(
                                                   document['location'] ??
-                                                      "Animal engname",
+                                                      " ",
                                                   style: TextStyle(
+                                                    
                                                     color: Colors.white,
                                                     fontSize: isTab(context)
                                                         ? 24

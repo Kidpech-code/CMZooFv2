@@ -36,6 +36,7 @@ class _BookingTicketState extends State<BookingTicket> {
                   children: snapshot.data!.docs.map(
                     (document) {
                       return Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
                             "ซื้อบัตรล่วงหน้า",
@@ -47,7 +48,7 @@ class _BookingTicketState extends State<BookingTicket> {
                             ),
                           ),
                           SizedBox(
-                            width: isLandscape(context) ? 550 : 118,
+                            width: isLandscape(context) ? 490 : 98,
                           ),
                           // ignore: deprecated_member_use
                           RaisedButton.icon(

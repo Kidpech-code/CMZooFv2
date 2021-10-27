@@ -89,7 +89,6 @@ flutter:
 
   assets:
      - images/logo.png
-     - audio/
      - images/
      - icons/
      - imguse/

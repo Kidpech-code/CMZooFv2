@@ -160,10 +160,10 @@ class _ListMammalsState extends State<ListMammals> {
                                                         SizedBox(width: 2),
                                                         Text(
                                                           document['nameEng'] ??
-                                                              "Animal engname",
+                                                              " ",
                                                           style: TextStyle(
                                                             color: Colors.teal,
-                                                            fontSize: 18.0,
+                                                            fontSize: 17.0,
                                                             fontWeight:
                                                                 FontWeight.bold,
                                                             fontFamily: 'mitr',
@@ -775,7 +775,7 @@ class _ListMammalsState extends State<ListMammals> {
                                                               child: Text(
                                                                 document[
                                                                         'placetowatch'] ??
-                                                                    " " ,
+                                                                    " ",
                                                                 style:
                                                                     TextStyle(
                                                                   fontSize: 16,
@@ -841,7 +841,7 @@ class _ListMammalsState extends State<ListMammals> {
                                                     children: [
                                                       Text(
                                                         document['nameTh'] ??
-                                                            "Animal name",
+                                                            " ",
                                                         style: TextStyle(
                                                             color: Colors.white,
                                                             fontSize:
@@ -858,7 +858,9 @@ class _ListMammalsState extends State<ListMammals> {
                                                     children: [
                                                       Text(
                                                         document['nameEng'] ??
-                                                            "Animal engname",
+                                                            " ",
+                                                        overflow: TextOverflow
+                                                            .ellipsis,
                                                         style: TextStyle(
                                                           color: Colors.white,
                                                           fontSize:

@@ -57,8 +57,8 @@ class _ZooMapFBState extends State<ZooMapFB> {
   Widget trackBotton() {
     return Padding(
       padding: const EdgeInsets.only(
-        top: 40,
-        right: 20,
+        top: 50,
+        right: 10,
       ),
       child: Align(
         alignment: Alignment.topRight,
@@ -188,9 +188,10 @@ class _ZooMapFBState extends State<ZooMapFB> {
 
   Widget cancelButton() {
     return Container(
+      width: 150,
       // ignore: deprecated_member_use
       child: RaisedButton(
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
         color: Colors.red[400],
         child: Text(
           'ยกเลิกเส้นทาง',
@@ -248,8 +249,8 @@ class _ZooMapFBState extends State<ZooMapFB> {
         AnimatedPositioned(
           duration: const Duration(milliseconds: 500),
           curve: Curves.easeInOut,
-          left: 130,
-          right: 130,
+          left: 110,
+          right: 110,
           bottom: this.pinPillPosition,
           child: cancelButton(),
         ),
